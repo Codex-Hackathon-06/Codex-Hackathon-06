@@ -1,0 +1,75 @@
+{
+    "id":  "Camera_01",
+    "name":  "Camera 01",
+    "source":  "https://polyhaven.com/a/Camera_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "Camera_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/Camera_01/Camera_01_2k.blend",
+                      "size":  955188
+                  },
+                  {
+                      "path":  "textures/Camera_01_lens_body_metallic_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Camera_01/Camera_01_lens_body_metallic_2k.png",
+                      "size":  151698
+                  },
+                  {
+                      "path":  "textures/Camera_01_strap_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Camera_01/Camera_01_strap_nor_gl_2k.png",
+                      "size":  6050242
+                  },
+                  {
+                      "path":  "textures/Camera_01_strap_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Camera_01/Camera_01_strap_diff_2k.png",
+                      "size":  3621340
+                  },
+                  {
+                      "path":  "textures/Camera_01_body_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Camera_01/Camera_01_body_diff_2k.png",
+                      "size":  3072450
+                  },
+                  {
+                      "path":  "textures/Camera_01_body_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Camera_01/Camera_01_body_nor_gl_2k.png",
+                      "size":  5680091
+                  },
+                  {
+                      "path":  "textures/Camera_01_body_metallic_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Camera_01/Camera_01_body_metallic_2k.png",
+                      "size":  496312
+                  },
+                  {
+                      "path":  "textures/Camera_01_lens_body_roughness_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Camera_01/Camera_01_lens_body_roughness_2k.png",
+                      "size":  1612834
+                  },
+                  {
+                      "path":  "textures/Camera_01_lens_body_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Camera_01/Camera_01_lens_body_diff_2k.png",
+                      "size":  1700670
+                  },
+                  {
+                      "path":  "textures/Camera_01_strap_metallic_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Camera_01/Camera_01_strap_metallic_2k.png",
+                      "size":  52268
+                  },
+                  {
+                      "path":  "textures/Camera_01_strap_roughness_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Camera_01/Camera_01_strap_roughness_2k.png",
+                      "size":  2153572
+                  },
+                  {
+                      "path":  "textures/Camera_01_body_roughness_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Camera_01/Camera_01_body_roughness_2k.png",
+                      "size":  2167749
+                  },
+                  {
+                      "path":  "textures/Camera_01_lens_body_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Camera_01/Camera_01_lens_body_nor_gl_2k.png",
+                      "size":  3940666
+                  }
+              ]
+}

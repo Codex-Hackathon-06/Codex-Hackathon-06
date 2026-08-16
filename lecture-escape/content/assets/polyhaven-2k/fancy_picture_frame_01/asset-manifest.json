@@ -1,0 +1,45 @@
+{
+    "id":  "fancy_picture_frame_01",
+    "name":  "Fancy Picture Frame 01",
+    "source":  "https://polyhaven.com/a/fancy_picture_frame_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "fancy_picture_frame_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/fancy_picture_frame_01/fancy_picture_frame_01_2k.blend",
+                      "size":  171433
+                  },
+                  {
+                      "path":  "textures/fancy_picture_frame_01_rough_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/fancy_picture_frame_01/fancy_picture_frame_01_rough_2k.jpg",
+                      "size":  392276
+                  },
+                  {
+                      "path":  "textures/fancy_picture_frame_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/fancy_picture_frame_01/fancy_picture_frame_01_diff_2k.jpg",
+                      "size":  495698
+                  },
+                  {
+                      "path":  "textures/fancy_picture_frame_01_canvas_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/fancy_picture_frame_01/fancy_picture_frame_01_canvas_diff_2k.png",
+                      "size":  2839789
+                  },
+                  {
+                      "path":  "textures/fancy_picture_frame_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/fancy_picture_frame_01/fancy_picture_frame_01_nor_gl_2k.exr",
+                      "size":  7238080
+                  },
+                  {
+                      "path":  "textures/fancy_picture_frame_01_canvas_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/fancy_picture_frame_01/fancy_picture_frame_01_canvas_nor_gl_2k.png",
+                      "size":  2359046
+                  },
+                  {
+                      "path":  "textures/fancy_picture_frame_01_canvas_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/fancy_picture_frame_01/fancy_picture_frame_01_canvas_rough_2k.png",
+                      "size":  1724959
+                  }
+              ]
+}

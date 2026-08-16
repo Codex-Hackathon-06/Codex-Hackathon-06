@@ -1,0 +1,35 @@
+{
+    "id":  "CheeseBox_01",
+    "name":  "CheeseBox_01",
+    "source":  "https://polyhaven.com/a/CheeseBox_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "CheeseBox_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/CheeseBox_01/CheeseBox_01_2k.blend",
+                      "size":  148348
+                  },
+                  {
+                      "path":  "textures/CheeseBox_01_roughness_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/CheeseBox_01/CheeseBox_01_roughness_2k.jpg",
+                      "size":  727901
+                  },
+                  {
+                      "path":  "textures/CheeseBox_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/CheeseBox_01/CheeseBox_01_nor_gl_2k.exr",
+                      "size":  3119773
+                  },
+                  {
+                      "path":  "textures/CheeseBox_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/CheeseBox_01/CheeseBox_01_diff_2k.jpg",
+                      "size":  717726
+                  },
+                  {
+                      "path":  "textures/CheeseBox_01_metallic_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/CheeseBox_01/CheeseBox_01_metallic_2k.exr",
+                      "size":  15121
+                  }
+              ]
+}

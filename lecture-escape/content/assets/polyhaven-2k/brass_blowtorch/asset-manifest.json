@@ -1,0 +1,35 @@
+{
+    "id":  "brass_blowtorch",
+    "name":  "Brass Blowtorch",
+    "source":  "https://polyhaven.com/a/brass_blowtorch",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "brass_blowtorch_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/brass_blowtorch/brass_blowtorch_2k.blend",
+                      "size":  391249
+                  },
+                  {
+                      "path":  "textures/brass_blowtorch_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_blowtorch/brass_blowtorch_diff_2k.jpg",
+                      "size":  2296687
+                  },
+                  {
+                      "path":  "textures/brass_blowtorch_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_blowtorch/brass_blowtorch_metal_2k.exr",
+                      "size":  2433552
+                  },
+                  {
+                      "path":  "textures/brass_blowtorch_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_blowtorch/brass_blowtorch_nor_gl_2k.exr",
+                      "size":  5299152
+                  },
+                  {
+                      "path":  "textures/brass_blowtorch_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_blowtorch/brass_blowtorch_rough_2k.exr",
+                      "size":  2424156
+                  }
+              ]
+}

@@ -1,0 +1,35 @@
+{
+    "id":  "dartboard",
+    "name":  "Dartboard",
+    "source":  "https://polyhaven.com/a/dartboard",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "dartboard_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/dartboard/dartboard_2k.blend",
+                      "size":  289324
+                  },
+                  {
+                      "path":  "textures/dartboard_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/dartboard/dartboard_rough_2k.exr",
+                      "size":  4525963
+                  },
+                  {
+                      "path":  "textures/dartboard_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/dartboard/dartboard_diff_2k.jpg",
+                      "size":  3034244
+                  },
+                  {
+                      "path":  "textures/dartboard_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/dartboard/dartboard_nor_gl_2k.exr",
+                      "size":  9764046
+                  },
+                  {
+                      "path":  "textures/dartboard_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/dartboard/dartboard_metal_2k.exr",
+                      "size":  730066
+                  }
+              ]
+}

@@ -1,0 +1,30 @@
+{
+    "id":  "carved_wooden_elephant",
+    "name":  "Carved Wooden Elephant",
+    "source":  "https://polyhaven.com/a/carved_wooden_elephant",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "carved_wooden_elephant_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/carved_wooden_elephant/carved_wooden_elephant_2k.blend",
+                      "size":  213566
+                  },
+                  {
+                      "path":  "textures/carved_wooden_elephant_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/carved_wooden_elephant/carved_wooden_elephant_diff_2k.jpg",
+                      "size":  2099162
+                  },
+                  {
+                      "path":  "textures/carved_wooden_elephant_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/carved_wooden_elephant/carved_wooden_elephant_nor_gl_2k.exr",
+                      "size":  3227447
+                  },
+                  {
+                      "path":  "textures/carved_wooden_elephant_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/carved_wooden_elephant/carved_wooden_elephant_rough_2k.exr",
+                      "size":  3625870
+                  }
+              ]
+}

@@ -1,0 +1,35 @@
+{
+    "id":  "bronze_ray_statue",
+    "name":  "Bronze Ray Statue",
+    "source":  "https://polyhaven.com/a/bronze_ray_statue",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "bronze_ray_statue_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/bronze_ray_statue/bronze_ray_statue_2k.blend",
+                      "size":  149519
+                  },
+                  {
+                      "path":  "textures/bronze_ray_statue_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/bronze_ray_statue/bronze_ray_statue_diff_2k.jpg",
+                      "size":  1623409
+                  },
+                  {
+                      "path":  "textures/bronze_ray_statue_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bronze_ray_statue/bronze_ray_statue_metal_2k.exr",
+                      "size":  1244916
+                  },
+                  {
+                      "path":  "textures/bronze_ray_statue_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bronze_ray_statue/bronze_ray_statue_nor_gl_2k.exr",
+                      "size":  4635266
+                  },
+                  {
+                      "path":  "textures/bronze_ray_statue_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bronze_ray_statue/bronze_ray_statue_rough_2k.exr",
+                      "size":  2913784
+                  }
+              ]
+}

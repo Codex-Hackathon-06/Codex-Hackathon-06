@@ -1,0 +1,40 @@
+{
+    "id":  "caged_hanging_light",
+    "name":  "Caged Hanging Light",
+    "source":  "https://polyhaven.com/a/caged_hanging_light",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "caged_hanging_light_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/caged_hanging_light/caged_hanging_light_2k.blend",
+                      "size":  621184
+                  },
+                  {
+                      "path":  "textures/caged_hanging_light_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/caged_hanging_light/caged_hanging_light_diff_2k.jpg",
+                      "size":  2175755
+                  },
+                  {
+                      "path":  "textures/caged_hanging_light_emissive_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/caged_hanging_light/caged_hanging_light_emissive_2k.png",
+                      "size":  270951
+                  },
+                  {
+                      "path":  "textures/caged_hanging_light_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/caged_hanging_light/caged_hanging_light_metal_2k.exr",
+                      "size":  2427885
+                  },
+                  {
+                      "path":  "textures/caged_hanging_light_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/caged_hanging_light/caged_hanging_light_nor_gl_2k.exr",
+                      "size":  5838095
+                  },
+                  {
+                      "path":  "textures/caged_hanging_light_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/caged_hanging_light/caged_hanging_light_rough_2k.exr",
+                      "size":  2811249
+                  }
+              ]
+}

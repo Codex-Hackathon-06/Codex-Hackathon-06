@@ -1,0 +1,40 @@
+{
+    "id":  "Chandelier_03",
+    "name":  "Chandelier 03",
+    "source":  "https://polyhaven.com/a/Chandelier_03",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "Chandelier_03_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/Chandelier_03/Chandelier_03_2k.blend",
+                      "size":  1242288
+                  },
+                  {
+                      "path":  "textures/Chandelier_03_roughness_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/Chandelier_03/Chandelier_03_roughness_2k.jpg",
+                      "size":  653137
+                  },
+                  {
+                      "path":  "textures/Chandelier_03_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/Chandelier_03/Chandelier_03_nor_gl_2k.exr",
+                      "size":  4943581
+                  },
+                  {
+                      "path":  "textures/Chandelier_03_metallic_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/Chandelier_03/Chandelier_03_metallic_2k.exr",
+                      "size":  1835450
+                  },
+                  {
+                      "path":  "textures/Chandelier_03_opacity_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Chandelier_03/Chandelier_03_opacity_2k.png",
+                      "size":  69682
+                  },
+                  {
+                      "path":  "textures/Chandelier_03_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/Chandelier_03/Chandelier_03_diff_2k.jpg",
+                      "size":  408109
+                  }
+              ]
+}

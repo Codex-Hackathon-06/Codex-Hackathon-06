@@ -1,0 +1,75 @@
+{
+    "id":  "dutch_ship_large_01",
+    "name":  "Dutch Ship Large 01",
+    "source":  "https://polyhaven.com/a/dutch_ship_large_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "dutch_ship_large_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/dutch_ship_large_01/dutch_ship_large_01_2k.blend",
+                      "size":  3292813
+                  },
+                  {
+                      "path":  "textures/dutch_ship_large_01_sails_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dutch_ship_large_01/dutch_ship_large_01_sails_diff_2k.png",
+                      "size":  18649619
+                  },
+                  {
+                      "path":  "textures/dutch_ship_large_01_hull_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dutch_ship_large_01/dutch_ship_large_01_hull_rough_2k.png",
+                      "size":  6709751
+                  },
+                  {
+                      "path":  "textures/dutch_ship_large_01_hull_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dutch_ship_large_01/dutch_ship_large_01_hull_diff_2k.png",
+                      "size":  19218228
+                  },
+                  {
+                      "path":  "textures/dutch_ship_large_01_rigging_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dutch_ship_large_01/dutch_ship_large_01_rigging_diff_2k.png",
+                      "size":  16627808
+                  },
+                  {
+                      "path":  "textures/dutch_ship_large_01_sails_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dutch_ship_large_01/dutch_ship_large_01_sails_nor_gl_2k.png",
+                      "size":  19811732
+                  },
+                  {
+                      "path":  "textures/dutch_ship_large_01_rigging_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dutch_ship_large_01/dutch_ship_large_01_rigging_rough_2k.png",
+                      "size":  3796671
+                  },
+                  {
+                      "path":  "textures/dutch_ship_large_01_hull_metal_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dutch_ship_large_01/dutch_ship_large_01_hull_metal_2k.png",
+                      "size":  352736
+                  },
+                  {
+                      "path":  "textures/dutch_ship_large_01_sails_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dutch_ship_large_01/dutch_ship_large_01_sails_rough_2k.png",
+                      "size":  5685503
+                  },
+                  {
+                      "path":  "textures/dutch_ship_large_01_rigging_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dutch_ship_large_01/dutch_ship_large_01_rigging_nor_gl_2k.png",
+                      "size":  16389148
+                  },
+                  {
+                      "path":  "textures/dutch_ship_large_01_sails_alpha_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dutch_ship_large_01/dutch_ship_large_01_sails_alpha_2k.png",
+                      "size":  28224
+                  },
+                  {
+                      "path":  "textures/dutch_ship_large_01_rigging_metal_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dutch_ship_large_01/dutch_ship_large_01_rigging_metal_2k.png",
+                      "size":  824042
+                  },
+                  {
+                      "path":  "textures/dutch_ship_large_01_hull_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dutch_ship_large_01/dutch_ship_large_01_hull_nor_gl_2k.png",
+                      "size":  19517331
+                  }
+              ]
+}

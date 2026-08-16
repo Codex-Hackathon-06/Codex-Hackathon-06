@@ -1,0 +1,45 @@
+{
+    "id":  "ceiling_fan",
+    "name":  "Ceiling Fan",
+    "source":  "https://polyhaven.com/a/ceiling_fan",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "ceiling_fan_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/ceiling_fan/ceiling_fan_2k.blend",
+                      "size":  480694
+                  },
+                  {
+                      "path":  "textures/ceiling_fan_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceiling_fan/ceiling_fan_diff_2k.jpg",
+                      "size":  1433732
+                  },
+                  {
+                      "path":  "textures/ceiling_fan_emissive_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/ceiling_fan/ceiling_fan_emissive_2k.png",
+                      "size":  75793
+                  },
+                  {
+                      "path":  "textures/ceiling_fan_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceiling_fan/ceiling_fan_metal_2k.exr",
+                      "size":  619462
+                  },
+                  {
+                      "path":  "textures/ceiling_fan_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceiling_fan/ceiling_fan_nor_gl_2k.exr",
+                      "size":  2554786
+                  },
+                  {
+                      "path":  "textures/ceiling_fan_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceiling_fan/ceiling_fan_rough_2k.exr",
+                      "size":  1604185
+                  },
+                  {
+                      "path":  "textures/ceiling_fan_spec_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/ceiling_fan/ceiling_fan_spec_2k.png",
+                      "size":  35784
+                  }
+              ]
+}

@@ -1,0 +1,35 @@
+{
+    "id":  "clipboard",
+    "name":  "Clipboard",
+    "source":  "https://polyhaven.com/a/clipboard",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "clipboard_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/clipboard/clipboard_2k.blend",
+                      "size":  249741
+                  },
+                  {
+                      "path":  "textures/clipboard_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/clipboard/clipboard_diff_2k.jpg",
+                      "size":  2287331
+                  },
+                  {
+                      "path":  "textures/clipboard_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/clipboard/clipboard_metal_2k.exr",
+                      "size":  489595
+                  },
+                  {
+                      "path":  "textures/clipboard_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/clipboard/clipboard_nor_gl_2k.exr",
+                      "size":  4536392
+                  },
+                  {
+                      "path":  "textures/clipboard_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/clipboard/clipboard_rough_2k.exr",
+                      "size":  2329127
+                  }
+              ]
+}

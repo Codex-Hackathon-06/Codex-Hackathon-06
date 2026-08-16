@@ -1,0 +1,60 @@
+{
+    "id":  "CashRegister_01",
+    "name":  "Cash Register 01",
+    "source":  "https://polyhaven.com/a/CashRegister_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "CashRegister_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/CashRegister_01/CashRegister_01_2k.blend",
+                      "size":  465907
+                  },
+                  {
+                      "path":  "textures/CashRegister_01_glass_metallic_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CashRegister_01/CashRegister_01_glass_metallic_2k.png",
+                      "size":  4187
+                  },
+                  {
+                      "path":  "textures/CashRegister_01_glass_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CashRegister_01/CashRegister_01_glass_nor_gl_2k.png",
+                      "size":  16923
+                  },
+                  {
+                      "path":  "textures/CashRegister_01_glass_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CashRegister_01/CashRegister_01_glass_diff_2k.png",
+                      "size":  2086091
+                  },
+                  {
+                      "path":  "textures/CashRegister_01_metallic_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/CashRegister_01/CashRegister_01_metallic_2k.exr",
+                      "size":  1034131
+                  },
+                  {
+                      "path":  "textures/CashRegister_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/CashRegister_01/CashRegister_01_diff_2k.jpg",
+                      "size":  400846
+                  },
+                  {
+                      "path":  "textures/CashRegister_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/CashRegister_01/CashRegister_01_nor_gl_2k.exr",
+                      "size":  2554681
+                  },
+                  {
+                      "path":  "textures/CashRegister_01_glass_opacity_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CashRegister_01/CashRegister_01_glass_opacity_2k.png",
+                      "size":  549173
+                  },
+                  {
+                      "path":  "textures/CashRegister_01_roughness_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/CashRegister_01/CashRegister_01_roughness_2k.jpg",
+                      "size":  499200
+                  },
+                  {
+                      "path":  "textures/CashRegister_01_glass_roughness_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CashRegister_01/CashRegister_01_glass_roughness_2k.png",
+                      "size":  404532
+                  }
+              ]
+}

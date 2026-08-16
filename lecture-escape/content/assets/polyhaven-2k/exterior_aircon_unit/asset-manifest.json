@@ -1,0 +1,105 @@
+{
+    "id":  "exterior_aircon_unit",
+    "name":  "Exterior Aircon Unit",
+    "source":  "https://polyhaven.com/a/exterior_aircon_unit",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "exterior_aircon_unit_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/exterior_aircon_unit/exterior_aircon_unit_2k.blend",
+                      "size":  393834
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_rusted_02_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_02_rough_2k.png",
+                      "size":  1660169
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_01_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_01_rough_2k.png",
+                      "size":  1718580
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_02_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_02_rough_2k.png",
+                      "size":  1268637
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_rusted_02_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_02_diff_2k.png",
+                      "size":  3355641
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_rusted_01_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_01_rough_2k.png",
+                      "size":  1729452
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_rusted_01_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_01_diff_2k.png",
+                      "size":  3472269
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_02_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_02_nor_gl_2k.png",
+                      "size":  4266686
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_01_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_01_nor_gl_2k.png",
+                      "size":  3114526
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_01_metal_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_01_metal_2k.png",
+                      "size":  65678
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_rusted_02_opacity_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_02_opacity_2k.png",
+                      "size":  485809
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_02_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_02_diff_2k.png",
+                      "size":  2651128
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_rusted_02_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_02_nor_gl_2k.png",
+                      "size":  4622221
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_01_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_01_diff_2k.png",
+                      "size":  2504533
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_rusted_01_metal_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_01_metal_2k.png",
+                      "size":  138925
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_02_metal_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_02_metal_2k.png",
+                      "size":  837953
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_rusted_01_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_01_nor_gl_2k.png",
+                      "size":  3712970
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_01_opacity_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_01_opacity_2k.png",
+                      "size":  424520
+                  },
+                  {
+                      "path":  "textures/exterior_aircon_unit_rusted_02_metal_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_02_metal_2k.png",
+                      "size":  838091
+                  }
+              ]
+}

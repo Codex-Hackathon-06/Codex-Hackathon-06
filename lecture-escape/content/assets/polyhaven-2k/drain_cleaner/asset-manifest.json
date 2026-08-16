@@ -1,0 +1,30 @@
+{
+    "id":  "drain_cleaner",
+    "name":  "Drain Cleaner",
+    "source":  "https://polyhaven.com/a/drain_cleaner",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "drain_cleaner_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/drain_cleaner/drain_cleaner_2k.blend",
+                      "size":  196912
+                  },
+                  {
+                      "path":  "textures/drain_cleaner_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/drain_cleaner/drain_cleaner_nor_gl_2k.exr",
+                      "size":  3148675
+                  },
+                  {
+                      "path":  "textures/drain_cleaner_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/drain_cleaner/drain_cleaner_diff_2k.jpg",
+                      "size":  2041684
+                  },
+                  {
+                      "path":  "textures/drain_cleaner_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/drain_cleaner/drain_cleaner_rough_2k.exr",
+                      "size":  4213315
+                  }
+              ]
+}

@@ -1,0 +1,30 @@
+{
+    "id":  "chinese_stool",
+    "name":  "Chinese Stool",
+    "source":  "https://polyhaven.com/a/chinese_stool",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "chinese_stool_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/chinese_stool/chinese_stool_2k.blend",
+                      "size":  141103
+                  },
+                  {
+                      "path":  "textures/chinese_stool_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/chinese_stool/chinese_stool_diff_2k.jpg",
+                      "size":  2086650
+                  },
+                  {
+                      "path":  "textures/chinese_stool_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chinese_stool/chinese_stool_nor_gl_2k.exr",
+                      "size":  5750391
+                  },
+                  {
+                      "path":  "textures/chinese_stool_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chinese_stool/chinese_stool_rough_2k.exr",
+                      "size":  1967564
+                  }
+              ]
+}

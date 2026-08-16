@@ -1,0 +1,35 @@
+{
+    "id":  "ClassicConsole_01",
+    "name":  "Classic Console 01",
+    "source":  "https://polyhaven.com/a/ClassicConsole_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "ClassicConsole_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/ClassicConsole_01/ClassicConsole_01_2k.blend",
+                      "size":  433955
+                  },
+                  {
+                      "path":  "textures/ClassicConsole_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ClassicConsole_01/ClassicConsole_01_nor_gl_2k.exr",
+                      "size":  5869393
+                  },
+                  {
+                      "path":  "textures/ClassicConsole_01_metallic_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ClassicConsole_01/ClassicConsole_01_metallic_2k.exr",
+                      "size":  13296
+                  },
+                  {
+                      "path":  "textures/ClassicConsole_01_roughness_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ClassicConsole_01/ClassicConsole_01_roughness_2k.jpg",
+                      "size":  502323
+                  },
+                  {
+                      "path":  "textures/ClassicConsole_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ClassicConsole_01/ClassicConsole_01_diff_2k.jpg",
+                      "size":  557292
+                  }
+              ]
+}

@@ -1,0 +1,75 @@
+{
+    "id":  "brass_goblets",
+    "name":  "Brass Goblets",
+    "source":  "https://polyhaven.com/a/brass_goblets",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "brass_goblets_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/brass_goblets/brass_goblets_2k.blend",
+                      "size":  310969
+                  },
+                  {
+                      "path":  "textures/brass_goblet_02_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_goblets/brass_goblet_02_nor_gl_2k.exr",
+                      "size":  2501286
+                  },
+                  {
+                      "path":  "textures/brass_goblet_03_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_goblets/brass_goblet_03_metal_2k.exr",
+                      "size":  14192
+                  },
+                  {
+                      "path":  "textures/brass_goblet_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_goblets/brass_goblet_01_nor_gl_2k.exr",
+                      "size":  3073274
+                  },
+                  {
+                      "path":  "textures/brass_goblet_02_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_goblets/brass_goblet_02_rough_2k.exr",
+                      "size":  2873842
+                  },
+                  {
+                      "path":  "textures/brass_goblet_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_goblets/brass_goblet_01_rough_2k.exr",
+                      "size":  1972486
+                  },
+                  {
+                      "path":  "textures/brass_goblet_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_goblets/brass_goblet_01_diff_2k.jpg",
+                      "size":  2458412
+                  },
+                  {
+                      "path":  "textures/brass_goblet_01_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_goblets/brass_goblet_01_metal_2k.exr",
+                      "size":  14192
+                  },
+                  {
+                      "path":  "textures/brass_goblet_02_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_goblets/brass_goblet_02_metal_2k.exr",
+                      "size":  14192
+                  },
+                  {
+                      "path":  "textures/brass_goblet_03_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_goblets/brass_goblet_03_diff_2k.jpg",
+                      "size":  2142516
+                  },
+                  {
+                      "path":  "textures/brass_goblet_03_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_goblets/brass_goblet_03_rough_2k.exr",
+                      "size":  1071285
+                  },
+                  {
+                      "path":  "textures/brass_goblet_02_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_goblets/brass_goblet_02_diff_2k.jpg",
+                      "size":  2371722
+                  },
+                  {
+                      "path":  "textures/brass_goblet_03_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_goblets/brass_goblet_03_nor_gl_2k.exr",
+                      "size":  1957180
+                  }
+              ]
+}

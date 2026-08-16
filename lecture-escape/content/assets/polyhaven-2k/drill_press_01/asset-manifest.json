@@ -1,0 +1,35 @@
+{
+    "id":  "drill_press_01",
+    "name":  "Drill Press 01",
+    "source":  "https://polyhaven.com/a/drill_press_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "drill_press_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/drill_press_01/drill_press_01_2k.blend",
+                      "size":  1509130
+                  },
+                  {
+                      "path":  "textures/drill_press_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/drill_press_01/drill_press_01_diff_2k.jpg",
+                      "size":  2230040
+                  },
+                  {
+                      "path":  "textures/drill_press_01_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/drill_press_01/drill_press_01_metal_2k.exr",
+                      "size":  878189
+                  },
+                  {
+                      "path":  "textures/drill_press_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/drill_press_01/drill_press_01_nor_gl_2k.exr",
+                      "size":  5926996
+                  },
+                  {
+                      "path":  "textures/drill_press_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/drill_press_01/drill_press_01_rough_2k.exr",
+                      "size":  2453278
+                  }
+              ]
+}

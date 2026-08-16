@@ -1,0 +1,35 @@
+{
+    "id":  "ClassicNightstand_01",
+    "name":  "Classic Nightstand 01",
+    "source":  "https://polyhaven.com/a/ClassicNightstand_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "ClassicNightstand_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/ClassicNightstand_01/ClassicNightstand_01_2k.blend",
+                      "size":  203281
+                  },
+                  {
+                      "path":  "textures/ClassicNightstand_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ClassicNightstand_01/ClassicNightstand_01_nor_gl_2k.exr",
+                      "size":  4339911
+                  },
+                  {
+                      "path":  "textures/ClassicNightstand_01_roughness_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ClassicNightstand_01/ClassicNightstand_01_roughness_2k.jpg",
+                      "size":  490470
+                  },
+                  {
+                      "path":  "textures/ClassicNightstand_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ClassicNightstand_01/ClassicNightstand_01_diff_2k.jpg",
+                      "size":  379963
+                  },
+                  {
+                      "path":  "textures/ClassicNightstand_01_metallic_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ClassicNightstand_01/ClassicNightstand_01_metallic_2k.exr",
+                      "size":  13296
+                  }
+              ]
+}

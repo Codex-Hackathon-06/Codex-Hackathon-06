@@ -1,0 +1,35 @@
+{
+    "id":  "concrete_cat_statue",
+    "name":  "Concrete Cat Statue",
+    "source":  "https://polyhaven.com/a/concrete_cat_statue",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "concrete_cat_statue_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/concrete_cat_statue/concrete_cat_statue_2k.blend",
+                      "size":  478676
+                  },
+                  {
+                      "path":  "textures/concrete_cat_statue_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/concrete_cat_statue/concrete_cat_statue_rough_2k.exr",
+                      "size":  2212695
+                  },
+                  {
+                      "path":  "textures/concrete_cat_statue_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/concrete_cat_statue/concrete_cat_statue_diff_2k.jpg",
+                      "size":  3368899
+                  },
+                  {
+                      "path":  "textures/concrete_cat_statue_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/concrete_cat_statue/concrete_cat_statue_nor_gl_2k.exr",
+                      "size":  9057064
+                  },
+                  {
+                      "path":  "textures/concrete_cat_statue_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/concrete_cat_statue/concrete_cat_statue_metal_2k.exr",
+                      "size":  12214
+                  }
+              ]
+}

@@ -1,0 +1,35 @@
+{
+    "id":  "brass_pan_01",
+    "name":  "Brass Pan 01",
+    "source":  "https://polyhaven.com/a/brass_pan_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "brass_pan_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/brass_pan_01/brass_pan_01_2k.blend",
+                      "size":  231994
+                  },
+                  {
+                      "path":  "textures/brass_pan_01_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_pan_01/brass_pan_01_metal_2k.exr",
+                      "size":  32235
+                  },
+                  {
+                      "path":  "textures/brass_pan_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_pan_01/brass_pan_01_rough_2k.exr",
+                      "size":  4005335
+                  },
+                  {
+                      "path":  "textures/brass_pan_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_pan_01/brass_pan_01_nor_gl_2k.exr",
+                      "size":  2218494
+                  },
+                  {
+                      "path":  "textures/brass_pan_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_pan_01/brass_pan_01_diff_2k.jpg",
+                      "size":  2020753
+                  }
+              ]
+}

@@ -1,0 +1,35 @@
+{
+    "id":  "can_rusted",
+    "name":  "Can Rusted",
+    "source":  "https://polyhaven.com/a/can_rusted",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "can_rusted_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/can_rusted/can_rusted_2k.blend",
+                      "size":  211149
+                  },
+                  {
+                      "path":  "textures/can_rusted_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/can_rusted/can_rusted_metal_2k.exr",
+                      "size":  3006053
+                  },
+                  {
+                      "path":  "textures/can_rusted_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/can_rusted/can_rusted_rough_2k.exr",
+                      "size":  3041799
+                  },
+                  {
+                      "path":  "textures/can_rusted_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/can_rusted/can_rusted_nor_gl_2k.exr",
+                      "size":  3699202
+                  },
+                  {
+                      "path":  "textures/can_rusted_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/can_rusted/can_rusted_diff_2k.jpg",
+                      "size":  2568361
+                  }
+              ]
+}

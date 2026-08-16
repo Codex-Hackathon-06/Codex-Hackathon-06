@@ -1,0 +1,35 @@
+{
+    "id":  "classic_laptop",
+    "name":  "Classic Laptop",
+    "source":  "https://polyhaven.com/a/classic_laptop",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "classic_laptop_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/classic_laptop/classic_laptop_2k.blend",
+                      "size":  524380
+                  },
+                  {
+                      "path":  "textures/classic_laptop_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/classic_laptop/classic_laptop_diff_2k.jpg",
+                      "size":  1842752
+                  },
+                  {
+                      "path":  "textures/classic_laptop_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/classic_laptop/classic_laptop_metal_2k.exr",
+                      "size":  2069307
+                  },
+                  {
+                      "path":  "textures/classic_laptop_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/classic_laptop/classic_laptop_nor_gl_2k.exr",
+                      "size":  2365876
+                  },
+                  {
+                      "path":  "textures/classic_laptop_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/classic_laptop/classic_laptop_rough_2k.exr",
+                      "size":  1711912
+                  }
+              ]
+}

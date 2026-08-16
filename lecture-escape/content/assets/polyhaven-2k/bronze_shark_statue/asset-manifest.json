@@ -1,0 +1,35 @@
+{
+    "id":  "bronze_shark_statue",
+    "name":  "Bronze Shark Statue",
+    "source":  "https://polyhaven.com/a/bronze_shark_statue",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "bronze_shark_statue_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/bronze_shark_statue/bronze_shark_statue_2k.blend",
+                      "size":  263580
+                  },
+                  {
+                      "path":  "textures/bronze_shark_statue_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/bronze_shark_statue/bronze_shark_statue_diff_2k.jpg",
+                      "size":  1694434
+                  },
+                  {
+                      "path":  "textures/bronze_shark_statue_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bronze_shark_statue/bronze_shark_statue_metal_2k.exr",
+                      "size":  515424
+                  },
+                  {
+                      "path":  "textures/bronze_shark_statue_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bronze_shark_statue/bronze_shark_statue_nor_gl_2k.exr",
+                      "size":  5300128
+                  },
+                  {
+                      "path":  "textures/bronze_shark_statue_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bronze_shark_statue/bronze_shark_statue_rough_2k.exr",
+                      "size":  2265443
+                  }
+              ]
+}

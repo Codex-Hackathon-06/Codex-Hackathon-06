@@ -1,0 +1,60 @@
+{
+    "id":  "chess_set",
+    "name":  "Chess Set",
+    "source":  "https://polyhaven.com/a/chess_set",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "chess_set_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/chess_set/chess_set_2k.blend",
+                      "size":  963815
+                  },
+                  {
+                      "path":  "textures/chess_set_board_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/chess_set/chess_set_board_diff_2k.png",
+                      "size":  21068336
+                  },
+                  {
+                      "path":  "textures/chess_set_pieces_white_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/chess_set/chess_set_pieces_white_nor_gl_2k.png",
+                      "size":  16543404
+                  },
+                  {
+                      "path":  "textures/chess_set_board_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/chess_set/chess_set_board_rough_2k.png",
+                      "size":  6126438
+                  },
+                  {
+                      "path":  "textures/chess_set_pieces_black_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/chess_set/chess_set_pieces_black_diff_2k.png",
+                      "size":  19337620
+                  },
+                  {
+                      "path":  "textures/chess_set_board_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/chess_set/chess_set_board_nor_gl_2k.png",
+                      "size":  14780192
+                  },
+                  {
+                      "path":  "textures/chess_set_pieces_black_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/chess_set/chess_set_pieces_black_rough_2k.png",
+                      "size":  5912484
+                  },
+                  {
+                      "path":  "textures/chess_set_pieces_white_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/chess_set/chess_set_pieces_white_rough_2k.png",
+                      "size":  6057970
+                  },
+                  {
+                      "path":  "textures/chess_set_pieces_white_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/chess_set/chess_set_pieces_white_diff_2k.png",
+                      "size":  20380900
+                  },
+                  {
+                      "path":  "textures/chess_set_pieces_black_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/chess_set/chess_set_pieces_black_nor_gl_2k.png",
+                      "size":  15678906
+                  }
+              ]
+}

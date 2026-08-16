@@ -1,0 +1,30 @@
+{
+    "id":  "ceramic_vase_02",
+    "name":  "Ceramic Vase 02",
+    "source":  "https://polyhaven.com/a/ceramic_vase_02",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "ceramic_vase_02_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/ceramic_vase_02/ceramic_vase_02_2k.blend",
+                      "size":  192664
+                  },
+                  {
+                      "path":  "textures/ceramic_vase_02_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceramic_vase_02/ceramic_vase_02_nor_gl_2k.exr",
+                      "size":  6595935
+                  },
+                  {
+                      "path":  "textures/ceramic_vase_02_rough_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_rough_2k.jpg",
+                      "size":  666816
+                  },
+                  {
+                      "path":  "textures/ceramic_vase_02_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_diff_2k.jpg",
+                      "size":  364783
+                  }
+              ]
+}

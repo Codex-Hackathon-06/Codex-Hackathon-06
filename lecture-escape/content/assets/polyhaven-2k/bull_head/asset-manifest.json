@@ -1,0 +1,35 @@
+{
+    "id":  "bull_head",
+    "name":  "Bull Head",
+    "source":  "https://polyhaven.com/a/bull_head",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "bull_head_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/bull_head/bull_head_2k.blend",
+                      "size":  516276
+                  },
+                  {
+                      "path":  "textures/bull_head_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/bull_head/bull_head_diff_2k.jpg",
+                      "size":  1360449
+                  },
+                  {
+                      "path":  "textures/bull_head_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bull_head/bull_head_metal_2k.exr",
+                      "size":  2324258
+                  },
+                  {
+                      "path":  "textures/bull_head_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bull_head/bull_head_nor_gl_2k.exr",
+                      "size":  3621107
+                  },
+                  {
+                      "path":  "textures/bull_head_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bull_head/bull_head_rough_2k.exr",
+                      "size":  2290860
+                  }
+              ]
+}

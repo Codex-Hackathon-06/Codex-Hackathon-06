@@ -1,0 +1,30 @@
+{
+    "id":  "cardboard_box_01",
+    "name":  "Cardboard Box 01",
+    "source":  "https://polyhaven.com/a/cardboard_box_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "cardboard_box_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/cardboard_box_01/cardboard_box_01_2k.blend",
+                      "size":  494200
+                  },
+                  {
+                      "path":  "textures/cardboard_box_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/cardboard_box_01/cardboard_box_01_diff_2k.jpg",
+                      "size":  1987615
+                  },
+                  {
+                      "path":  "textures/cardboard_box_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/cardboard_box_01/cardboard_box_01_rough_2k.exr",
+                      "size":  2076621
+                  },
+                  {
+                      "path":  "textures/cardboard_box_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/cardboard_box_01/cardboard_box_01_nor_gl_2k.exr",
+                      "size":  6552207
+                  }
+              ]
+}
