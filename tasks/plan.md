@@ -108,7 +108,7 @@ Whisper 산출물(`manifest.json`, `transcript.chunks.json`, `transcript.raw.jso
 
 - [x] 자동 테스트와 JSON 검증이 통과한다.
 - [x] `npm start`에서 새 강의 팩을 0/5부터 탈출까지 완주한다.
-- [ ] 기능 브랜치와 기존 PR에 push한다.
+- [x] 기능 브랜치와 기존 PR에 push한다.
 
 ### Phase 4: 물리적 진행 체인과 교체형 에셋
 
