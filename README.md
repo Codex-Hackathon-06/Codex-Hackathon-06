@@ -67,20 +67,39 @@ flowchart LR
 
 ### Game data contract
 
-프론트엔드와 생성 API는 공통 게임 데이터(JSON)를 주고받습니다. 각 문제는 반드시 정답, 힌트, 해설, 그리고 영상 근거 타임스탬프를 가집니다.
+프론트엔드와 생성 API는 공통 게임 데이터(JSON)를 주고받습니다. 각 문제는 반드시 정답, 힌트, 해설, 그리고 영상 근거 타임스탬프를 가집니다. 아래는 핵심 필드 발췌이며, 실행 가능한 전체 예시는 [`puppy-poop.room.json`](content/sample-lectures/puppy-poop.room.json)입니다.
 
 ```json
 {
-  "room": "lecture-room",
-  "theme": "왜곡된 거울방",
-  "learningGoal": "핵심 개념을 구별한다",
-  "puzzle": {
-    "question": "강의의 핵심 개념은 무엇인가요?",
-    "answer": "정답",
-    "hints": ["관찰 힌트", "개념 힌트"],
-    "explanation": "정답 해설",
-    "evidence": { "start": 1240.5, "end": 1302.2 }
-  }
+  "video": {
+    "segments": [{ "id": "segment-1", "startSec": 0, "endSec": 360, "text": "강의 자막" }]
+  },
+  "room": { "declaredPuzzleCount": 5, "views": [{ "id": "desk", "kind": "CLOSEUP", "label": "책상" }] },
+  "items": [{
+    "id": "concept-book",
+    "label": "개념 책",
+    "assetKey": "book",
+    "description": "강의의 핵심 개념이 적힌 책",
+    "source": { "type": "SCENE", "viewId": "desk" }
+  }],
+  "puzzles": [{
+    "kind": "ITEM_PLACEMENT",
+    "candidateItemIds": ["concept-book", "distractor-book"],
+    "slots": [{ "id": "bookshelf-slot-1" }],
+    "solution": [{ "slotId": "bookshelf-slot-1", "itemId": "concept-book" }],
+    "feedback": {
+      "defaultWrongItem": "이 슬롯에 사용할 아이템을 다시 살펴보세요.",
+      "wrongSlot": "아이템과 슬롯의 개념 관계를 확인하세요.",
+      "byItemId": { "distractor-book": "개념 차이를 설명하는 오답 피드백" }
+    },
+    "hints": [
+      { "level": 1, "type": "OBSERVATION", "text": "관찰 힌트" },
+      { "level": 2, "type": "CONCEPT", "text": "개념 힌트" },
+      { "level": 3, "type": "DIRECTION", "text": "풀이 방향" }
+    ],
+    "explanation": { "title": "정답", "body": "정답 해설", "evidenceSegmentIds": ["segment-1"] }
+  }],
+  "completion": { "finalPuzzleId": "puzzle-5", "exitItemId": "exit-key", "effect": "UNLOCK_EXIT" }
 }
 ```
 
@@ -114,11 +133,42 @@ lecture-escape/
 
 ## Getting started
 
-> 현재는 프로젝트 구조와 데모 게임 데이터를 제공합니다. 구현 기술 스택이 확정되면 이 절에 설치·실행 명령을 추가합니다.
+현재 브랜치의 오브젝트 퍼즐 프로토타입은 외부 패키지 설치 없이 Node.js 20 이상에서 실행할 수 있습니다.
 
 ```bash
-git clone https://github.com/<YOUR-ORG>/lecture-room-escape.git
-cd lecture-room-escape
+git clone https://github.com/Codex-Hackathon-06/Codex-Hackathon-06.git
+cd Codex-Hackathon-06
+npm start
+```
+
+브라우저에서 `http://127.0.0.1:4173`을 열면 다음 흐름을 직접 확인할 수 있습니다.
+
+```text
+방 전체 보기
+→ 책장·벽면·서랍·책상 확대
+→ 아이템 클릭 수집
+→ 인벤토리에서 슬롯으로 드래그 또는 클릭 사용
+→ 오답 피드백·3단계 힌트·영상 근거 해설
+→ 5개 퍼즐 해결 및 탈출
+```
+
+샘플 데이터와 구조 검사는 다음 명령으로 확인합니다.
+
+```bash
+npm run validate:sample
+npm test
+```
+
+### Prototype files
+
+```text
+apps/web/                                      # 확대 탐색·인벤토리 플레이 화면
+packages/game-engine/src/runtime.js            # 공통 아이템 배치 상태 로직
+packages/content-schema/                       # 생성 JSON 검증·프롬프트 빌더
+content/sample-lectures/puppy-poop.input.json  # 30분 영상 분석 입력 예시
+content/sample-lectures/puppy-poop.room.json   # 퍼즐 5개 실행 데이터
+content/templates/puzzle-generation-prompt.md  # AI 생성 규칙
+docs/puzzle-generator-handoff.md               # 팀 연동 계약
 ```
 
 ### Environment variables
@@ -128,6 +178,10 @@ cp .env.example .env
 ```
 
 `.env`에는 자막 인식 또는 AI 생성에 필요한 개인 API 키만 넣습니다. 실제 키와 원본 강의 영상은 GitHub에 커밋하지 않습니다.
+
+### Open-source design options
+
+현재 프로토타입은 팀의 최종 프레임워크를 강제하지 않도록 의존성 없는 HTML/CSS/JavaScript로 작성합니다. 이후에는 CC0인 [Kenney UI Pack](https://kenney.nl/assets/ui-pack), ISC 라이선스의 [Lucide](https://github.com/lucide-icons/lucide), MIT 라이선스의 [dnd-kit](https://github.com/clauderic/dnd-kit)을 선택적으로 적용할 수 있습니다. 자세한 기준은 [`docs/open-source-design-options.md`](docs/open-source-design-options.md)에 정리했습니다.
 
 ## Git 컨벤션
 
@@ -163,10 +217,10 @@ cp .env.example .env
 - [ ] 영상 파일 업로드 및 자막 추출
 - [ ] 타임스탬프 기반 강의 맵 생성
 - [ ] 강의 맞춤형 방·인테리어·퍼즐 게임 JSON 생성
-- [ ] 1인칭 오브젝트 탐색 및 퍼즐 UI
-- [ ] 힌트·정답 보기 팝업
+- [x] 1인칭 오브젝트 탐색 및 퍼즐 UI
+- [x] 힌트·정답 보기 팝업
 - [ ] 학습 노트와 재시청 시점 제공
-- [ ] 하나의 방 전체 클리어 데모
+- [x] 하나의 방 전체 클리어 데모
 
 ## License
 

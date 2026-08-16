@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0",
+  "video": {
+    "id": "puppy-poop-lecture",
+    "title": "강아지똥 작품 이해",
+    "durationSec": 1800,
+    "segments": [
+      {
+        "id": "segment-1",
+        "startSec": 0,
+        "endSec": 360,
+        "text": "강아지똥은 주변에서 쓸모없다고 여겨지며 자신의 가치를 알지 못한다."
+      },
+      {
+        "id": "segment-2",
+        "startSec": 360,
+        "endSec": 720,
+        "text": "강아지똥은 여러 존재를 만나며 자신도 누군가에게 도움이 될 수 있는지 묻는다."
+      },
+      {
+        "id": "segment-3",
+        "startSec": 720,
+        "endSec": 1080,
+        "text": "민들레는 꽃을 피우려면 자신을 길러 줄 거름이 필요하다고 설명한다."
+      },
+      {
+        "id": "segment-4",
+        "startSec": 1080,
+        "endSec": 1440,
+        "text": "강아지똥은 비와 흙에 섞여 민들레가 자라는 데 필요한 양분이 된다."
+      },
+      {
+        "id": "segment-5",
+        "startSec": 1440,
+        "endSec": 1800,
+        "text": "작품은 보잘것없어 보이는 존재도 다른 존재를 도우며 가치를 발견할 수 있음을 보여 준다."
+      }
+    ]
+  },
+  "roomCapabilities": {
+    "roomId": "puppy-poop-room",
+    "initialViewId": "overview",
+    "viewIds": ["overview", "bookshelf", "wall", "drawer", "desk"],
+    "targets": [
+      {
+        "id": "bookshelf-word",
+        "viewId": "bookshelf",
+        "template": "MISSING_TOKEN",
+        "slotIds": ["bookshelf-slot-1"]
+      },
+      {
+        "id": "wall-story-board",
+        "viewId": "wall",
+        "template": "ORDER_ITEMS",
+        "slotIds": ["wall-slot-1", "wall-slot-2", "wall-slot-3"]
+      },
+      {
+        "id": "drawer-lock",
+        "viewId": "drawer",
+        "template": "KEY_TO_LOCK",
+        "slotIds": ["drawer-key-slot"]
+      },
+      {
+        "id": "desk-message-board",
+        "viewId": "desk",
+        "template": "MATCH_ITEM",
+        "slotIds": ["desk-message-slot"]
+      },
+      {
+        "id": "desk-safe",
+        "viewId": "desk",
+        "template": "FINAL_SAFE",
+        "slotIds": ["safe-slot-1", "safe-slot-2", "safe-slot-3", "safe-slot-4"]
+      }
+    ],
+    "allowedAssetKeys": [
+      "book",
+      "story-card",
+      "key",
+      "message-card",
+      "concept-token",
+      "exit-key"
+    ]
+  }
+}
