@@ -27,6 +27,14 @@ createServer((request, response) => {
       ? "/apps/web/index.html"
       : urlPath === "/game"
         ? "/game-team-handoff/integration/game.html"
+        : urlPath === "/style.css"
+          ? "/game-team-handoff/integration/style.css"
+          : urlPath === "/game.js"
+            ? "/game-team-handoff/integration/game.js"
+            : urlPath === "/game-handoff.js"
+              ? "/game-team-handoff/integration/game-handoff.js"
+              : urlPath === "/game-runtime.js"
+                ? "/game-team-handoff/integration/game-runtime.js"
         : urlPath;
   const safePath = normalize(requested).replace(/^(\.\.[/\\])+/, "");
   const filePath = join(root, safePath);

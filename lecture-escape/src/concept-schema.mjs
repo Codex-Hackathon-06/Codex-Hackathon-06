@@ -1,0 +1,191 @@
+const stringArray = {
+  type: "array",
+  items: { type: "string" },
+};
+
+const evidenceChunkIds = {
+  ...stringArray,
+  minItems: 1,
+  maxItems: 6,
+};
+
+export const lectureAnalysisSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: [
+    "lectureTitle",
+    "lectureSummary",
+    "learningObjectives",
+    "coreConcepts",
+    "examples",
+    "confusions",
+    "conceptSequence",
+    "roomBlueprint",
+  ],
+  properties: {
+    lectureTitle: { type: "string" },
+    lectureSummary: { type: "string" },
+    learningObjectives: {
+      ...stringArray,
+      minItems: 3,
+      maxItems: 8,
+    },
+    coreConcepts: {
+      type: "array",
+      minItems: 4,
+      maxItems: 12,
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: [
+          "id",
+          "name",
+          "definition",
+          "whyImportant",
+          "importanceScore",
+          "difficulty",
+          "prerequisiteConceptIds",
+          "relatedConceptIds",
+          "evidenceChunkIds",
+        ],
+        properties: {
+          id: { type: "string" },
+          name: { type: "string" },
+          definition: { type: "string" },
+          whyImportant: { type: "string" },
+          importanceScore: { type: "integer", minimum: 1, maximum: 5 },
+          difficulty: {
+            type: "string",
+            enum: ["introductory", "intermediate", "advanced"],
+          },
+          prerequisiteConceptIds: stringArray,
+          relatedConceptIds: stringArray,
+          evidenceChunkIds,
+        },
+      },
+    },
+    examples: {
+      type: "array",
+      minItems: 3,
+      maxItems: 10,
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: [
+          "id",
+          "title",
+          "situation",
+          "explanation",
+          "conceptIds",
+          "evidenceChunkIds",
+        ],
+        properties: {
+          id: { type: "string" },
+          title: { type: "string" },
+          situation: { type: "string" },
+          explanation: { type: "string" },
+          conceptIds: { ...stringArray, minItems: 1 },
+          evidenceChunkIds,
+        },
+      },
+    },
+    confusions: {
+      type: "array",
+      minItems: 3,
+      maxItems: 10,
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: [
+          "id",
+          "title",
+          "conceptIds",
+          "mistakenBelief",
+          "correctDistinction",
+          "diagnosticQuestion",
+          "basis",
+          "evidenceChunkIds",
+        ],
+        properties: {
+          id: { type: "string" },
+          title: { type: "string" },
+          conceptIds: { ...stringArray, minItems: 1 },
+          mistakenBelief: { type: "string" },
+          correctDistinction: { type: "string" },
+          diagnosticQuestion: { type: "string" },
+          basis: {
+            type: "string",
+            enum: ["explicit", "pedagogical_inference"],
+          },
+          evidenceChunkIds,
+        },
+      },
+    },
+    conceptSequence: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["fromConceptId", "toConceptId", "relationship"],
+        properties: {
+          fromConceptId: { type: "string" },
+          toConceptId: { type: "string" },
+          relationship: { type: "string" },
+        },
+      },
+    },
+    roomBlueprint: {
+      type: "object",
+      additionalProperties: false,
+      required: ["format", "room"],
+      properties: {
+        format: { type: "string", enum: ["single_room"] },
+        room: {
+          type: "object",
+          additionalProperties: false,
+          required: ["title", "story", "goal", "theme", "stages"],
+          properties: {
+            title: { type: "string" },
+            story: { type: "string" },
+            goal: { type: "string" },
+            theme: { type: "string" },
+            stages: {
+              type: "array",
+              minItems: 3,
+              maxItems: 3,
+              items: {
+                type: "object",
+                additionalProperties: false,
+                required: [
+                  "id",
+                  "type",
+                  "title",
+                  "goal",
+                  "objectIds",
+                  "conceptIds",
+                  "exampleIds",
+                  "confusionIds",
+                  "recurrenceConceptIds",
+                ],
+                properties: {
+                  id: { type: "string" },
+                  type: {
+                    type: "string",
+                    enum: ["concept_discovery", "case_application", "synthesis_judgment"],
+                  },
+                  title: { type: "string" },
+                  goal: { type: "string" },
+                  objectIds: { ...stringArray, minItems: 1, maxItems: 5 },
+                  conceptIds: stringArray,
+                  exampleIds: stringArray,
+                  confusionIds: stringArray,
+                  recurrenceConceptIds: stringArray,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+};

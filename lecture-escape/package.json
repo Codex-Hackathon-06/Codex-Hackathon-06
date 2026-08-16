@@ -4,9 +4,18 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node scripts/serve.mjs",
-    "test": "node --test",
+    "start": "node src/live-server.mjs",
+    "start:game": "node scripts/serve.mjs",
+    "transcribe": "node src/cli.mjs",
+    "analyze": "node src/analyze-cli.mjs",
+    "live": "bash scripts/live-macos.sh",
+    "build:mac-audio": "bash scripts/build-macos-audio.sh",
+    "test": "node --test tests/*.test.js test/*.test.mjs",
     "validate:sample": "node scripts/validate-sample.mjs"
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.3.0",
+    "ws": "^8.21.3"
   },
   "engines": {
     "node": ">=20"
