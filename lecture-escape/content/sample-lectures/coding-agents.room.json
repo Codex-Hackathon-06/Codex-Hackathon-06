@@ -1,0 +1,700 @@
+{
+  "schemaVersion": "1.0",
+  "video": {
+    "id": "coding-agents-benchmarks",
+    "title": "코딩 에이전트와 벤치마크",
+    "durationSec": 1601.17,
+    "segments": [
+      {
+        "id": "seg-0020",
+        "startSec": 91,
+        "endSec": 95,
+        "text": "우선 첫 번째로는 실행 기반이라는 점이 있습니다."
+      },
+      {
+        "id": "seg-0021",
+        "startSec": 95,
+        "endSec": 101,
+        "text": "즉 단순히 코드를 작성하는데 머물지 않고 작성된 코드를 실제로 실행해 볼 수 있다는 점"
+      },
+      {
+        "id": "seg-0026",
+        "startSec": 125,
+        "endSec": 129,
+        "text": "익스트림 롱 컨텍스트를 다룬다는 태스크 자체의 특성이 있습니다."
+      },
+      {
+        "id": "seg-0027",
+        "startSec": 129,
+        "endSec": 133,
+        "text": "또한 코드를 검색하는 건 역시도 특징이라고 할 수 있는데요."
+      },
+      {
+        "id": "seg-0035",
+        "startSec": 162,
+        "endSec": 166,
+        "text": "마지막으로는 도구를 사용하는 건 역시도 매우 중요한데요."
+      },
+      {
+        "id": "seg-0094",
+        "startSec": 437,
+        "endSec": 444,
+        "text": "평가 방식 자체는 12개 저장소에서 수집되어 있는 9만 개의 풀리케스트를 사용했다고 하고"
+      },
+      {
+        "id": "seg-0097",
+        "startSec": 461,
+        "endSec": 467,
+        "text": "그래서 이슈의 텍스트가 평균적으로 195 단어로 생각보다 적고"
+      },
+      {
+        "id": "seg-0098",
+        "startSec": 467,
+        "endSec": 476,
+        "text": "다만 코드베이스 자체가 파일 수는 3천 개, 그리고 라인 수는 43만 라인에 이를 정도로 매우 방대한 라인으로 이루어져 있습니다."
+      },
+      {
+        "id": "seg-0112",
+        "startSec": 558,
+        "endSec": 564,
+        "text": "BM25를 적용했을 경우 가장 높은 성능이 3.79%의 성공률을 보이고 있습니다."
+      },
+      {
+        "id": "seg-0173",
+        "startSec": 827,
+        "endSec": 832,
+        "text": "총 168시간이 소모되는 태스크들도 일부 포함되어 있을 만큼"
+      },
+      {
+        "id": "seg-0177",
+        "startSec": 843,
+        "endSec": 845,
+        "text": "태스크 자체는 프롬프트와 더커 이미지,"
+      },
+      {
+        "id": "seg-0178",
+        "startSec": 845,
+        "endSec": 848,
+        "text": "그리고 검증할 수 있는 테스트,"
+      },
+      {
+        "id": "seg-0179",
+        "startSec": 848,
+        "endSec": 851,
+        "text": "레퍼런스 솔루션, 그리고 제한시간으로 구성되어 있습니다."
+      },
+      {
+        "id": "seg-0258",
+        "startSec": 1270,
+        "endSec": 1275,
+        "text": "그 다음으로 인프라 구축에 있어서는 평가를 12시간으로 제한을 했습니다."
+      },
+      {
+        "id": "seg-0263",
+        "startSec": 1315,
+        "endSec": 1323,
+        "text": "성능 평가 자체는 Full Success, Execution Success, 그리고 File Recall 세가지 측면에서 측정이 됩니다."
+      },
+      {
+        "id": "seg-0267",
+        "startSec": 1349,
+        "endSec": 1358,
+        "text": "그래서 어쩔 수 없이 Execution Success라고 하는 최종 파일이 실제로 실행 가능한지 여부만 측정을 해보았을 때도"
+      },
+      {
+        "id": "seg-0269",
+        "startSec": 1366,
+        "endSec": 1377,
+        "text": "그러면 조금 더 가서 File Recall 즉 골드가 수정한 파일 중에서 실제로 각각의 평가되는 에이전트가 수정한 파일들이 얼마나 포함되는지 확인해 보면"
+      }
+    ]
+  },
+  "room": {
+    "id": "coding-agents-lab",
+    "title": "벤치마크 통제실",
+    "theme": "코드가 흐르는 모니터와 금속 제어판으로 이루어진 연구실",
+    "initialViewId": "overview",
+    "declaredPuzzleCount": 5,
+    "views": [
+      {
+        "id": "overview",
+        "kind": "OVERVIEW",
+        "label": "통제실 전체",
+        "backgroundAssetKey": "room-overview",
+        "navigation": [
+          {
+            "targetViewId": "bookshelf",
+            "label": "에이전트 랙 확대",
+            "rect": [0.04, 0.12, 0.25, 0.68]
+          },
+          {
+            "targetViewId": "wall",
+            "label": "SWE-bench 보드 확대",
+            "rect": [0.31, 0.1, 0.25, 0.45]
+          },
+          {
+            "targetViewId": "drawer",
+            "label": "Terminal-bench 서랍 확대",
+            "rect": [0.58, 0.42, 0.17, 0.38]
+          },
+          {
+            "targetViewId": "desk",
+            "label": "REXBench 책상 확대",
+            "rect": [0.72, 0.26, 0.24, 0.56]
+          }
+        ]
+      },
+      {
+        "id": "bookshelf",
+        "kind": "CLOSEUP",
+        "label": "에이전트 기능 랙",
+        "backgroundAssetKey": "bookshelf-closeup",
+        "backToViewId": "overview"
+      },
+      {
+        "id": "wall",
+        "kind": "CLOSEUP",
+        "label": "SWE-bench 계산 보드",
+        "backgroundAssetKey": "wall-closeup",
+        "backToViewId": "overview",
+        "unlock": {
+          "itemId": "wall-access-card",
+          "lockedMessage": "벽 패널의 카드 리더가 붉게 깜빡인다. 에이전트 랙에서 얻은 액세스 카드가 필요하다.",
+          "unlockedMessage": "벽 액세스 카드를 사용해 SWE-bench 계산 보드의 잠금을 해제했다."
+        }
+      },
+      {
+        "id": "drawer",
+        "kind": "CLOSEUP",
+        "label": "Terminal-bench 다이얼 서랍",
+        "backgroundAssetKey": "drawer-closeup",
+        "backToViewId": "overview",
+        "unlock": {
+          "itemId": "drawer-key",
+          "lockedMessage": "서랍의 실린더 자물쇠가 잠겨 있다. 계산 보드에서 서랍 열쇠를 찾아야 한다.",
+          "unlockedMessage": "황동 서랍 열쇠를 돌려 Terminal-bench 서랍을 열었다."
+        }
+      },
+      {
+        "id": "desk",
+        "kind": "CLOSEUP",
+        "label": "REXBench 분석 책상",
+        "backgroundAssetKey": "desk-closeup",
+        "backToViewId": "overview",
+        "unlock": {
+          "itemId": "desk-power-fuse",
+          "lockedMessage": "분석 책상에 전원이 들어오지 않는다. 서랍 안의 전원 퓨즈가 필요하다.",
+          "unlockedMessage": "전원 퓨즈를 소켓에 끼우자 REXBench 분석 책상이 켜졌다."
+        }
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": "wall-access-card",
+      "label": "SWE 보드 액세스 카드",
+      "assetKey": "wall-access-card",
+      "displayText": "WALL",
+      "description": "SWE-bench 계산 보드의 카드 리더에 태그하는 청색 액세스 카드다.",
+      "pickupText": "기능 랙에서 SWE 보드 액세스 카드를 꺼냈다.",
+      "inventoryDescription": "벽 계산 보드의 카드 리더에 드래그해 사용한다.",
+      "consumedOnUse": true,
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-1",
+        "viewId": "bookshelf",
+        "rect": [0.8, 0.14, 0.14, 0.18]
+      }
+    },
+    {
+      "id": "drawer-key",
+      "label": "황동 서랍 열쇠",
+      "assetKey": "drawer-key",
+      "displayText": "KEY",
+      "description": "Terminal-bench 서랍의 실린더 자물쇠에 맞는 작은 황동 열쇠다.",
+      "pickupText": "계산 보드 아래 수납칸에서 황동 서랍 열쇠를 꺼냈다.",
+      "inventoryDescription": "잠긴 서랍의 열쇠 구멍에 드래그해 사용한다.",
+      "consumedOnUse": true,
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-2",
+        "viewId": "wall",
+        "rect": [0.81, 0.67, 0.14, 0.18]
+      }
+    },
+    {
+      "id": "desk-power-fuse",
+      "label": "분석 책상 전원 퓨즈",
+      "assetKey": "desk-power-fuse",
+      "displayText": "FUSE",
+      "description": "REXBench 분석 책상의 빈 전원 소켓에 끼우는 유리관 퓨즈다.",
+      "pickupText": "잠금이 풀린 서랍 안에서 전원 퓨즈를 회수했다.",
+      "inventoryDescription": "꺼진 분석 책상의 전원 소켓에 드래그해 사용한다.",
+      "consumedOnUse": true,
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-3",
+        "viewId": "drawer",
+        "rect": [0.76, 0.58, 0.16, 0.18]
+      }
+    },
+    {
+      "id": "safe-handle",
+      "label": "금고 회전 손잡이",
+      "assetKey": "safe-handle",
+      "displayText": "GRIP",
+      "description": "최종 금고 전면축에 결합하는 검은색 삼지 회전 손잡이다.",
+      "pickupText": "분석 단말의 첫 번째 부품함에서 금고 회전 손잡이를 꺼냈다.",
+      "inventoryDescription": "최종 금고의 손잡이 결합부에 드래그해 조립한다.",
+      "consumedOnUse": true,
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-4",
+        "viewId": "desk",
+        "rect": [0.42, 0.68, 0.12, 0.18]
+      }
+    },
+    {
+      "id": "safe-gear",
+      "label": "금고 잠금 기어",
+      "assetKey": "safe-gear",
+      "displayText": "GEAR",
+      "description": "최종 금고의 잠금 볼트를 움직이는 은색 톱니 기어다.",
+      "pickupText": "분석 단말의 두 번째 부품함에서 금고 잠금 기어를 꺼냈다.",
+      "inventoryDescription": "최종 금고의 기어 결합부에 드래그해 조립한다.",
+      "consumedOnUse": true,
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-4",
+        "viewId": "desk",
+        "rect": [0.58, 0.68, 0.12, 0.18]
+      }
+    },
+    {
+      "id": "safe-power-core",
+      "label": "금고 전원 코어",
+      "assetKey": "safe-power-core",
+      "displayText": "CORE",
+      "description": "최종 금고의 전자 잠금장치에 전원을 공급하는 원통형 코어다.",
+      "pickupText": "분석 단말의 세 번째 부품함에서 금고 전원 코어를 꺼냈다.",
+      "inventoryDescription": "최종 금고의 전원 결합부에 드래그해 조립한다.",
+      "consumedOnUse": true,
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-4",
+        "viewId": "desk",
+        "rect": [0.74, 0.68, 0.12, 0.18]
+      }
+    },
+    {
+      "id": "exit-key",
+      "label": "비상구 키카드",
+      "assetKey": "exit-keycard",
+      "displayText": "EXIT",
+      "description": "벤치마크 통제실의 출구 잠금장치에 태그하는 비상구 키카드다.",
+      "pickupText": "최종 금고 안에서 비상구 키카드를 꺼냈다.",
+      "inventoryDescription": "비상구 카드 리더에 드래그해 사용한다.",
+      "consumedOnUse": true,
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-5",
+        "viewId": "desk",
+        "rect": [0.78, 0.34, 0.15, 0.2]
+      }
+    }
+  ],
+  "puzzles": [
+    {
+      "id": "puzzle-1",
+      "order": 1,
+      "kind": "TOGGLE_PANEL",
+      "template": "SWITCH_BANK",
+      "viewId": "bookshelf",
+      "target": {
+        "id": "agent-feature-panel",
+        "label": "코딩 에이전트 기능 스위치",
+        "rect": [0.14, 0.16, 0.72, 0.52]
+      },
+      "prompt": "영상에서 설명한 코딩 에이전트의 특징 네 가지만 켜세요.",
+      "requiresPuzzleIds": [],
+      "control": {
+        "switches": [
+          {
+            "id": "feature-execution",
+            "label": "실행 기반",
+            "description": "작성한 코드를 실제로 실행한다."
+          },
+          {
+            "id": "feature-long-context",
+            "label": "긴 컨텍스트",
+            "description": "방대한 코드 문맥을 다룬다."
+          },
+          {
+            "id": "feature-code-search",
+            "label": "코드 검색",
+            "description": "필요한 코드를 정확히 탐색한다."
+          },
+          {
+            "id": "feature-tool-use",
+            "label": "도구 사용",
+            "description": "상황에 맞는 도구를 활용한다."
+          },
+          {
+            "id": "feature-text-only",
+            "label": "텍스트만 생성",
+            "description": "실행 없이 답변 텍스트만 만든다."
+          },
+          {
+            "id": "feature-no-environment",
+            "label": "환경과 분리",
+            "description": "코드베이스나 실행 환경과 상호작용하지 않는다."
+          }
+        ]
+      },
+      "solution": {
+        "selectedControlIds": [
+          "feature-execution",
+          "feature-long-context",
+          "feature-code-search",
+          "feature-tool-use"
+        ]
+      },
+      "feedback": {
+        "defaultWrongAnswer": "켜야 할 특징은 네 개입니다. 영상의 ‘코딩 에이전트의 특징’ 부분을 다시 떠올려 보세요.",
+        "byControlId": {
+          "feature-text-only": "코딩 에이전트는 텍스트 생성에 머물지 않고 코드를 실제로 실행합니다.",
+          "feature-no-environment": "코딩 에이전트는 코드베이스와 실행 환경에 직접 상호작용합니다."
+        }
+      },
+      "hints": [
+        {
+          "level": 1,
+          "type": "OBSERVATION",
+          "text": "‘실제로 해 보는 기능’과 ‘큰 코드베이스를 다루는 기능’을 먼저 찾으세요."
+        },
+        {
+          "level": 2,
+          "type": "CONCEPT",
+          "text": "영상은 실행, 긴 컨텍스트, 코드 탐색, 도구 활용을 차례로 강조합니다."
+        },
+        {
+          "level": 3,
+          "type": "DIRECTION",
+          "text": "실행 기반·긴 컨텍스트·코드 검색·도구 사용 스위치만 켜세요."
+        }
+      ],
+      "explanation": {
+        "title": "정답: 실행·긴 컨텍스트·검색·도구 사용",
+        "body": "강의는 코딩 에이전트가 작성한 코드를 실제로 실행하고, 긴 컨텍스트를 다루며, 코드를 탐색하고, 여러 도구를 적절히 사용한다고 설명합니다.",
+        "evidenceSegmentIds": ["seg-0020", "seg-0021", "seg-0026", "seg-0027", "seg-0035"]
+      },
+      "rewards": [
+        {
+          "type": "REVEAL_ITEM",
+          "itemId": "wall-access-card"
+        }
+      ]
+    },
+    {
+      "id": "puzzle-2",
+      "order": 2,
+      "kind": "KEYPAD",
+      "template": "NUMERIC_KEYPAD",
+      "viewId": "wall",
+      "target": {
+        "id": "swe-repository-keypad",
+        "label": "SWE-bench 계산 자물쇠",
+        "rect": [0.2, 0.16, 0.6, 0.5]
+      },
+      "prompt": "90,000개의 PR을 12개 저장소에 똑같이 나누면 저장소당 몇 개인가요? 계산 결과를 입력하세요.",
+      "requiresPuzzleIds": ["puzzle-1"],
+      "control": {
+        "keys": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+        "maxLength": 4
+      },
+      "solution": {
+        "value": "7500"
+      },
+      "feedback": {
+        "defaultWrongAnswer": "90,000을 12로 나누는 계산을 다시 확인하세요.",
+        "byAnswer": {
+          "12": "12는 저장소의 수입니다. 자물쇠에는 저장소당 평균 PR 수를 입력해야 합니다.",
+          "9000": "0 하나를 빼는 것으로는 12등분이 되지 않습니다. 90,000 ÷ 12를 계산하세요.",
+          "750": "계산 방향은 맞지만 자릿수가 하나 부족합니다. 7,500 × 12를 역산해 보세요."
+        }
+      },
+      "hints": [
+        {
+          "level": 1,
+          "type": "OBSERVATION",
+          "text": "보드의 두 수는 90,000과 12입니다."
+        },
+        {
+          "level": 2,
+          "type": "CONCEPT",
+          "text": "평균은 전체 PR 수를 저장소 수로 나누어 구합니다."
+        },
+        {
+          "level": 3,
+          "type": "DIRECTION",
+          "text": "90,000 ÷ 12 = 7,500이므로 7500을 입력하세요."
+        }
+      ],
+      "explanation": {
+        "title": "정답: 7,500",
+        "body": "강의의 12개 저장소와 9만 개 PR이라는 수치를 이용하면 90,000 ÷ 12 = 7,500입니다. 저장소당 평균 PR 수를 계산한 값입니다.",
+        "evidenceSegmentIds": ["seg-0094"]
+      },
+      "rewards": [
+        {
+          "type": "REVEAL_ITEM",
+          "itemId": "drawer-key"
+        }
+      ]
+    },
+    {
+      "id": "puzzle-3",
+      "order": 3,
+      "kind": "DIAL_LOCK",
+      "template": "MULTI_DIAL",
+      "viewId": "drawer",
+      "target": {
+        "id": "terminal-structure-dials",
+        "label": "Terminal-bench 구성 다이얼",
+        "rect": [0.1, 0.18, 0.8, 0.48]
+      },
+      "prompt": "Terminal-bench 태스크의 다섯 구성요소를 영상에서 나온 순서대로 맞추세요.",
+      "requiresPuzzleIds": ["puzzle-2"],
+      "control": {
+        "dials": [
+          {
+            "id": "terminal-1",
+            "label": "1",
+            "options": ["PROMPT", "DOCKER", "TESTS", "REFERENCE", "TIME"]
+          },
+          {
+            "id": "terminal-2",
+            "label": "2",
+            "options": ["PROMPT", "DOCKER", "TESTS", "REFERENCE", "TIME"]
+          },
+          {
+            "id": "terminal-3",
+            "label": "3",
+            "options": ["PROMPT", "DOCKER", "TESTS", "REFERENCE", "TIME"]
+          },
+          {
+            "id": "terminal-4",
+            "label": "4",
+            "options": ["PROMPT", "DOCKER", "TESTS", "REFERENCE", "TIME"]
+          },
+          {
+            "id": "terminal-5",
+            "label": "5",
+            "options": ["PROMPT", "DOCKER", "TESTS", "REFERENCE", "TIME"]
+          }
+        ]
+      },
+      "solution": {
+        "valuesByControlId": {
+          "terminal-1": "PROMPT",
+          "terminal-2": "DOCKER",
+          "terminal-3": "TESTS",
+          "terminal-4": "REFERENCE",
+          "terminal-5": "TIME"
+        }
+      },
+      "feedback": {
+        "defaultWrongAnswer": "다섯 요소는 맞지만 순서가 다릅니다. 프롬프트부터 시작해 강의의 나열 순서를 따라가세요.",
+        "byControlId": {
+          "terminal-1": "첫 구성요소는 에이전트에게 주어지는 프롬프트입니다.",
+          "terminal-2": "프롬프트 다음에는 실행 환경을 담은 Docker 이미지가 나옵니다.",
+          "terminal-3": "세 번째는 결과를 검증할 테스트입니다.",
+          "terminal-4": "테스트 다음에는 기준이 되는 레퍼런스 솔루션이 옵니다.",
+          "terminal-5": "마지막 구성요소는 제한시간입니다."
+        }
+      },
+      "hints": [
+        {
+          "level": 1,
+          "type": "OBSERVATION",
+          "text": "에이전트가 받는 입력, 실행 환경, 검증 수단의 순서부터 생각하세요."
+        },
+        {
+          "level": 2,
+          "type": "CONCEPT",
+          "text": "프롬프트와 Docker 이미지 뒤에 테스트가 나오고, 기준 답안과 시간이 이어집니다."
+        },
+        {
+          "level": 3,
+          "type": "DIRECTION",
+          "text": "PROMPT → DOCKER → TESTS → REFERENCE → TIME 순서로 맞추세요."
+        }
+      ],
+      "explanation": {
+        "title": "정답: 프롬프트 → Docker → 테스트 → 레퍼런스 → 시간",
+        "body": "강의는 Terminal-bench 태스크가 프롬프트, Docker 이미지, 검증 테스트, 레퍼런스 솔루션, 제한시간으로 구성된다고 순서대로 설명합니다.",
+        "evidenceSegmentIds": ["seg-0177", "seg-0178", "seg-0179"]
+      },
+      "rewards": [
+        {
+          "type": "REVEAL_ITEM",
+          "itemId": "desk-power-fuse"
+        }
+      ]
+    },
+    {
+      "id": "puzzle-4",
+      "order": 4,
+      "kind": "KEYPAD",
+      "template": "SYMBOL_KEYPAD",
+      "viewId": "desk",
+      "target": {
+        "id": "rex-metric-keypad",
+        "label": "REXBench 지표 문자키패드",
+        "rect": [0.08, 0.16, 0.42, 0.46]
+      },
+      "prompt": "REXBench의 세 평가 지표를 영상 순서대로 떠올리고 각 첫 글자를 입력하세요.",
+      "requiresPuzzleIds": ["puzzle-3"],
+      "control": {
+        "keys": ["F", "E", "R", "X"],
+        "maxLength": 3
+      },
+      "solution": {
+        "value": "FER"
+      },
+      "feedback": {
+        "defaultWrongAnswer": "Full Success, Execution Success, File Recall의 영상 속 순서를 다시 확인하세요.",
+        "byAnswer": {
+          "REF": "세 지표의 글자는 맞지만 순서가 반대입니다. Full Success부터 시작하세요.",
+          "FRE": "첫 글자는 맞습니다. 두 번째는 실행 가능 여부를 뜻하는 Execution Success입니다.",
+          "EXR": "X는 평가 지표의 첫 글자가 아닙니다. 세 지표의 영문 이름만 사용하세요."
+        }
+      },
+      "hints": [
+        {
+          "level": 1,
+          "type": "OBSERVATION",
+          "text": "세 지표의 영문 이름이 화면에 그대로 표시되어 있습니다."
+        },
+        {
+          "level": 2,
+          "type": "CONCEPT",
+          "text": "전체 성공, 실행 성공, 파일 재현율 순서입니다."
+        },
+        {
+          "level": 3,
+          "type": "DIRECTION",
+          "text": "Full의 F, Execution의 E, Recall의 R을 차례로 누르세요."
+        }
+      ],
+      "explanation": {
+        "title": "정답: FER",
+        "body": "REXBench는 Full Success, Execution Success, File Recall 세 측면으로 성능을 측정합니다. 각각의 첫 글자를 강의 순서대로 쓰면 FER입니다.",
+        "evidenceSegmentIds": ["seg-0263", "seg-0267", "seg-0269"]
+      },
+      "rewards": [
+        {
+          "type": "REVEAL_ITEM",
+          "itemId": "safe-handle"
+        },
+        {
+          "type": "REVEAL_ITEM",
+          "itemId": "safe-gear"
+        },
+        {
+          "type": "REVEAL_ITEM",
+          "itemId": "safe-power-core"
+        }
+      ]
+    },
+    {
+      "id": "puzzle-5",
+      "order": 5,
+      "kind": "ITEM_PLACEMENT",
+      "template": "FINAL_SAFE",
+      "viewId": "desk",
+      "target": {
+        "id": "benchmark-final-safe",
+        "label": "벤치마크 종합 금고",
+        "rect": [0.56, 0.14, 0.38, 0.52]
+      },
+      "prompt": "REXBench 단말에서 회수한 금고 부품 세 개를 형태에 맞는 결합부에 드래그해 조립하세요.",
+      "requiresPuzzleIds": ["puzzle-1", "puzzle-2", "puzzle-3", "puzzle-4"],
+      "candidateItemIds": ["safe-handle", "safe-gear", "safe-power-core"],
+      "slots": [
+        {
+          "id": "final-slot-1",
+          "label": "회전축",
+          "rect": [0.6, 0.35, 0.09, 0.14]
+        },
+        {
+          "id": "final-slot-2",
+          "label": "기어축",
+          "rect": [0.72, 0.35, 0.09, 0.14]
+        },
+        {
+          "id": "final-slot-3",
+          "label": "전원 소켓",
+          "rect": [0.84, 0.35, 0.09, 0.14]
+        }
+      ],
+      "solution": [
+        {
+          "slotId": "final-slot-1",
+          "itemId": "safe-handle"
+        },
+        {
+          "slotId": "final-slot-2",
+          "itemId": "safe-gear"
+        },
+        {
+          "slotId": "final-slot-3",
+          "itemId": "safe-power-core"
+        }
+      ],
+      "feedback": {
+        "defaultWrongItem": "최종 금고에는 REXBench 단말이 공개한 전용 조립 부품만 사용할 수 있습니다.",
+        "wrongSlot": "부품의 형태가 결합부와 맞지 않습니다. 회전축·톱니축·전원 소켓의 윤곽을 비교하세요.",
+        "byItemId": {}
+      },
+      "hints": [
+        {
+          "level": 1,
+          "type": "OBSERVATION",
+          "text": "금고 전면에는 손잡이 축, 톱니가 맞물리는 축, 원통형 전원 소켓이 보입니다."
+        },
+        {
+          "level": 2,
+          "type": "CONCEPT",
+          "text": "손잡이는 회전력을 만들고, 기어는 잠금 볼트를 움직이며, 전원 코어는 전자 잠금장치를 켭니다."
+        },
+        {
+          "level": 3,
+          "type": "DIRECTION",
+          "text": "손잡이는 회전축, 기어는 기어축, 전원 코어는 원통형 전원 소켓에 배치하세요."
+        }
+      ],
+      "explanation": {
+        "title": "정답: 손잡이·기어·전원 코어 조립",
+        "body": "회전 손잡이를 전면축에, 잠금 기어를 톱니축에, 전원 코어를 소켓에 결합하면 금고 잠금장치가 완성됩니다. 세 부품은 앞선 REXBench 평가 지표 퍼즐을 해결해 얻은 최종 보상입니다.",
+        "evidenceSegmentIds": ["seg-0263"]
+      },
+      "rewards": [
+        {
+          "type": "REVEAL_ITEM",
+          "itemId": "exit-key"
+        },
+        {
+          "type": "UNLOCK_EXIT",
+          "objectId": "exit-door"
+        }
+      ]
+    }
+  ],
+  "completion": {
+    "finalPuzzleId": "puzzle-5",
+    "exitItemId": "exit-key",
+    "exitObjectId": "exit-door",
+    "effect": "UNLOCK_EXIT"
+  }
+}

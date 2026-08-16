@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="강의 내용을 오브젝트 퍼즐로 복습하는 1인칭 방탈출 프로토타입"
+    />
+    <meta name="theme-color" content="#10100f" />
+    <title>강의실 탈출 | 오브젝트 퍼즐 데모</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#game-scene">게임 장면으로 바로가기</a>
+
+    <dialog
+      class="story-overlay story-intro-overlay"
+      id="story-intro-dialog"
+      aria-labelledby="story-intro-title"
+      aria-describedby="story-intro-body"
+    >
+      <div class="story-card story-intro-card">
+        <div class="story-card-glow" aria-hidden="true"></div>
+        <p class="story-overline">LECTURE ARCHIVE · AFTER HOURS</p>
+        <h1 id="story-intro-title">기억이 잠든 강의실</h1>
+        <p class="story-lead" id="story-intro-body">
+          강의가 끝난 뒤, 기록 보관실의 문이 잠겼습니다. 방 안에 남은 물건과
+          강의 속 단서를 연결해 마지막 출구를 여세요.
+        </p>
+
+        <section class="story-mission" aria-labelledby="story-mission-title">
+          <div class="story-mission-heading">
+            <span aria-hidden="true">MISSION</span>
+            <h2 id="story-mission-title">오늘의 탈출 임무</h2>
+          </div>
+          <p id="story-intro-mission">
+            <strong id="story-puzzle-total">5</strong>개의 퍼즐을 해결하고 출구 키카드를
+            획득하세요.
+          </p>
+          <ol class="story-objectives" id="story-intro-objectives">
+            <li><span>01</span>빛나는 가구를 눌러 가까이 관찰하기</li>
+            <li><span>02</span>발견한 물건을 수집하고 장치를 직접 조작하기</li>
+            <li><span>03</span>마지막 키카드로 잠긴 출구 열기</li>
+          </ol>
+        </section>
+
+        <div class="story-tip">
+          <span class="story-tip-mark" aria-hidden="true">!</span>
+          <p>막히면 힌트를 두 번 확인한 뒤 정답을 공개할 수 있어요.</p>
+        </div>
+
+        <form class="story-actions" method="dialog">
+          <button
+            class="story-primary-button"
+            id="story-start-button"
+            type="submit"
+            value="start"
+            data-story-action="start"
+            autofocus
+          >
+            <span>강의실 들어가기</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+      </div>
+    </dialog>
+
+    <div class="app-shell" id="app-shell" data-view="overview">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="강의실 탈출 처음으로">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img">
+              <path d="M7 4.5h13a3 3 0 0 1 3 3v20H7z" />
+              <path d="M23 9h3v18.5h-3M12 15h5M12 20h5" />
+              <circle cx="19" cy="16" r="1" />
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <strong>강의실 탈출</strong>
+            <small>LECTURE ESCAPE</small>
+          </span>
+        </a>
+
+        <div class="lecture-pill" aria-label="현재 강의">
+          <span class="lecture-pill-dot" aria-hidden="true"></span>
+          <span id="lecture-title">게임 데이터 불러오는 중</span>
+        </div>
+
+        <div class="topbar-actions">
+          <label class="demo-picker">
+            <span>에셋 모드</span>
+            <select id="asset-mode-select" aria-label="장면 에셋 모드 선택">
+              <option value="2d" selected>2D</option>
+              <option value="3d">3D</option>
+            </select>
+          </label>
+          <label class="demo-picker">
+            <span>데모</span>
+            <select id="demo-select" aria-label="강의 퍼즐 데모 선택">
+              <option value="coding-agents">코딩 에이전트 · 멀티 템플릿</option>
+              <option value="puppy-poop">강아지똥 · 아이템 배치</option>
+            </select>
+          </label>
+          <div class="progress-chip" aria-label="퍼즐 진행도">
+            <span class="progress-chip-label">해결</span>
+            <strong><span id="progress-count">0</span>/<span id="progress-total">5</span></strong>
+          </div>
+          <button class="icon-button" id="reset-button" type="button" aria-label="게임 처음부터 다시 시작">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.7 8.1A8 8 0 1 1 4 13" />
+              <path d="M4.7 3.8v4.3H9" />
+            </svg>
+            <span>초기화</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="game-layout">
+        <section class="mission-strip" aria-labelledby="mission-title">
+          <div>
+            <p class="eyebrow" id="scene-eyebrow">기록 보관실 · 01</p>
+            <h1 id="mission-title">기억이 잠든 강의실</h1>
+          </div>
+          <p class="mission-copy" id="mission-copy">
+            공간을 관찰하고 강의 속 단서를 찾아 마지막 금고를 여세요.
+          </p>
+          <div class="mission-meter" aria-hidden="true">
+            <span id="progress-bar"></span>
+          </div>
+        </section>
+
+        <section class="scene-shell" aria-label="방탈출 게임">
+          <div class="scene-toolbar">
+            <button class="back-button is-hidden" id="back-button" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m14.5 5-7 7 7 7" />
+              </svg>
+              방 전체 보기
+            </button>
+
+            <div class="scene-location">
+              <span class="location-pulse" aria-hidden="true"></span>
+              <span id="scene-location">방 전체</span>
+            </div>
+
+            <p class="scene-instruction" id="scene-instruction">
+              빛나는 가구를 눌러 가까이 살펴보세요
+            </p>
+          </div>
+
+          <div
+            class="game-scene"
+            id="game-scene"
+            tabindex="-1"
+            aria-live="polite"
+            aria-busy="true"
+          >
+            <div class="loading-state" id="loading-state">
+              <div class="loading-orbit" aria-hidden="true"><span></span></div>
+              <p>강의의 기억을 방 안에 배치하고 있어요</p>
+              <small>잠시만 기다려 주세요</small>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="inventory-dock" aria-label="아이템 인벤토리">
+        <div class="inventory-heading">
+          <span class="inventory-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 8.5h16v11H4zM8 8.5V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2.5M4 13h16" />
+              <path d="M10 12h4v3h-4z" />
+            </svg>
+          </span>
+          <div>
+            <strong>발견한 아이템</strong>
+            <small>보상 물품은 수집하고, 장치는 화면에서 직접 조작하세요</small>
+          </div>
+        </div>
+
+        <div class="inventory-list" id="inventory-list" role="list">
+          <div class="inventory-empty" id="inventory-empty">
+            <span aria-hidden="true">＋</span>
+            방 안의 물건을 눌러 수집하세요
+          </div>
+        </div>
+
+        <div class="selection-status" id="selection-status" aria-live="polite">
+          <span class="selection-status-dot" aria-hidden="true"></span>
+          <span>선택한 아이템 없음</span>
+        </div>
+      </footer>
+    </div>
+
+    <dialog
+      class="story-overlay story-ending-overlay"
+      id="exit-ending-dialog"
+      aria-labelledby="exit-ending-title"
+      aria-describedby="exit-ending-summary"
+    >
+      <div class="story-card story-ending-card">
+        <div class="ending-sunburst" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="ending-unlocked-mark" aria-hidden="true">
+          <span class="ending-door-leaf"></span>
+          <span class="ending-light-path"></span>
+        </div>
+        <p class="story-overline">EXIT UNLOCKED · MISSION COMPLETE</p>
+        <h1 id="exit-ending-title">강의실 탈출 완료!</h1>
+        <p class="story-lead" id="exit-ending-summary">
+          마지막 잠금이 풀리고 밝은 복도로 이어지는 출구가 열렸습니다.
+          강의의 핵심 단서를 모두 되찾았어요.
+        </p>
+
+        <div class="ending-result" aria-label="최종 탈출 결과">
+          <div>
+            <small>해결한 퍼즐</small>
+            <strong><span id="exit-solved-count">5</span>/<span id="exit-puzzle-total">5</span></strong>
+          </div>
+          <span class="ending-result-divider" aria-hidden="true"></span>
+          <div>
+            <small>출구 상태</small>
+            <strong id="exit-door-status">OPEN</strong>
+          </div>
+        </div>
+
+        <p class="ending-caption" id="exit-ending-caption">
+          수고했어요. 이제 밝아진 문 너머로 나갈 시간입니다.
+        </p>
+
+        <form class="story-actions ending-actions" method="dialog">
+          <button
+            class="story-secondary-button"
+            id="exit-ending-replay-button"
+            type="submit"
+            value="replay"
+            data-story-action="replay"
+          >
+            처음부터 다시 하기
+          </button>
+          <button
+            class="story-primary-button story-exit-button"
+            id="exit-ending-continue-button"
+            type="submit"
+            value="continue"
+            data-story-action="continue"
+          >
+            <span>밝은 복도로 나가기</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+      </div>
+    </dialog>
+
+    <dialog class="game-modal" id="game-modal" aria-labelledby="modal-title">
+      <div class="modal-accent" id="modal-accent" aria-hidden="true"></div>
+      <button class="modal-close" id="modal-close" type="button" aria-label="팝업 닫기">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18" />
+        </svg>
+      </button>
+      <div class="modal-symbol" id="modal-symbol" aria-hidden="true">!</div>
+      <p class="modal-kicker" id="modal-kicker">다시 관찰해 보세요</p>
+      <h2 id="modal-title">아직 맞지 않아요</h2>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-evidence is-hidden" id="modal-evidence"></div>
+      <div class="modal-actions">
+        <button class="primary-button" id="modal-primary" type="button">계속 탐색하기</button>
+        <button class="text-button is-hidden" id="modal-secondary" type="button">다음 힌트 보기</button>
+      </div>
+    </dialog>
+
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

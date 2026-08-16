@@ -1,0 +1,599 @@
+{
+  "schemaVersion": "1.0",
+  "video": {
+    "id": "puppy-poop-lecture",
+    "title": "강아지똥 작품 이해",
+    "durationSec": 1800,
+    "segments": [
+      {
+        "id": "segment-1",
+        "startSec": 0,
+        "endSec": 360,
+        "text": "강아지똥은 주변에서 쓸모없다고 여겨지며 자신의 가치를 알지 못한다."
+      },
+      {
+        "id": "segment-2",
+        "startSec": 360,
+        "endSec": 720,
+        "text": "강아지똥은 여러 존재를 만나며 자신도 누군가에게 도움이 될 수 있는지 묻는다."
+      },
+      {
+        "id": "segment-3",
+        "startSec": 720,
+        "endSec": 1080,
+        "text": "민들레는 꽃을 피우려면 자신을 길러 줄 거름이 필요하다고 설명한다."
+      },
+      {
+        "id": "segment-4",
+        "startSec": 1080,
+        "endSec": 1440,
+        "text": "강아지똥은 비와 흙에 섞여 민들레가 자라는 데 필요한 양분이 된다."
+      },
+      {
+        "id": "segment-5",
+        "startSec": 1440,
+        "endSec": 1800,
+        "text": "작품은 보잘것없어 보이는 존재도 다른 존재를 도우며 가치를 발견할 수 있음을 보여 준다."
+      }
+    ]
+  },
+  "room": {
+    "id": "puppy-poop-room",
+    "title": "잊힌 것들의 서재",
+    "theme": "따뜻한 종이 질감과 민들레 빛이 번지는 비밀 서재",
+    "initialViewId": "overview",
+    "declaredPuzzleCount": 5,
+    "views": [
+      {
+        "id": "overview",
+        "kind": "OVERVIEW",
+        "label": "방 전체",
+        "backgroundAssetKey": "room-overview",
+        "navigation": [
+          {
+            "targetViewId": "bookshelf",
+            "label": "책장 확대",
+            "rect": [0.04, 0.12, 0.25, 0.68]
+          },
+          {
+            "targetViewId": "wall",
+            "label": "벽면 확대",
+            "rect": [0.31, 0.1, 0.25, 0.45]
+          },
+          {
+            "targetViewId": "drawer",
+            "label": "서랍 확대",
+            "rect": [0.58, 0.42, 0.17, 0.38]
+          },
+          {
+            "targetViewId": "desk",
+            "label": "책상 확대",
+            "rect": [0.72, 0.26, 0.24, 0.56]
+          }
+        ]
+      },
+      {
+        "id": "bookshelf",
+        "kind": "CLOSEUP",
+        "label": "낡은 책장",
+        "backgroundAssetKey": "bookshelf-closeup",
+        "backToViewId": "overview"
+      },
+      {
+        "id": "wall",
+        "kind": "CLOSEUP",
+        "label": "기억의 벽",
+        "backgroundAssetKey": "wall-closeup",
+        "backToViewId": "overview"
+      },
+      {
+        "id": "drawer",
+        "kind": "CLOSEUP",
+        "label": "잠긴 서랍",
+        "backgroundAssetKey": "drawer-closeup",
+        "backToViewId": "overview"
+      },
+      {
+        "id": "desk",
+        "kind": "CLOSEUP",
+        "label": "기록자의 책상",
+        "backgroundAssetKey": "desk-closeup",
+        "backToViewId": "overview"
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": "book-ji",
+      "label": "‘지’ 책",
+      "assetKey": "book",
+      "displayText": "지",
+      "description": "‘지’가 적힌 작은 책이다.",
+      "pickupText": "책상 모서리에서 ‘지’가 적힌 책을 발견했다.",
+      "source": {
+        "type": "SCENE",
+        "viewId": "desk",
+        "rect": [0.1, 0.62, 0.15, 0.18]
+      }
+    },
+    {
+      "id": "book-gi",
+      "label": "‘기’ 책",
+      "assetKey": "book",
+      "displayText": "기",
+      "description": "‘기’가 적힌 책이다.",
+      "pickupText": "책장 아래에서 ‘기’가 적힌 책을 발견했다.",
+      "source": {
+        "type": "SCENE",
+        "viewId": "bookshelf",
+        "rect": [0.08, 0.68, 0.15, 0.2]
+      }
+    },
+    {
+      "id": "book-chi",
+      "label": "‘치’ 책",
+      "assetKey": "book",
+      "displayText": "치",
+      "description": "‘치’가 적힌 책이다.",
+      "pickupText": "서랍 위에서 ‘치’가 적힌 책을 발견했다.",
+      "source": {
+        "type": "SCENE",
+        "viewId": "drawer",
+        "rect": [0.7, 0.18, 0.16, 0.2]
+      }
+    },
+    {
+      "id": "event-rejected",
+      "label": "외면받음 카드",
+      "assetKey": "story-card",
+      "displayText": "외면",
+      "description": "주인공이 자신의 가치를 알지 못하는 장면이다.",
+      "pickupText": "책 사이에서 ‘외면’ 사건 카드를 찾았다.",
+      "source": {
+        "type": "SCENE",
+        "viewId": "bookshelf",
+        "rect": [0.75, 0.62, 0.15, 0.2]
+      }
+    },
+    {
+      "id": "event-meeting",
+      "label": "민들레와 만남 카드",
+      "assetKey": "story-card",
+      "displayText": "만남",
+      "description": "민들레가 필요한 것을 설명하는 장면이다.",
+      "pickupText": "벽면 틈에서 ‘만남’ 사건 카드를 찾았다.",
+      "source": {
+        "type": "SCENE",
+        "viewId": "wall",
+        "rect": [0.14, 0.68, 0.16, 0.2]
+      }
+    },
+    {
+      "id": "event-nourish",
+      "label": "양분이 됨 카드",
+      "assetKey": "story-card",
+      "displayText": "양분",
+      "description": "강아지똥이 민들레의 양분이 되는 장면이다.",
+      "pickupText": "책상 위 기록에서 ‘양분’ 사건 카드를 찾았다.",
+      "source": {
+        "type": "SCENE",
+        "viewId": "desk",
+        "rect": [0.66, 0.64, 0.16, 0.2]
+      }
+    },
+    {
+      "id": "event-still-worthless",
+      "label": "끝까지 가치 없음 카드",
+      "assetKey": "story-card",
+      "displayText": "가치 없음",
+      "description": "처음의 부정적 평가가 결말까지 이어진다는 잘못된 사건 카드다.",
+      "pickupText": "서랍 옆에서 ‘가치 없음’ 사건 카드를 찾았다.",
+      "source": {
+        "type": "SCENE",
+        "viewId": "drawer",
+        "rect": [0.12, 0.62, 0.16, 0.2]
+      }
+    },
+    {
+      "id": "key-fertilizer",
+      "label": "거름 열쇠",
+      "assetKey": "key",
+      "displayText": "거름",
+      "description": "‘거름’이라는 글자가 새겨진 작은 열쇠다.",
+      "pickupText": "완성된 책장 뒤에서 ‘거름’ 열쇠가 나타났다.",
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-1",
+        "viewId": "bookshelf",
+        "rect": [0.43, 0.7, 0.14, 0.18]
+      }
+    },
+    {
+      "id": "key-rain",
+      "label": "비 열쇠",
+      "assetKey": "key",
+      "displayText": "비",
+      "description": "‘비’라고 적힌 열쇠다.",
+      "pickupText": "벽면 아래에서 ‘비’ 열쇠를 찾았다.",
+      "source": {
+        "type": "SCENE",
+        "viewId": "wall",
+        "rect": [0.66, 0.68, 0.14, 0.18]
+      }
+    },
+    {
+      "id": "key-soil",
+      "label": "흙 열쇠",
+      "assetKey": "key",
+      "displayText": "흙",
+      "description": "‘흙’이라고 적힌 열쇠다.",
+      "pickupText": "책상 아래에서 ‘흙’ 열쇠를 찾았다.",
+      "source": {
+        "type": "SCENE",
+        "viewId": "desk",
+        "rect": [0.84, 0.7, 0.12, 0.16]
+      }
+    },
+    {
+      "id": "message-help",
+      "label": "도움을 통한 가치 카드",
+      "assetKey": "message-card",
+      "displayText": "도움",
+      "description": "다른 존재를 도우며 자신의 가치를 발견한다는 해석이다.",
+      "pickupText": "열린 서랍 안에서 ‘도움’ 메시지 카드를 발견했다.",
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-3",
+        "viewId": "drawer",
+        "rect": [0.42, 0.52, 0.18, 0.2]
+      }
+    },
+    {
+      "id": "message-alone",
+      "label": "혼자 발견하는 가치 카드",
+      "assetKey": "message-card",
+      "displayText": "혼자",
+      "description": "다른 존재와의 관계없이 혼자 가치를 발견한다는 해석이다.",
+      "pickupText": "책상 위에서 ‘혼자’ 메시지 카드를 찾았다.",
+      "source": {
+        "type": "SCENE",
+        "viewId": "desk",
+        "rect": [0.32, 0.66, 0.17, 0.18]
+      }
+    },
+    {
+      "id": "message-worthless",
+      "label": "가치는 변하지 않는다는 카드",
+      "assetKey": "message-card",
+      "displayText": "고정",
+      "description": "처음 평가받은 가치는 바뀌지 않는다는 해석이다.",
+      "pickupText": "책장 위에서 ‘고정’ 메시지 카드를 찾았다.",
+      "source": {
+        "type": "SCENE",
+        "viewId": "bookshelf",
+        "rect": [0.58, 0.12, 0.17, 0.18]
+      }
+    },
+    {
+      "id": "safe-token-1",
+      "label": "외면 토큰",
+      "assetKey": "concept-token",
+      "displayText": "외면",
+      "description": "금고에 사용할 수 있는 첫 번째 개념 토큰이다.",
+      "pickupText": "첫 퍼즐의 보상으로 ‘외면’ 토큰이 나타났다.",
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-1",
+        "viewId": "bookshelf",
+        "rect": [0.8, 0.12, 0.14, 0.16]
+      }
+    },
+    {
+      "id": "safe-token-2",
+      "label": "만남 토큰",
+      "assetKey": "concept-token",
+      "displayText": "만남",
+      "description": "금고에 사용할 수 있는 두 번째 개념 토큰이다.",
+      "pickupText": "벽면 퍼즐 뒤에서 ‘만남’ 토큰이 나타났다.",
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-2",
+        "viewId": "wall",
+        "rect": [0.82, 0.14, 0.13, 0.16]
+      }
+    },
+    {
+      "id": "safe-token-3",
+      "label": "도움 토큰",
+      "assetKey": "concept-token",
+      "displayText": "도움",
+      "description": "금고에 사용할 수 있는 세 번째 개념 토큰이다.",
+      "pickupText": "열린 서랍 안에서 ‘도움’ 토큰이 나타났다.",
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-3",
+        "viewId": "drawer",
+        "rect": [0.7, 0.52, 0.14, 0.16]
+      }
+    },
+    {
+      "id": "safe-token-4",
+      "label": "변화 토큰",
+      "assetKey": "concept-token",
+      "displayText": "변화",
+      "description": "금고에 사용할 수 있는 네 번째 개념 토큰이다.",
+      "pickupText": "책상의 메시지 판에서 ‘변화’ 토큰이 나타났다.",
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-4",
+        "viewId": "desk",
+        "rect": [0.5, 0.16, 0.14, 0.16]
+      }
+    },
+    {
+      "id": "exit-key",
+      "label": "탈출 열쇠",
+      "assetKey": "exit-key",
+      "displayText": "EXIT",
+      "description": "강의실의 마지막 문을 여는 열쇠다.",
+      "pickupText": "금고 안에서 탈출 열쇠가 빛나고 있다.",
+      "source": {
+        "type": "PUZZLE_REWARD",
+        "puzzleId": "puzzle-5",
+        "viewId": "desk",
+        "rect": [0.73, 0.34, 0.16, 0.18]
+      }
+    }
+  ],
+  "puzzles": [
+    {
+      "id": "puzzle-1",
+      "order": 1,
+      "kind": "ITEM_PLACEMENT",
+      "template": "MISSING_TOKEN",
+      "viewId": "bookshelf",
+      "target": {
+        "id": "bookshelf-word",
+        "label": "강아○똥 책장",
+        "rect": [0.22, 0.2, 0.56, 0.42]
+      },
+      "prompt": "‘강아○똥’의 빈칸을 완성하는 책을 꽂으세요.",
+      "requiresPuzzleIds": [],
+      "candidateItemIds": ["book-ji", "book-gi", "book-chi"],
+      "slots": [
+        {
+          "id": "bookshelf-slot-1",
+          "label": "빠진 글자",
+          "rect": [0.45, 0.34, 0.1, 0.22]
+        }
+      ],
+      "solution": [
+        {
+          "slotId": "bookshelf-slot-1",
+          "itemId": "book-ji"
+        }
+      ],
+      "feedback": {
+        "defaultWrongItem": "이 빈칸에는 글자가 적힌 책을 사용해야 합니다.",
+        "wrongSlot": "앞뒤 글자를 연결해 자연스러운 단어가 되는지 확인하세요.",
+        "byItemId": {
+          "book-gi": "‘강아기똥’은 작품 제목과 다릅니다. 빈칸 앞의 ‘강아’를 하나의 단어로 완성해 보세요.",
+          "book-chi": "‘강아치똥’은 자연스러운 단어가 아닙니다. 영상에서 반복된 제목을 떠올려 보세요."
+        }
+      },
+      "hints": [
+        {
+          "level": 1,
+          "type": "OBSERVATION",
+          "text": "책장 문구의 빈칸 앞뒤 글자를 자세히 보세요."
+        },
+        {
+          "level": 2,
+          "type": "CONCEPT",
+          "text": "영상에서 반복된 작품 제목을 떠올려 보세요."
+        },
+        {
+          "level": 3,
+          "type": "DIRECTION",
+          "text": "‘강아’ 뒤에 붙어 동물을 뜻하는 단어를 완성하는 책이 필요합니다."
+        }
+      ],
+      "explanation": {
+        "title": "정답: ‘지’ 책",
+        "body": "‘지’를 넣으면 작품 제목인 ‘강아지똥’이 완성됩니다. 주인공은 처음에는 자신의 가치를 알지 못하는 존재로 소개됩니다.",
+        "evidenceSegmentIds": ["segment-1"]
+      },
+      "rewards": [
+        { "type": "REVEAL_ITEM", "itemId": "key-fertilizer" },
+        { "type": "REVEAL_ITEM", "itemId": "safe-token-1" }
+      ]
+    },
+    {
+      "id": "puzzle-2",
+      "order": 2,
+      "kind": "ITEM_PLACEMENT",
+      "template": "ORDER_ITEMS",
+      "viewId": "wall",
+      "target": {
+        "id": "wall-story-board",
+        "label": "이야기 순서판",
+        "rect": [0.15, 0.16, 0.7, 0.46]
+      },
+      "prompt": "주인공이 변화하는 과정을 영상의 순서대로 배치하세요.",
+      "requiresPuzzleIds": [],
+      "candidateItemIds": [
+        "event-rejected",
+        "event-meeting",
+        "event-nourish",
+        "event-still-worthless"
+      ],
+      "slots": [
+        { "id": "wall-slot-1", "label": "처음", "rect": [0.18, 0.34, 0.18, 0.2] },
+        { "id": "wall-slot-2", "label": "가운데", "rect": [0.41, 0.34, 0.18, 0.2] },
+        { "id": "wall-slot-3", "label": "마지막", "rect": [0.64, 0.34, 0.18, 0.2] }
+      ],
+      "solution": [
+        { "slotId": "wall-slot-1", "itemId": "event-rejected" },
+        { "slotId": "wall-slot-2", "itemId": "event-meeting" },
+        { "slotId": "wall-slot-3", "itemId": "event-nourish" }
+      ],
+      "feedback": {
+        "defaultWrongItem": "이 사건은 주인공의 핵심 변화 단계에 들어가지 않습니다.",
+        "wrongSlot": "사건은 맞지만 위치가 다릅니다. 영상에서 먼저 일어난 일을 기준으로 순서를 다시 생각하세요.",
+        "byItemId": {
+          "event-still-worthless": "초반에는 쓸모없다고 여겨지지만 그것이 결말은 아닙니다. 민들레를 만난 뒤 일어난 변화를 다시 확인하세요."
+        }
+      },
+      "hints": [
+        { "level": 1, "type": "OBSERVATION", "text": "각 카드가 이야기의 시작·전환·결말 중 어디에 해당하는지 살펴보세요." },
+        { "level": 2, "type": "CONCEPT", "text": "주인공은 외면받은 뒤 민들레를 만나고, 이후 양분이 됩니다." },
+        { "level": 3, "type": "DIRECTION", "text": "가장 왼쪽에는 주인공이 자신의 가치를 몰랐던 장면을 놓으세요." }
+      ],
+      "explanation": {
+        "title": "정답: 외면 → 만남 → 양분",
+        "body": "주인공은 외면받던 상태에서 민들레를 만나고, 마침내 민들레의 양분이 됩니다. 이 순서가 작품의 가치 발견 과정을 보여 줍니다.",
+        "evidenceSegmentIds": ["segment-2", "segment-3", "segment-4"]
+      },
+      "rewards": [
+        { "type": "REVEAL_ITEM", "itemId": "safe-token-2" }
+      ]
+    },
+    {
+      "id": "puzzle-3",
+      "order": 3,
+      "kind": "ITEM_PLACEMENT",
+      "template": "KEY_TO_LOCK",
+      "viewId": "drawer",
+      "target": {
+        "id": "drawer-lock",
+        "label": "민들레 문양 자물쇠",
+        "rect": [0.32, 0.28, 0.36, 0.34]
+      },
+      "prompt": "강아지똥이 민들레에게 제공한 역할을 나타내는 열쇠를 사용하세요.",
+      "requiresPuzzleIds": ["puzzle-1"],
+      "candidateItemIds": ["key-fertilizer", "key-rain", "key-soil"],
+      "slots": [
+        { "id": "drawer-key-slot", "label": "열쇠 구멍", "rect": [0.46, 0.42, 0.08, 0.16] }
+      ],
+      "solution": [
+        { "slotId": "drawer-key-slot", "itemId": "key-fertilizer" }
+      ],
+      "feedback": {
+        "defaultWrongItem": "자물쇠에는 역할을 나타내는 열쇠를 사용해야 합니다.",
+        "wrongSlot": "민들레가 강아지똥에게 필요하다고 말한 것을 다시 떠올려 보세요.",
+        "byItemId": {
+          "key-rain": "비는 강아지똥이 흙에 섞이는 과정에 함께하지만, 주인공이 민들레에게 제공한 역할 자체는 아닙니다.",
+          "key-soil": "흙은 강아지똥과 섞이는 환경이지만, 주인공이 민들레에게 제공한 역할 자체는 아닙니다."
+        }
+      },
+      "hints": [
+        { "level": 1, "type": "OBSERVATION", "text": "열쇠에 새겨진 단어와 민들레 문양을 함께 보세요." },
+        { "level": 2, "type": "CONCEPT", "text": "민들레는 자신을 길러 줄 양분이 필요했습니다." },
+        { "level": 3, "type": "DIRECTION", "text": "흙에 섞여 식물의 양분이 되는 역할을 나타낸 열쇠를 사용하세요." }
+      ],
+      "explanation": {
+        "title": "정답: 거름 열쇠",
+        "body": "강아지똥은 비와 흙에 섞여 민들레가 자라는 데 필요한 거름과 양분이 됩니다. 함께 등장하는 비나 흙 자체가 아니라 주인공이 직접 제공한 역할을 구별해야 합니다.",
+        "evidenceSegmentIds": ["segment-3", "segment-4"]
+      },
+      "rewards": [
+        { "type": "REVEAL_ITEM", "itemId": "message-help" },
+        { "type": "REVEAL_ITEM", "itemId": "safe-token-3" }
+      ]
+    },
+    {
+      "id": "puzzle-4",
+      "order": 4,
+      "kind": "ITEM_PLACEMENT",
+      "template": "MATCH_ITEM",
+      "viewId": "desk",
+      "target": {
+        "id": "desk-message-board",
+        "label": "작품의 메시지 기록판",
+        "rect": [0.08, 0.18, 0.45, 0.4]
+      },
+      "prompt": "작품이 전달하는 메시지와 가장 가까운 카드를 기록판에 놓으세요.",
+      "requiresPuzzleIds": ["puzzle-3"],
+      "candidateItemIds": ["message-help", "message-alone", "message-worthless"],
+      "slots": [
+        { "id": "desk-message-slot", "label": "핵심 메시지", "rect": [0.22, 0.34, 0.2, 0.2] }
+      ],
+      "solution": [
+        { "slotId": "desk-message-slot", "itemId": "message-help" }
+      ],
+      "feedback": {
+        "defaultWrongItem": "이 기록판에는 작품의 메시지를 나타내는 카드를 사용해야 합니다.",
+        "wrongSlot": "주인공이 마지막에 자신의 가치를 어떻게 발견했는지 생각해 보세요.",
+        "byItemId": {
+          "message-alone": "주인공은 혼자 가치를 깨닫지 않습니다. 민들레를 만나 도움을 주는 관계 속에서 일어난 변화를 확인하세요.",
+          "message-worthless": "주인공의 가치는 처음 평가에 머물지 않고 행동을 통해 달라집니다. 결말의 변화를 다시 보세요."
+        }
+      },
+      "hints": [
+        { "level": 1, "type": "OBSERVATION", "text": "세 카드가 ‘가치’를 각각 어떻게 설명하는지 비교하세요." },
+        { "level": 2, "type": "CONCEPT", "text": "주인공은 민들레를 도운 뒤 자신의 역할을 발견합니다." },
+        { "level": 3, "type": "DIRECTION", "text": "다른 존재를 돕는 행동과 가치 발견을 연결한 카드를 사용하세요." }
+      ],
+      "explanation": {
+        "title": "정답: 도움을 통한 가치 발견",
+        "body": "작품은 보잘것없어 보이는 존재도 다른 존재를 도우며 자신의 가치를 발견할 수 있음을 보여 줍니다. 가치는 힘이나 처음의 평가만으로 결정되지 않습니다.",
+        "evidenceSegmentIds": ["segment-5"]
+      },
+      "rewards": [
+        { "type": "REVEAL_ITEM", "itemId": "safe-token-4" }
+      ]
+    },
+    {
+      "id": "puzzle-5",
+      "order": 5,
+      "kind": "ITEM_PLACEMENT",
+      "template": "FINAL_SAFE",
+      "viewId": "desk",
+      "target": {
+        "id": "desk-safe",
+        "label": "개념 순서 금고",
+        "rect": [0.58, 0.16, 0.34, 0.48]
+      },
+      "prompt": "주인공이 가치를 발견하는 흐름대로 네 개의 토큰을 배치하세요.",
+      "requiresPuzzleIds": ["puzzle-1", "puzzle-2", "puzzle-3", "puzzle-4"],
+      "candidateItemIds": ["safe-token-1", "safe-token-2", "safe-token-3", "safe-token-4"],
+      "slots": [
+        { "id": "safe-slot-1", "label": "1", "rect": [0.62, 0.36, 0.07, 0.14] },
+        { "id": "safe-slot-2", "label": "2", "rect": [0.7, 0.36, 0.07, 0.14] },
+        { "id": "safe-slot-3", "label": "3", "rect": [0.78, 0.36, 0.07, 0.14] },
+        { "id": "safe-slot-4", "label": "4", "rect": [0.86, 0.36, 0.07, 0.14] }
+      ],
+      "solution": [
+        { "slotId": "safe-slot-1", "itemId": "safe-token-1" },
+        { "slotId": "safe-slot-2", "itemId": "safe-token-2" },
+        { "slotId": "safe-slot-3", "itemId": "safe-token-3" },
+        { "slotId": "safe-slot-4", "itemId": "safe-token-4" }
+      ],
+      "feedback": {
+        "defaultWrongItem": "금고에는 앞선 퍼즐에서 얻은 개념 토큰만 사용할 수 있습니다.",
+        "wrongSlot": "토큰은 모두 맞지만 순서가 다릅니다. 외면받던 처음부터 가치가 변화한 결말까지 연결하세요.",
+        "byItemId": {}
+      },
+      "hints": [
+        { "level": 1, "type": "OBSERVATION", "text": "토큰의 단어가 이야기의 어느 시점에 등장했는지 살펴보세요." },
+        { "level": 2, "type": "CONCEPT", "text": "주인공은 외면받다가 누군가를 만나고, 도움을 준 뒤 변화합니다." },
+        { "level": 3, "type": "DIRECTION", "text": "‘외면’을 첫 칸에, ‘변화’를 마지막 칸에 놓고 가운데 원인을 연결하세요." }
+      ],
+      "explanation": {
+        "title": "정답: 외면 → 만남 → 도움 → 변화",
+        "body": "주인공은 외면받던 상태에서 민들레를 만나 도움을 주고, 그 과정을 통해 자신의 가치를 발견합니다. 네 토큰은 강의 전체의 핵심 흐름을 요약합니다.",
+        "evidenceSegmentIds": ["segment-1", "segment-2", "segment-3", "segment-4", "segment-5"]
+      },
+      "rewards": [
+        { "type": "REVEAL_ITEM", "itemId": "exit-key" },
+        { "type": "UNLOCK_EXIT", "objectId": "exit-door" }
+      ]
+    }
+  ],
+  "completion": {
+    "finalPuzzleId": "puzzle-5",
+    "exitItemId": "exit-key",
+    "exitObjectId": "exit-door",
+    "effect": "UNLOCK_EXIT"
+  }
+}

@@ -1,0 +1,14 @@
+[LecScape 게임 파트 전달]
+
+STT → 개념 분석 → 게임 시작 버튼 → /game 데이터 전달까지 완료했습니다.
+
+첨부 ZIP의 game-generator.sample.json이 실제 입력 예시이고, game-contract.d.ts가 전체 타입입니다. 게임 파트에서는 integration/game-runtime.js의 mountGame(root, gameInput, context)만 실제 플레이 가능한 단일 방 게임으로 교체해주세요.
+
+필수 조건:
+- gameInput만으로 실행하고 별도 AI/API 호출은 하지 않기
+- concept_discovery → case_application → synthesis_judgment 3단계 구현
+- 각 단계의 conceptIds/exampleIds/confusionIds로 실제 데이터 조회
+- 힌트·오답 피드백 제공
+- 완료 시 context.onComplete(result) 호출
+
+README.md에 실행법과 반환 방법이 정리되어 있습니다.
