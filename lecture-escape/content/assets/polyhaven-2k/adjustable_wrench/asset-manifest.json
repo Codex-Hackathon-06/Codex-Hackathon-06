@@ -1,0 +1,35 @@
+{
+    "id":  "adjustable_wrench",
+    "name":  "Adjustable Wrench",
+    "source":  "https://polyhaven.com/a/adjustable_wrench",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "adjustable_wrench_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/adjustable_wrench/adjustable_wrench_2k.blend",
+                      "size":  229048
+                  },
+                  {
+                      "path":  "textures/adjustable_wrench_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/adjustable_wrench/adjustable_wrench_diff_2k.jpg",
+                      "size":  3052831
+                  },
+                  {
+                      "path":  "textures/adjustable_wrench_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/adjustable_wrench/adjustable_wrench_metal_2k.exr",
+                      "size":  158871
+                  },
+                  {
+                      "path":  "textures/adjustable_wrench_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/adjustable_wrench/adjustable_wrench_nor_gl_2k.exr",
+                      "size":  6882906
+                  },
+                  {
+                      "path":  "textures/adjustable_wrench_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/adjustable_wrench/adjustable_wrench_rough_2k.exr",
+                      "size":  3084960
+                  }
+              ]
+}

@@ -1,0 +1,35 @@
+{
+    "id":  "bolt_cutters_01",
+    "name":  "Bolt Cutters 01",
+    "source":  "https://polyhaven.com/a/bolt_cutters_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "bolt_cutters_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/bolt_cutters_01/bolt_cutters_01_2k.blend",
+                      "size":  373698
+                  },
+                  {
+                      "path":  "textures/bolt_cutters_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bolt_cutters_01/bolt_cutters_01_rough_2k.exr",
+                      "size":  4166391
+                  },
+                  {
+                      "path":  "textures/bolt_cutters_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bolt_cutters_01/bolt_cutters_01_nor_gl_2k.exr",
+                      "size":  7455188
+                  },
+                  {
+                      "path":  "textures/bolt_cutters_01_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bolt_cutters_01/bolt_cutters_01_metal_2k.exr",
+                      "size":  2628187
+                  },
+                  {
+                      "path":  "textures/bolt_cutters_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/bolt_cutters_01/bolt_cutters_01_diff_2k.jpg",
+                      "size":  2922960
+                  }
+              ]
+}

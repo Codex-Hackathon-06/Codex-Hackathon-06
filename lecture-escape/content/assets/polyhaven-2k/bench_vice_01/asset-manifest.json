@@ -1,0 +1,35 @@
+{
+    "id":  "bench_vice_01",
+    "name":  "Bench Vice 01",
+    "source":  "https://polyhaven.com/a/bench_vice_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "bench_vice_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/bench_vice_01/bench_vice_01_2k.blend",
+                      "size":  215338
+                  },
+                  {
+                      "path":  "textures/bench_vice_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bench_vice_01/bench_vice_01_rough_2k.exr",
+                      "size":  3875847
+                  },
+                  {
+                      "path":  "textures/bench_vice_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bench_vice_01/bench_vice_01_nor_gl_2k.exr",
+                      "size":  8327750
+                  },
+                  {
+                      "path":  "textures/bench_vice_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/bench_vice_01/bench_vice_01_diff_2k.jpg",
+                      "size":  2680037
+                  },
+                  {
+                      "path":  "textures/bench_vice_01_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bench_vice_01/bench_vice_01_metal_2k.exr",
+                      "size":  4214509
+                  }
+              ]
+}

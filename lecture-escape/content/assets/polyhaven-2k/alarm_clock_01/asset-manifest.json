@@ -1,0 +1,35 @@
+{
+    "id":  "alarm_clock_01",
+    "name":  "Alarm Clock 01",
+    "source":  "https://polyhaven.com/a/alarm_clock_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "alarm_clock_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/alarm_clock_01/alarm_clock_01_2k.blend",
+                      "size":  624188
+                  },
+                  {
+                      "path":  "textures/alarm_clock_01_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/alarm_clock_01/alarm_clock_01_metal_2k.exr",
+                      "size":  809397
+                  },
+                  {
+                      "path":  "textures/alarm_clock_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/alarm_clock_01/alarm_clock_01_nor_gl_2k.exr",
+                      "size":  2981683
+                  },
+                  {
+                      "path":  "textures/alarm_clock_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/alarm_clock_01/alarm_clock_01_diff_2k.jpg",
+                      "size":  1254506
+                  },
+                  {
+                      "path":  "textures/alarm_clock_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/alarm_clock_01/alarm_clock_01_rough_2k.exr",
+                      "size":  1603535
+                  }
+              ]
+}

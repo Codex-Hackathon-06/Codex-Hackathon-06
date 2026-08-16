@@ -1,0 +1,40 @@
+{
+    "id":  "barrel_stove",
+    "name":  "Barrel Stove",
+    "source":  "https://polyhaven.com/a/barrel_stove",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "barrel_stove_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/barrel_stove/barrel_stove_2k.blend",
+                      "size":  390151
+                  },
+                  {
+                      "path":  "textures/barrel_stove_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/barrel_stove/barrel_stove_metal_2k.exr",
+                      "size":  3141626
+                  },
+                  {
+                      "path":  "textures/barrel_stove_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/barrel_stove/barrel_stove_diff_2k.jpg",
+                      "size":  3451677
+                  },
+                  {
+                      "path":  "textures/barrel_stove_opacity_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/barrel_stove/barrel_stove_opacity_2k.png",
+                      "size":  18152
+                  },
+                  {
+                      "path":  "textures/barrel_stove_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/barrel_stove/barrel_stove_nor_gl_2k.exr",
+                      "size":  1217908
+                  },
+                  {
+                      "path":  "textures/barrel_stove_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/barrel_stove/barrel_stove_rough_2k.exr",
+                      "size":  2519697
+                  }
+              ]
+}

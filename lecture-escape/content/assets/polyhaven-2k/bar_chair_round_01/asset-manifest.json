@@ -1,0 +1,35 @@
+{
+    "id":  "bar_chair_round_01",
+    "name":  "Bar Chair Round 01",
+    "source":  "https://polyhaven.com/a/bar_chair_round_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "bar_chair_round_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/bar_chair_round_01/bar_chair_round_01_2k.blend",
+                      "size":  630343
+                  },
+                  {
+                      "path":  "textures/bar_chair_round_01_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bar_chair_round_01/bar_chair_round_01_metal_2k.exr",
+                      "size":  18903
+                  },
+                  {
+                      "path":  "textures/bar_chair_round_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bar_chair_round_01/bar_chair_round_01_rough_2k.exr",
+                      "size":  2695895
+                  },
+                  {
+                      "path":  "textures/bar_chair_round_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/bar_chair_round_01/bar_chair_round_01_diff_2k.jpg",
+                      "size":  2078896
+                  },
+                  {
+                      "path":  "textures/bar_chair_round_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bar_chair_round_01/bar_chair_round_01_nor_gl_2k.exr",
+                      "size":  2883490
+                  }
+              ]
+}

@@ -1,0 +1,35 @@
+{
+    "id":  "Barrel_01",
+    "name":  "Barrel_01",
+    "source":  "https://polyhaven.com/a/Barrel_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "Barrel_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/Barrel_01/Barrel_01_2k.blend",
+                      "size":  195364
+                  },
+                  {
+                      "path":  "textures/Barrel_01_explosive_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Barrel_01/Barrel_01_explosive_diff_2k.png",
+                      "size":  4805672
+                  },
+                  {
+                      "path":  "textures/Barrel_01_explosive_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Barrel_01/Barrel_01_explosive_nor_gl_2k.png",
+                      "size":  6658513
+                  },
+                  {
+                      "path":  "textures/Barrel_01_explosive_metallic_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Barrel_01/Barrel_01_explosive_metallic_2k.png",
+                      "size":  1105564
+                  },
+                  {
+                      "path":  "textures/Barrel_01_explosive_roughness_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/Barrel_01/Barrel_01_explosive_roughness_2k.png",
+                      "size":  2086761
+                  }
+              ]
+}

@@ -1,0 +1,35 @@
+{
+    "id":  "BarberShopChair_01",
+    "name":  "Barber Shop Chair 01",
+    "source":  "https://polyhaven.com/a/BarberShopChair_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "BarberShopChair_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/BarberShopChair_01/BarberShopChair_01_2k.blend",
+                      "size":  270168
+                  },
+                  {
+                      "path":  "textures/BarberShopChair_01_metallic_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/BarberShopChair_01/BarberShopChair_01_metallic_2k.exr",
+                      "size":  293481
+                  },
+                  {
+                      "path":  "textures/BarberShopChair_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/BarberShopChair_01/BarberShopChair_01_nor_gl_2k.exr",
+                      "size":  4678917
+                  },
+                  {
+                      "path":  "textures/BarberShopChair_01_roughness_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/BarberShopChair_01/BarberShopChair_01_roughness_2k.jpg",
+                      "size":  639914
+                  },
+                  {
+                      "path":  "textures/BarberShopChair_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/BarberShopChair_01/BarberShopChair_01_diff_2k.jpg",
+                      "size":  520691
+                  }
+              ]
+}

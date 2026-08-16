@@ -1,0 +1,35 @@
+{
+    "id":  "barrel_03",
+    "name":  "Barrel 03",
+    "source":  "https://polyhaven.com/a/barrel_03",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "barrel_03_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/barrel_03/barrel_03_2k.blend",
+                      "size":  156523
+                  },
+                  {
+                      "path":  "textures/barrel_03_rough_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/barrel_03/barrel_03_rough_2k.jpg",
+                      "size":  1011647
+                  },
+                  {
+                      "path":  "textures/barrel_03_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/barrel_03/barrel_03_diff_2k.jpg",
+                      "size":  581642
+                  },
+                  {
+                      "path":  "textures/barrel_03_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/barrel_03/barrel_03_nor_gl_2k.exr",
+                      "size":  4756289
+                  },
+                  {
+                      "path":  "textures/barrel_03_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/barrel_03/barrel_03_metal_2k.exr",
+                      "size":  478613
+                  }
+              ]
+}

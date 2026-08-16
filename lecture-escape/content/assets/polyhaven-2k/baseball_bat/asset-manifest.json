@@ -1,0 +1,30 @@
+{
+    "id":  "baseball_bat",
+    "name":  "Baseball Bat",
+    "source":  "https://polyhaven.com/a/baseball_bat",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "baseball_bat_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/baseball_bat/baseball_bat_2k.blend",
+                      "size":  196102
+                  },
+                  {
+                      "path":  "textures/baseball_bat_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/baseball_bat/baseball_bat_diff_2k.jpg",
+                      "size":  1456474
+                  },
+                  {
+                      "path":  "textures/baseball_bat_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/baseball_bat/baseball_bat_rough_2k.exr",
+                      "size":  2655970
+                  },
+                  {
+                      "path":  "textures/baseball_bat_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/baseball_bat/baseball_bat_nor_gl_2k.exr",
+                      "size":  4180844
+                  }
+              ]
+}

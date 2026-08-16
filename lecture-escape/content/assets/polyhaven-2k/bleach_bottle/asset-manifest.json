@@ -1,0 +1,30 @@
+{
+    "id":  "bleach_bottle",
+    "name":  "Bleach Bottle",
+    "source":  "https://polyhaven.com/a/bleach_bottle",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "bleach_bottle_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/bleach_bottle/bleach_bottle_2k.blend",
+                      "size":  197863
+                  },
+                  {
+                      "path":  "textures/bleach_bottle_01_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/bleach_bottle/bleach_bottle_01_nor_gl_2k.png",
+                      "size":  13358392
+                  },
+                  {
+                      "path":  "textures/bleach_bottle_01_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/bleach_bottle/bleach_bottle_01_rough_2k.png",
+                      "size":  5310870
+                  },
+                  {
+                      "path":  "textures/bleach_bottle_01_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/bleach_bottle/bleach_bottle_01_diff_2k.png",
+                      "size":  15358426
+                  }
+              ]
+}

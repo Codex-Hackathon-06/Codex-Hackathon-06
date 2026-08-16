@@ -1,0 +1,40 @@
+{
+    "id":  "binoculars",
+    "name":  "Binoculars",
+    "source":  "https://polyhaven.com/a/binoculars",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "binoculars_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/binoculars/binoculars_2k.blend",
+                      "size":  531087
+                  },
+                  {
+                      "path":  "textures/binoculars_alpha_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/binoculars/binoculars_alpha_2k.png",
+                      "size":  50838
+                  },
+                  {
+                      "path":  "textures/binoculars_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/binoculars/binoculars_diff_2k.jpg",
+                      "size":  976195
+                  },
+                  {
+                      "path":  "textures/binoculars_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/binoculars/binoculars_metal_2k.exr",
+                      "size":  714293
+                  },
+                  {
+                      "path":  "textures/binoculars_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/binoculars/binoculars_nor_gl_2k.exr",
+                      "size":  2103266
+                  },
+                  {
+                      "path":  "textures/binoculars_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/binoculars/binoculars_rough_2k.exr",
+                      "size":  2399654
+                  }
+              ]
+}

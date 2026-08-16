@@ -1,0 +1,35 @@
+{
+    "id":  "antique_ceramic_vase_01",
+    "name":  "Antique Ceramic Vase 01",
+    "source":  "https://polyhaven.com/a/antique_ceramic_vase_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "antique_ceramic_vase_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/antique_ceramic_vase_01/antique_ceramic_vase_01_2k.blend",
+                      "size":  331377
+                  },
+                  {
+                      "path":  "textures/antique_ceramic_vase_01_rough_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/antique_ceramic_vase_01/antique_ceramic_vase_01_rough_2k.jpg",
+                      "size":  221400
+                  },
+                  {
+                      "path":  "textures/antique_ceramic_vase_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/antique_ceramic_vase_01/antique_ceramic_vase_01_nor_gl_2k.exr",
+                      "size":  1016974
+                  },
+                  {
+                      "path":  "textures/antique_ceramic_vase_01_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/antique_ceramic_vase_01/antique_ceramic_vase_01_metal_2k.exr",
+                      "size":  43577
+                  },
+                  {
+                      "path":  "textures/antique_ceramic_vase_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/antique_ceramic_vase_01/antique_ceramic_vase_01_diff_2k.jpg",
+                      "size":  590090
+                  }
+              ]
+}

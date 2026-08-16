@@ -1,0 +1,35 @@
+{
+    "id":  "ArmChair_01",
+    "name":  "Arm Chair 01",
+    "source":  "https://polyhaven.com/a/ArmChair_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "ArmChair_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/ArmChair_01/ArmChair_01_2k.blend",
+                      "size":  344664
+                  },
+                  {
+                      "path":  "textures/Armchair_01_roughness_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ArmChair_01/Armchair_01_roughness_2k.jpg",
+                      "size":  372858
+                  },
+                  {
+                      "path":  "textures/Armchair_01_metallic_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ArmChair_01/Armchair_01_metallic_2k.exr",
+                      "size":  13296
+                  },
+                  {
+                      "path":  "textures/Armchair_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ArmChair_01/Armchair_01_diff_2k.jpg",
+                      "size":  723200
+                  },
+                  {
+                      "path":  "textures/Armchair_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ArmChair_01/Armchair_01_nor_gl_2k.exr",
+                      "size":  8865448
+                  }
+              ]
+}

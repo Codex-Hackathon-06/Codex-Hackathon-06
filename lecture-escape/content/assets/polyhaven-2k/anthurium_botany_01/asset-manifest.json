@@ -1,0 +1,40 @@
+{
+    "id":  "anthurium_botany_01",
+    "name":  "Anthurium Botany 01",
+    "source":  "https://polyhaven.com/a/anthurium_botany_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "anthurium_botany_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/anthurium_botany_01/anthurium_botany_01_2k.blend",
+                      "size":  200840
+                  },
+                  {
+                      "path":  "textures/anthurium_botany_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/anthurium_botany_01/anthurium_botany_01_nor_gl_2k.exr",
+                      "size":  4308519
+                  },
+                  {
+                      "path":  "textures/anthurium_botany_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/anthurium_botany_01/anthurium_botany_01_rough_2k.exr",
+                      "size":  3087710
+                  },
+                  {
+                      "path":  "textures/anthurium_botany_01_disp_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/anthurium_botany_01/anthurium_botany_01_disp_2k.png",
+                      "size":  3081059
+                  },
+                  {
+                      "path":  "textures/anthurium_botany_01_alpha_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/anthurium_botany_01/anthurium_botany_01_alpha_2k.png",
+                      "size":  95881
+                  },
+                  {
+                      "path":  "textures/anthurium_botany_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/anthurium_botany_01/anthurium_botany_01_diff_2k.jpg",
+                      "size":  1565878
+                  }
+              ]
+}

@@ -1,0 +1,35 @@
+{
+    "id":  "binder_notebook",
+    "name":  "Binder Notebook",
+    "source":  "https://polyhaven.com/a/binder_notebook",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "binder_notebook_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/binder_notebook/binder_notebook_2k.blend",
+                      "size":  440097
+                  },
+                  {
+                      "path":  "textures/binder_notebook_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/binder_notebook/binder_notebook_diff_2k.jpg",
+                      "size":  1707438
+                  },
+                  {
+                      "path":  "textures/binder_notebook_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/binder_notebook/binder_notebook_metal_2k.exr",
+                      "size":  125045
+                  },
+                  {
+                      "path":  "textures/binder_notebook_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/binder_notebook/binder_notebook_nor_gl_2k.exr",
+                      "size":  2672006
+                  },
+                  {
+                      "path":  "textures/binder_notebook_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/binder_notebook/binder_notebook_rough_2k.exr",
+                      "size":  1389386
+                  }
+              ]
+}

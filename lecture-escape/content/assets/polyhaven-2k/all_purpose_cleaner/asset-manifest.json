@@ -1,0 +1,30 @@
+{
+    "id":  "all_purpose_cleaner",
+    "name":  "All Purpose Cleaner",
+    "source":  "https://polyhaven.com/a/all_purpose_cleaner",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "all_purpose_cleaner_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/all_purpose_cleaner/all_purpose_cleaner_2k.blend",
+                      "size":  219406
+                  },
+                  {
+                      "path":  "textures/all_purpose_cleaner_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/all_purpose_cleaner/all_purpose_cleaner_rough_2k.exr",
+                      "size":  2277960
+                  },
+                  {
+                      "path":  "textures/all_purpose_cleaner_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/all_purpose_cleaner/all_purpose_cleaner_nor_gl_2k.exr",
+                      "size":  681200
+                  },
+                  {
+                      "path":  "textures/all_purpose_cleaner_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/all_purpose_cleaner/all_purpose_cleaner_diff_2k.jpg",
+                      "size":  1212507
+                  }
+              ]
+}
