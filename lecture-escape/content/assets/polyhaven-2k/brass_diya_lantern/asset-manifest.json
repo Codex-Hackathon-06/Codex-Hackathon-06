@@ -1,0 +1,40 @@
+{
+    "id":  "brass_diya_lantern",
+    "name":  "Brass Diya Lantern",
+    "source":  "https://polyhaven.com/a/brass_diya_lantern",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "brass_diya_lantern_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/brass_diya_lantern/brass_diya_lantern_2k.blend",
+                      "size":  462366
+                  },
+                  {
+                      "path":  "textures/brass_diya_lantern_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_diya_lantern/brass_diya_lantern_metal_2k.exr",
+                      "size":  359307
+                  },
+                  {
+                      "path":  "textures/brass_diya_lantern_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_diya_lantern/brass_diya_lantern_diff_2k.jpg",
+                      "size":  1699090
+                  },
+                  {
+                      "path":  "textures/brass_diya_lantern_opacity_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_diya_lantern/brass_diya_lantern_opacity_2k.png",
+                      "size":  949325
+                  },
+                  {
+                      "path":  "textures/brass_diya_lantern_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_diya_lantern/brass_diya_lantern_nor_gl_2k.exr",
+                      "size":  1655864
+                  },
+                  {
+                      "path":  "textures/brass_diya_lantern_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_diya_lantern/brass_diya_lantern_rough_2k.exr",
+                      "size":  2780371
+                  }
+              ]
+}

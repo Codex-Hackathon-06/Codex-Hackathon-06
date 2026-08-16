@@ -1,0 +1,35 @@
+{
+    "id":  "brass_vase_03",
+    "name":  "Brass Vase 03",
+    "source":  "https://polyhaven.com/a/brass_vase_03",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "brass_vase_03_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/brass_vase_03/brass_vase_03_2k.blend",
+                      "size":  169680
+                  },
+                  {
+                      "path":  "textures/brass_vase_03_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_vase_03/brass_vase_03_diff_2k.jpg",
+                      "size":  1877378
+                  },
+                  {
+                      "path":  "textures/brass_vase_03_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_vase_03/brass_vase_03_metal_2k.exr",
+                      "size":  699069
+                  },
+                  {
+                      "path":  "textures/brass_vase_03_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_vase_03/brass_vase_03_nor_gl_2k.exr",
+                      "size":  3266499
+                  },
+                  {
+                      "path":  "textures/brass_vase_03_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_vase_03/brass_vase_03_rough_2k.exr",
+                      "size":  3527131
+                  }
+              ]
+}

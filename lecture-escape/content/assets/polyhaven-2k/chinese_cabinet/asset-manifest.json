@@ -1,0 +1,35 @@
+{
+    "id":  "chinese_cabinet",
+    "name":  "Chinese Cabinet",
+    "source":  "https://polyhaven.com/a/chinese_cabinet",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "chinese_cabinet_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/chinese_cabinet/chinese_cabinet_2k.blend",
+                      "size":  477881
+                  },
+                  {
+                      "path":  "textures/chinese_cabinet_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chinese_cabinet/chinese_cabinet_nor_gl_2k.exr",
+                      "size":  3828303
+                  },
+                  {
+                      "path":  "textures/chinese_cabinet_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chinese_cabinet/chinese_cabinet_rough_2k.exr",
+                      "size":  2427268
+                  },
+                  {
+                      "path":  "textures/chinese_cabinet_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/chinese_cabinet/chinese_cabinet_diff_2k.jpg",
+                      "size":  2255095
+                  },
+                  {
+                      "path":  "textures/chinese_cabinet_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chinese_cabinet/chinese_cabinet_metal_2k.exr",
+                      "size":  537268
+                  }
+              ]
+}

@@ -1,0 +1,50 @@
+{
+    "id":  "boombox",
+    "name":  "Boombox",
+    "source":  "https://polyhaven.com/a/boombox",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "boombox_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/boombox/boombox_2k.blend",
+                      "size":  418410
+                  },
+                  {
+                      "path":  "textures/boombox_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/boombox/boombox_metal_2k.exr",
+                      "size":  44172
+                  },
+                  {
+                      "path":  "textures/boombox_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/boombox/boombox_nor_gl_2k.exr",
+                      "size":  3794923
+                  },
+                  {
+                      "path":  "textures/boombox_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/boombox/boombox_rough_2k.exr",
+                      "size":  1528847
+                  },
+                  {
+                      "path":  "textures/boombox_speakers_metal_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/boombox/boombox_speakers_metal_2k.png",
+                      "size":  177397
+                  },
+                  {
+                      "path":  "textures/boombox_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/boombox/boombox_diff_2k.jpg",
+                      "size":  1703290
+                  },
+                  {
+                      "path":  "textures/boombox_speakers_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/boombox/boombox_speakers_diff_2k.png",
+                      "size":  2113113
+                  },
+                  {
+                      "path":  "textures/boombox_speakers_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/boombox/boombox_speakers_rough_2k.png",
+                      "size":  1292065
+                  }
+              ]
+}

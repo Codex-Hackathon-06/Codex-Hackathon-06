@@ -1,0 +1,35 @@
+{
+    "id":  "concrete_road_barrier",
+    "name":  "Concrete Road Barrier",
+    "source":  "https://polyhaven.com/a/concrete_road_barrier",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "concrete_road_barrier_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/concrete_road_barrier/concrete_road_barrier_2k.blend",
+                      "size":  2597594
+                  },
+                  {
+                      "path":  "textures/concrete_road_barrier_disp_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/concrete_road_barrier/concrete_road_barrier_disp_2k.png",
+                      "size":  6331501
+                  },
+                  {
+                      "path":  "textures/concrete_road_barrier_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/concrete_road_barrier/concrete_road_barrier_diff_2k.jpg",
+                      "size":  3189621
+                  },
+                  {
+                      "path":  "textures/concrete_road_barrier_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/concrete_road_barrier/concrete_road_barrier_nor_gl_2k.exr",
+                      "size":  8231792
+                  },
+                  {
+                      "path":  "textures/concrete_road_barrier_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/concrete_road_barrier/concrete_road_barrier_rough_2k.exr",
+                      "size":  2123274
+                  }
+              ]
+}

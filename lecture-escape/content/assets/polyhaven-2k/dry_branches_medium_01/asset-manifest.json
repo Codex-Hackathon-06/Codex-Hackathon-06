@@ -1,0 +1,30 @@
+{
+    "id":  "dry_branches_medium_01",
+    "name":  "Dry Branches Medium 01",
+    "source":  "https://polyhaven.com/a/dry_branches_medium_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "dry_branches_medium_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/dry_branches_medium_01/dry_branches_medium_01_2k.blend",
+                      "size":  768242
+                  },
+                  {
+                      "path":  "textures/dry_branches_medium_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/dry_branches_medium_01/dry_branches_medium_01_diff_2k.jpg",
+                      "size":  2815859
+                  },
+                  {
+                      "path":  "textures/dry_branches_medium_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/dry_branches_medium_01/dry_branches_medium_01_rough_2k.exr",
+                      "size":  3874550
+                  },
+                  {
+                      "path":  "textures/dry_branches_medium_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/dry_branches_medium_01/dry_branches_medium_01_nor_gl_2k.exr",
+                      "size":  9155024
+                  }
+              ]
+}

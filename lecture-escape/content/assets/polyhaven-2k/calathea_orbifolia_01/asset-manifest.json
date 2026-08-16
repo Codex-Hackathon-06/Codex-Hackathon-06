@@ -1,0 +1,40 @@
+{
+    "id":  "calathea_orbifolia_01",
+    "name":  "Calathea Orbifolia 01",
+    "source":  "https://polyhaven.com/a/calathea_orbifolia_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "calathea_orbifolia_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/calathea_orbifolia_01/calathea_orbifolia_01_2k.blend",
+                      "size":  477692
+                  },
+                  {
+                      "path":  "textures/calathea_orbifolia_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/calathea_orbifolia_01/calathea_orbifolia_01_diff_2k.jpg",
+                      "size":  1584695
+                  },
+                  {
+                      "path":  "textures/calathea_orbifolia_01_alpha_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/calathea_orbifolia_01/calathea_orbifolia_01_alpha_2k.png",
+                      "size":  126330
+                  },
+                  {
+                      "path":  "textures/calathea_orbifolia_01_disp_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/calathea_orbifolia_01/calathea_orbifolia_01_disp_2k.png",
+                      "size":  4459326
+                  },
+                  {
+                      "path":  "textures/calathea_orbifolia_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/calathea_orbifolia_01/calathea_orbifolia_01_rough_2k.exr",
+                      "size":  2764054
+                  },
+                  {
+                      "path":  "textures/calathea_orbifolia_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/calathea_orbifolia_01/calathea_orbifolia_01_nor_gl_2k.exr",
+                      "size":  5263966
+                  }
+              ]
+}

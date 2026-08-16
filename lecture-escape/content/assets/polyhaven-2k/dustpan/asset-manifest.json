@@ -1,0 +1,35 @@
+{
+    "id":  "dustpan",
+    "name":  "Dustpan",
+    "source":  "https://polyhaven.com/a/dustpan",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "dustpan_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/dustpan/dustpan_2k.blend",
+                      "size":  240598
+                  },
+                  {
+                      "path":  "textures/dustpan_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/dustpan/dustpan_diff_2k.jpg",
+                      "size":  2521936
+                  },
+                  {
+                      "path":  "textures/dustpan_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/dustpan/dustpan_metal_2k.exr",
+                      "size":  2725401
+                  },
+                  {
+                      "path":  "textures/dustpan_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/dustpan/dustpan_nor_gl_2k.exr",
+                      "size":  6784635
+                  },
+                  {
+                      "path":  "textures/dustpan_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/dustpan/dustpan_rough_2k.exr",
+                      "size":  2261288
+                  }
+              ]
+}

@@ -1,0 +1,60 @@
+{
+    "id":  "cassette_player",
+    "name":  "Cassette Player",
+    "source":  "https://polyhaven.com/a/cassette_player",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "cassette_player_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/cassette_player/cassette_player_2k.blend",
+                      "size":  268417
+                  },
+                  {
+                      "path":  "textures/cassette_player_body_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/cassette_player/cassette_player_body_diff_2k.png",
+                      "size":  3978217
+                  },
+                  {
+                      "path":  "textures/cassette_player_tape_metallic_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/cassette_player/cassette_player_tape_metallic_2k.png",
+                      "size":  10387
+                  },
+                  {
+                      "path":  "textures/cassette_player_body_metallic_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/cassette_player/cassette_player_body_metallic_2k.png",
+                      "size":  233213
+                  },
+                  {
+                      "path":  "textures/cassette_player_tape_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/cassette_player/cassette_player_tape_nor_gl_2k.png",
+                      "size":  2087549
+                  },
+                  {
+                      "path":  "textures/cassette_player_tape_roughness_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/cassette_player/cassette_player_tape_roughness_2k.png",
+                      "size":  777053
+                  },
+                  {
+                      "path":  "textures/cassette_player_body_roughness_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/cassette_player/cassette_player_body_roughness_2k.png",
+                      "size":  1846105
+                  },
+                  {
+                      "path":  "textures/cassette_player_body_opacity_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/cassette_player/cassette_player_body_opacity_2k.png",
+                      "size":  21373
+                  },
+                  {
+                      "path":  "textures/cassette_player_body_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/cassette_player/cassette_player_body_nor_gl_2k.png",
+                      "size":  2785238
+                  },
+                  {
+                      "path":  "textures/cassette_player_tape_orangeblue_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/cassette_player/cassette_player_tape_orangeblue_diff_2k.png",
+                      "size":  3018739
+                  }
+              ]
+}

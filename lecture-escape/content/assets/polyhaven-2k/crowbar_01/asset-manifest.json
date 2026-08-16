@@ -1,0 +1,35 @@
+{
+    "id":  "crowbar_01",
+    "name":  "Crowbar 01",
+    "source":  "https://polyhaven.com/a/crowbar_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "crowbar_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/crowbar_01/crowbar_01_2k.blend",
+                      "size":  162904
+                  },
+                  {
+                      "path":  "textures/crowbar_01_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/crowbar_01/crowbar_01_metal_2k.exr",
+                      "size":  2201970
+                  },
+                  {
+                      "path":  "textures/crowbar_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/crowbar_01/crowbar_01_diff_2k.jpg",
+                      "size":  1814525
+                  },
+                  {
+                      "path":  "textures/crowbar_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/crowbar_01/crowbar_01_rough_2k.exr",
+                      "size":  2236069
+                  },
+                  {
+                      "path":  "textures/crowbar_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/crowbar_01/crowbar_01_nor_gl_2k.exr",
+                      "size":  4506178
+                  }
+              ]
+}

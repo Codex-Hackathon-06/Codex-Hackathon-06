@@ -28,6 +28,10 @@ const elements = {
   progressCount: document.querySelector("#progress-count"),
   progressTotal: document.querySelector("#progress-total"),
   progressBar: document.querySelector("#progress-bar"),
+  reviewPage: document.querySelector("#review-page"),
+  reviewBackButton: document.querySelector("#review-back-button"),
+  reviewCardGrid: document.querySelector("#review-card-grid"),
+  reviewSummary: document.querySelector("#review-summary"),
   resetButton: document.querySelector("#reset-button"),
   selectionStatus: document.querySelector("#selection-status"),
   modal: document.querySelector("#game-modal"),
@@ -532,7 +536,7 @@ function openModal(overlay) {
     LOCKED: { kicker: "아직 잠겨 있어요", symbol: "⌁", primary: "다른 장소 살펴보기" },
     HINT: { kicker: "단계형 힌트", symbol: "?", primary: "힌트 적용하기" },
     EXPLANATION: { kicker: "정답 해설", symbol: "✓", primary: "다음 단서 찾기" },
-    ENDING: { kicker: "모든 기록 복원 완료", symbol: "✦", primary: "방 둘러보기" },
+    ENDING: { kicker: "모든 기록 복원 완료", symbol: "✦", primary: "틀린 개념 복습하기" },
   }[type] ?? { kicker: "관찰 기록", symbol: "·", primary: "계속하기" };
 
   elements.modal.dataset.kind = modalKind;
@@ -561,6 +565,93 @@ function openModal(overlay) {
   elements.modalSecondary.textContent = canShowNextHint ? "다음 단계 힌트" : "";
 
   if (!elements.modal.open) elements.modal.showModal();
+}
+
+function reviewCards() {
+  const attempts = state?.wrongAttempts ?? [];
+  const grouped = new Map();
+
+  attempts.forEach((attempt) => {
+    const previous = grouped.get(attempt.puzzleId) ?? [];
+    previous.push(attempt);
+    grouped.set(attempt.puzzleId, previous);
+  });
+
+  return [...grouped.entries()]
+    .map(([puzzleId, entries]) => {
+      const puzzle = puzzleById(puzzleId);
+      if (!puzzle) return null;
+      const latest = entries.at(-1);
+      const wrongItem = itemById(latest.itemId);
+      const correctPlacement = puzzle.solution.find((entry) => entry.slotId === latest.slotId) ?? puzzle.solution[0];
+      const correctItem = correctPlacement ? itemById(correctPlacement.itemId) : null;
+      const evidenceIds = new Set(puzzle.explanation?.evidenceSegmentIds ?? []);
+      const evidence = pack.video.segments.filter((segment) => evidenceIds.has(segment.id));
+
+      return { puzzle, entries, latest, wrongItem, correctItem, evidence };
+    })
+    .filter(Boolean);
+}
+
+function renderReviewPage() {
+  const cards = reviewCards();
+  elements.reviewSummary.textContent = cards.length
+    ? `${cards.length}개의 개념에서 ${state.wrongAttempts.length}번 다시 생각해 본 기록이 있어요.`
+    : "이번 탈출에서는 오답 기록이 없어요. 핵심 개념을 다시 한 번 확인해 보세요.";
+
+  elements.reviewCardGrid.innerHTML = cards.length
+    ? cards
+        .map(({ puzzle, entries, latest, wrongItem, correctItem, evidence }, index) => `
+          <article class="review-card">
+            <div class="review-card-topline">
+              <span>개념 ${String(index + 1).padStart(2, "0")}</span>
+              <span>${entries.length}회 오답</span>
+            </div>
+            <h2>${escapeHtml(puzzle.target?.label ?? puzzle.learningObjective ?? "핵심 개념")}</h2>
+            <p class="review-prompt">${escapeHtml(puzzle.prompt)}</p>
+            <div class="review-comparison">
+              <div class="review-choice is-wrong">
+                <small>내가 선택한 단서</small>
+                <strong>${escapeHtml(wrongItem?.label ?? "선택한 단서")}</strong>
+              </div>
+              <div class="review-choice is-correct">
+                <small>정답 단서</small>
+                <strong>${escapeHtml(correctItem?.label ?? "정답 단서")}</strong>
+              </div>
+            </div>
+            <div class="review-explanation">
+              <span aria-hidden="true">✦</span>
+              <p>${escapeHtml(latest.feedback || puzzle.explanation?.body || "해설을 다시 확인해 보세요.")}</p>
+            </div>
+            <div class="review-evidence">
+              <span>영상 근거</span>
+              ${evidence.map((segment) => `<button type="button" class="review-timestamp" data-review-evidence-id="${escapeHtml(segment.id)}">${formatTime(segment.startSec)}–${formatTime(segment.endSec)}</button>`).join("") || "<em>등록된 근거 없음</em>"}
+            </div>
+          </article>
+        `)
+        .join("")
+    : `
+      <article class="review-empty-card">
+        <span aria-hidden="true">✓</span>
+        <h2>틀린 개념이 없어요</h2>
+        <p>힌트와 정답을 확인한 기록은 게임 결과 화면에서 계속 볼 수 있습니다.</p>
+      </article>
+    `;
+}
+
+function openReviewPage() {
+  if (elements.modal.open) elements.modal.close();
+  if (state?.overlay) state = closeOverlay(state);
+  renderReviewPage();
+  elements.appShell.classList.add("is-hidden");
+  elements.reviewPage.classList.remove("is-hidden");
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+
+function closeReviewPage() {
+  elements.reviewPage.classList.add("is-hidden");
+  elements.appShell.classList.remove("is-hidden");
+  render();
 }
 
 function closeModal() {
@@ -676,7 +767,14 @@ function bindEvents() {
   });
 
   elements.modalClose.addEventListener("click", closeModal);
-  elements.modalPrimary.addEventListener("click", closeModal);
+  elements.modalPrimary.addEventListener("click", () => {
+    if (state?.overlay?.type === "ENDING") {
+      openReviewPage();
+      return;
+    }
+    closeModal();
+  });
+  elements.reviewBackButton.addEventListener("click", closeReviewPage);
   elements.modal.addEventListener("cancel", (event) => {
     event.preventDefault();
     closeModal();

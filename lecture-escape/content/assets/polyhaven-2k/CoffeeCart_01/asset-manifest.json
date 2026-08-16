@@ -1,0 +1,55 @@
+{
+    "id":  "CoffeeCart_01",
+    "name":  "Coffee Cart 01",
+    "source":  "https://polyhaven.com/a/CoffeeCart_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "CoffeeCart_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/CoffeeCart_01/CoffeeCart_01_2k.blend",
+                      "size":  1088188
+                  },
+                  {
+                      "path":  "textures/CoffeeCart_01_props_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CoffeeCart_01/CoffeeCart_01_props_diff_2k.png",
+                      "size":  3640662
+                  },
+                  {
+                      "path":  "textures/CoffeeCart_01_props_roughness_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CoffeeCart_01/CoffeeCart_01_props_roughness_2k.png",
+                      "size":  1777048
+                  },
+                  {
+                      "path":  "textures/CoffeeCart_01_cart_metallic_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CoffeeCart_01/CoffeeCart_01_cart_metallic_2k.png",
+                      "size":  23863
+                  },
+                  {
+                      "path":  "textures/CoffeeCart_01_cart_roughness_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CoffeeCart_01/CoffeeCart_01_cart_roughness_2k.png",
+                      "size":  1589520
+                  },
+                  {
+                      "path":  "textures/CoffeeCart_01_props_metallic_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CoffeeCart_01/CoffeeCart_01_props_metallic_2k.png",
+                      "size":  167563
+                  },
+                  {
+                      "path":  "textures/CoffeeCart_01_cart_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CoffeeCart_01/CoffeeCart_01_cart_diff_2k.png",
+                      "size":  3509441
+                  },
+                  {
+                      "path":  "textures/CoffeeCart_01_props_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CoffeeCart_01/CoffeeCart_01_props_nor_gl_2k.png",
+                      "size":  1799442
+                  },
+                  {
+                      "path":  "textures/CoffeeCart_01_cart_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/CoffeeCart_01/CoffeeCart_01_cart_nor_gl_2k.png",
+                      "size":  1267498
+                  }
+              ]
+}

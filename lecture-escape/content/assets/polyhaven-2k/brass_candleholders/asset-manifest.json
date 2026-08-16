@@ -1,0 +1,95 @@
+{
+    "id":  "brass_candleholders",
+    "name":  "Brass Candleholders",
+    "source":  "https://polyhaven.com/a/brass_candleholders",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "brass_candleholders_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/brass_candleholders/brass_candleholders_2k.blend",
+                      "size":  1064299
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_01_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_nor_gl_2k.png",
+                      "size":  11985347
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_03_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_diff_2k.png",
+                      "size":  5892604
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_candles_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_nor_gl_2k.png",
+                      "size":  7367569
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_02_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_nor_gl_2k.png",
+                      "size":  17540844
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_02_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_diff_2k.png",
+                      "size":  5474025
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_03_nor_gl_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_nor_gl_2k.png",
+                      "size":  19578394
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_01_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_diff_2k.png",
+                      "size":  5493515
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_01_metal_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_metal_2k.png",
+                      "size":  18234
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_02_metal_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_metal_2k.png",
+                      "size":  8767
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_03_metal_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_metal_2k.png",
+                      "size":  1465566
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_flame_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_flame_diff_2k.png",
+                      "size":  1472096
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_candles_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_rough_2k.png",
+                      "size":  1064549
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_01_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_rough_2k.png",
+                      "size":  2224059
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_02_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_rough_2k.png",
+                      "size":  1864678
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_candles_diff_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_diff_2k.png",
+                      "size":  2670520
+                  },
+                  {
+                      "path":  "textures/brass_candleholders_03_rough_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_rough_2k.png",
+                      "size":  2321504
+                  }
+              ]
+}

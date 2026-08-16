@@ -1,0 +1,35 @@
+{
+    "id":  "drawer_cabinet",
+    "name":  "Drawer Cabinet",
+    "source":  "https://polyhaven.com/a/drawer_cabinet",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "drawer_cabinet_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/drawer_cabinet/drawer_cabinet_2k.blend",
+                      "size":  709286
+                  },
+                  {
+                      "path":  "textures/drawer_cabinet_metallic_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/drawer_cabinet/drawer_cabinet_metallic_2k.exr",
+                      "size":  27066
+                  },
+                  {
+                      "path":  "textures/drawer_cabinet_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/drawer_cabinet/drawer_cabinet_nor_gl_2k.exr",
+                      "size":  3263324
+                  },
+                  {
+                      "path":  "textures/drawer_cabinet_roughness_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/drawer_cabinet/drawer_cabinet_roughness_2k.jpg",
+                      "size":  309038
+                  },
+                  {
+                      "path":  "textures/drawer_cabinet_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/drawer_cabinet/drawer_cabinet_diff_2k.jpg",
+                      "size":  541585
+                  }
+              ]
+}

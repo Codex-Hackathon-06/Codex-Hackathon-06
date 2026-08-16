@@ -6,6 +6,7 @@ export function createInitialState(pack) {
     solvedPuzzleIds: [],
     selectedItemId: null,
     hintLevelByPuzzle: {},
+    wrongAttempts: [],
     overlay: null,
     escaped: false,
   };
@@ -157,8 +158,22 @@ export function tryUseItem(pack, state, itemId, slotId) {
 
   const expected = puzzle.solution.find((placement) => placement.slotId === slotId);
   if (!expected || expected.itemId !== itemId) {
+    const wrongAttempts = [
+      ...(state.wrongAttempts ?? []),
+      {
+        puzzleId: puzzle.id,
+        itemId,
+        slotId,
+        feedback:
+          puzzle.feedback.byItemId?.[itemId] ??
+          puzzle.feedback.wrongSlot ??
+          puzzle.feedback.defaultWrongItem,
+      },
+    ];
+
     return {
       ...state,
+      wrongAttempts,
       overlay: {
         type: "WRONG",
         title: "단서를 다시 연결해 보세요",

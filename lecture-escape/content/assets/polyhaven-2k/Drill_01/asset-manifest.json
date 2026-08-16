@@ -1,0 +1,35 @@
+{
+    "id":  "Drill_01",
+    "name":  "Drill 01",
+    "source":  "https://polyhaven.com/a/Drill_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "Drill_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/Drill_01/Drill_01_2k.blend",
+                      "size":  214019
+                  },
+                  {
+                      "path":  "textures/Drill_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/Drill_01/Drill_01_nor_gl_2k.exr",
+                      "size":  4439229
+                  },
+                  {
+                      "path":  "textures/Drill_01_metallic_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/Drill_01/Drill_01_metallic_2k.exr",
+                      "size":  54589
+                  },
+                  {
+                      "path":  "textures/Drill_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/Drill_01/Drill_01_diff_2k.jpg",
+                      "size":  311893
+                  },
+                  {
+                      "path":  "textures/Drill_01_roughness_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/Drill_01/Drill_01_roughness_2k.jpg",
+                      "size":  522827
+                  }
+              ]
+}

@@ -1,0 +1,35 @@
+{
+    "id":  "CoffeeTable_01",
+    "name":  "Coffee Table 01",
+    "source":  "https://polyhaven.com/a/CoffeeTable_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "CoffeeTable_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/CoffeeTable_01/CoffeeTable_01_2k.blend",
+                      "size":  432339
+                  },
+                  {
+                      "path":  "textures/CoffeeTable_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/CoffeeTable_01/CoffeeTable_01_nor_gl_2k.exr",
+                      "size":  4359812
+                  },
+                  {
+                      "path":  "textures/CoffeeTable_01_roughness_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/CoffeeTable_01/CoffeeTable_01_roughness_2k.jpg",
+                      "size":  563129
+                  },
+                  {
+                      "path":  "textures/CoffeeTable_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/CoffeeTable_01/CoffeeTable_01_diff_2k.jpg",
+                      "size":  639146
+                  },
+                  {
+                      "path":  "textures/CoffeeTable_01_metallic_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/CoffeeTable_01/CoffeeTable_01_metallic_2k.exr",
+                      "size":  60814
+                  }
+              ]
+}

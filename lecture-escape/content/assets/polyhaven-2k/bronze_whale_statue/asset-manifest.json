@@ -1,0 +1,35 @@
+{
+    "id":  "bronze_whale_statue",
+    "name":  "Bronze Whale Statue",
+    "source":  "https://polyhaven.com/a/bronze_whale_statue",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "bronze_whale_statue_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/bronze_whale_statue/bronze_whale_statue_2k.blend",
+                      "size":  199693
+                  },
+                  {
+                      "path":  "textures/bronze_whale_statue_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/bronze_whale_statue/bronze_whale_statue_diff_2k.jpg",
+                      "size":  1864773
+                  },
+                  {
+                      "path":  "textures/bronze_whale_statue_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bronze_whale_statue/bronze_whale_statue_metal_2k.exr",
+                      "size":  1612742
+                  },
+                  {
+                      "path":  "textures/bronze_whale_statue_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bronze_whale_statue/bronze_whale_statue_nor_gl_2k.exr",
+                      "size":  6161300
+                  },
+                  {
+                      "path":  "textures/bronze_whale_statue_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/bronze_whale_statue/bronze_whale_statue_rough_2k.exr",
+                      "size":  3140380
+                  }
+              ]
+}

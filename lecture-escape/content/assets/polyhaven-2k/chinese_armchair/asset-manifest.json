@@ -1,0 +1,30 @@
+{
+    "id":  "chinese_armchair",
+    "name":  "Chinese Armchair",
+    "source":  "https://polyhaven.com/a/chinese_armchair",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "chinese_armchair_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/chinese_armchair/chinese_armchair_2k.blend",
+                      "size":  170900
+                  },
+                  {
+                      "path":  "textures/chinese_armchair_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/chinese_armchair/chinese_armchair_diff_2k.jpg",
+                      "size":  1854860
+                  },
+                  {
+                      "path":  "textures/chinese_armchair_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chinese_armchair/chinese_armchair_nor_gl_2k.exr",
+                      "size":  3468929
+                  },
+                  {
+                      "path":  "textures/chinese_armchair_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chinese_armchair/chinese_armchair_rough_2k.exr",
+                      "size":  2129021
+                  }
+              ]
+}

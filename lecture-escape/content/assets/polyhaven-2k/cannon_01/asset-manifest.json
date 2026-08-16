@@ -1,0 +1,35 @@
+{
+    "id":  "cannon_01",
+    "name":  "Cannon 01",
+    "source":  "https://polyhaven.com/a/cannon_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "cannon_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/cannon_01/cannon_01_2k.blend",
+                      "size":  1272217
+                  },
+                  {
+                      "path":  "textures/cannon_01_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/cannon_01/cannon_01_metal_2k.exr",
+                      "size":  1183996
+                  },
+                  {
+                      "path":  "textures/cannon_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/cannon_01/cannon_01_nor_gl_2k.exr",
+                      "size":  6979433
+                  },
+                  {
+                      "path":  "textures/cannon_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/cannon_01/cannon_01_diff_2k.jpg",
+                      "size":  2735174
+                  },
+                  {
+                      "path":  "textures/cannon_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/cannon_01/cannon_01_rough_2k.exr",
+                      "size":  2511996
+                  }
+              ]
+}

@@ -1,0 +1,35 @@
+{
+    "id":  "cross_pein_hammer",
+    "name":  "Cross Pein Hammer",
+    "source":  "https://polyhaven.com/a/cross_pein_hammer",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "cross_pein_hammer_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/cross_pein_hammer/cross_pein_hammer_2k.blend",
+                      "size":  155774
+                  },
+                  {
+                      "path":  "textures/cross_pein_hammer_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/cross_pein_hammer/cross_pein_hammer_diff_2k.jpg",
+                      "size":  1409450
+                  },
+                  {
+                      "path":  "textures/cross_pein_hammer_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/cross_pein_hammer/cross_pein_hammer_metal_2k.exr",
+                      "size":  152937
+                  },
+                  {
+                      "path":  "textures/cross_pein_hammer_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/cross_pein_hammer/cross_pein_hammer_nor_gl_2k.exr",
+                      "size":  2643189
+                  },
+                  {
+                      "path":  "textures/cross_pein_hammer_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/cross_pein_hammer/cross_pein_hammer_rough_2k.exr",
+                      "size":  1273751
+                  }
+              ]
+}

@@ -1,0 +1,40 @@
+{
+    "id":  "dandelion_01",
+    "name":  "Dandelion 01",
+    "source":  "https://polyhaven.com/a/dandelion_01",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "dandelion_01_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/dandelion_01/dandelion_01_2k.blend",
+                      "size":  1416013
+                  },
+                  {
+                      "path":  "textures/dandelion_01_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/dandelion_01/dandelion_01_rough_2k.exr",
+                      "size":  1344648
+                  },
+                  {
+                      "path":  "textures/dandelion_01_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/dandelion_01/dandelion_01_nor_gl_2k.exr",
+                      "size":  3626042
+                  },
+                  {
+                      "path":  "textures/dandelion_01_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/dandelion_01/dandelion_01_diff_2k.jpg",
+                      "size":  1466191
+                  },
+                  {
+                      "path":  "textures/dandelion_01_mask_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dandelion_01/dandelion_01_mask_2k.png",
+                      "size":  29725
+                  },
+                  {
+                      "path":  "textures/dandelion_01_alpha_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/dandelion_01/dandelion_01_alpha_2k.png",
+                      "size":  295015
+                  }
+              ]
+}

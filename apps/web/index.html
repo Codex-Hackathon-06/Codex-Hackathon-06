@@ -147,6 +147,25 @@
 
     <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
 
+    <section class="review-page is-hidden" id="review-page" aria-labelledby="review-page-title">
+      <header class="review-topbar">
+        <button class="review-back-button" id="review-back-button" type="button">
+          <span aria-hidden="true">←</span>
+          게임 결과로 돌아가기
+        </button>
+        <span class="review-status">학습 기록 기반 복습</span>
+      </header>
+
+      <main class="review-content">
+        <div class="review-hero">
+          <p class="eyebrow">ESCAPE REVIEW</p>
+          <h1 id="review-page-title">틀린 개념을 다시 연결해 볼까요?</h1>
+          <p id="review-summary">오답을 개념별로 정리했어요.</p>
+        </div>
+        <div class="review-card-grid" id="review-card-grid"></div>
+      </main>
+    </section>
+
     <script type="module" src="./app.js"></script>
   </body>
 </html>

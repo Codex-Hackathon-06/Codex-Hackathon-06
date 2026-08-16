@@ -1,0 +1,30 @@
+{
+    "id":  "carved_wooden_plate",
+    "name":  "Carved Wooden Plate",
+    "source":  "https://polyhaven.com/a/carved_wooden_plate",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "carved_wooden_plate_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/carved_wooden_plate/carved_wooden_plate_2k.blend",
+                      "size":  165106
+                  },
+                  {
+                      "path":  "textures/carved_wooden_plate_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/carved_wooden_plate/carved_wooden_plate_nor_gl_2k.exr",
+                      "size":  3654041
+                  },
+                  {
+                      "path":  "textures/carved_wooden_plate_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/carved_wooden_plate/carved_wooden_plate_diff_2k.jpg",
+                      "size":  1766314
+                  },
+                  {
+                      "path":  "textures/carved_wooden_plate_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/carved_wooden_plate/carved_wooden_plate_rough_2k.exr",
+                      "size":  2718751
+                  }
+              ]
+}

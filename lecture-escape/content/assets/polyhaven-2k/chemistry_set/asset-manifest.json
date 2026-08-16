@@ -1,0 +1,40 @@
+{
+    "id":  "chemistry_set",
+    "name":  "Chemistry Set",
+    "source":  "https://polyhaven.com/a/chemistry_set",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "chemistry_set_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/chemistry_set/chemistry_set_2k.blend",
+                      "size":  963421
+                  },
+                  {
+                      "path":  "textures/chemistry_set_alpha_2k.png",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/chemistry_set/chemistry_set_alpha_2k.png",
+                      "size":  1395409
+                  },
+                  {
+                      "path":  "textures/chemistry_set_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/chemistry_set/chemistry_set_diff_2k.jpg",
+                      "size":  1836994
+                  },
+                  {
+                      "path":  "textures/chemistry_set_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chemistry_set/chemistry_set_metal_2k.exr",
+                      "size":  1404101
+                  },
+                  {
+                      "path":  "textures/chemistry_set_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chemistry_set/chemistry_set_nor_gl_2k.exr",
+                      "size":  3139745
+                  },
+                  {
+                      "path":  "textures/chemistry_set_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chemistry_set/chemistry_set_rough_2k.exr",
+                      "size":  3429733
+                  }
+              ]
+}

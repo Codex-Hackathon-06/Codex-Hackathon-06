@@ -1,0 +1,35 @@
+{
+    "id":  "chinese_screen_panels",
+    "name":  "Chinese Screen Panels",
+    "source":  "https://polyhaven.com/a/chinese_screen_panels",
+    "format":  "blend",
+    "textureResolution":  "2k",
+    "license":  "CC0-1.0",
+    "files":  [
+                  {
+                      "path":  "chinese_screen_panels_2k.blend",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/chinese_screen_panels/chinese_screen_panels_2k.blend",
+                      "size":  132449
+                  },
+                  {
+                      "path":  "textures/chinese_screen_panels_diff_2k.jpg",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/chinese_screen_panels/chinese_screen_panels_diff_2k.jpg",
+                      "size":  2496906
+                  },
+                  {
+                      "path":  "textures/chinese_screen_panels_nor_gl_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chinese_screen_panels/chinese_screen_panels_nor_gl_2k.exr",
+                      "size":  3795612
+                  },
+                  {
+                      "path":  "textures/chinese_screen_panels_metal_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chinese_screen_panels/chinese_screen_panels_metal_2k.exr",
+                      "size":  86202
+                  },
+                  {
+                      "path":  "textures/chinese_screen_panels_rough_2k.exr",
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/chinese_screen_panels/chinese_screen_panels_rough_2k.exr",
+                      "size":  2107962
+                  }
+              ]
+}
