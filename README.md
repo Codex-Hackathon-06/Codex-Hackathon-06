@@ -197,10 +197,10 @@ API 키 없이도 오디오 프레이밍, 전사 요청 형식, 캐시, SRT, 실
 
 | 멤버 | 담당 영역 | 주요 역할 |
 | --- | --- | --- |
-| 이재용 (https://github.com/jaeyong20) | Insight | 유튜브 영상 기반 STT 연동, 텍스트 추출, 데모 및 발표 자료 제작 |
-| 한수영 (https://github.com/poolhan) | Insight | 유튜브 영상 기반 STT 연동, 텍스트 추출, 데모 제작 |
-| 장재원 (https://github.com/windmoondreamer) | Build | 문제 생성, 방탈출 게임 로직 구현, 데모 제작 |
-| 조혜림 (https://github.com/johyerim23) | Build | 방탈출 게임 로직 구현, 코드 통합 및 검증 |
+| [이재용](https://github.com/jaeyong20) | Insight | 기획, 유튜브 영상 기반 STT 연동, 텍스트 추출, 데모 및 발표 자료 제작 |
+| [한수영](https://github.com/poolhan) | Insight | 기획, 유튜브 영상 기반 STT 연동, 텍스트 추출, 데모 제작 |
+| [장재원](https://github.com/windmoondreamer) | Build | 기획, 문제 생성, 방탈출 게임 로직 구현, 데모 제작 |
+| [조혜림](https://github.com/johyerim23) | Build | 기획, 방탈출 게임 로직 구현, 코드 통합 및 검증 |
 
 모든 팀원은 공통 JSON 계약과 통합 테스트를 기준으로 각 영역을 연결합니다.
 
