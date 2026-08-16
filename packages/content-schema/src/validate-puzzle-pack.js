@@ -1,4 +1,7 @@
+import { getPuzzleTemplate, PUZZLE_KINDS } from "./template-catalog.js";
+
 const HINT_TYPES = new Set(["OBSERVATION", "CONCEPT", "DIRECTION"]);
+const PUZZLE_KIND_VALUES = new Set(Object.values(PUZZLE_KINDS));
 
 const isRecord = (value) =>
   value !== null && typeof value === "object" && !Array.isArray(value);
@@ -143,6 +146,25 @@ export function validatePuzzlePack(pack) {
     const view = room.views[viewIndex];
     const viewPath = `$.room.views[${viewIndex}]`;
     if (!isRecord(view)) continue;
+    if (hasOwn(view, "unlock")) {
+      if (!isRecord(view.unlock)) {
+        addError(
+          "INVALID_VIEW_UNLOCK",
+          `${viewPath}.unlock`,
+          "must be an object",
+        );
+      } else {
+        requireString(view.unlock.itemId, `${viewPath}.unlock.itemId`);
+        requireString(
+          view.unlock.lockedMessage,
+          `${viewPath}.unlock.lockedMessage`,
+        );
+        requireString(
+          view.unlock.unlockedMessage,
+          `${viewPath}.unlock.unlockedMessage`,
+        );
+      }
+    }
     if (
       isNonEmptyString(view.backToViewId) &&
       !viewById.has(view.backToViewId)
@@ -238,11 +260,29 @@ export function validatePuzzlePack(pack) {
       ? `${path}.kind`
       : `${path}.interaction`;
     requireString(interaction, interactionPath);
-    if (interaction !== "ITEM_PLACEMENT") {
+    if (!PUZZLE_KIND_VALUES.has(interaction)) {
       addError(
         "UNSUPPORTED_INTERACTION",
         interactionPath,
-        "must be ITEM_PLACEMENT",
+        `must be one of ${[...PUZZLE_KIND_VALUES].join(", ")}`,
+      );
+    }
+    const templateDefinition = getPuzzleTemplate(puzzle.template);
+    if (!templateDefinition && isNonEmptyString(puzzle.template)) {
+      addError(
+        "UNSUPPORTED_TEMPLATE",
+        `${path}.template`,
+        `unknown puzzle template ${puzzle.template}`,
+      );
+    } else if (
+      templateDefinition &&
+      PUZZLE_KIND_VALUES.has(interaction) &&
+      templateDefinition.kind !== interaction
+    ) {
+      addError(
+        "TEMPLATE_KIND_MISMATCH",
+        `${path}.template`,
+        `${puzzle.template} requires kind ${templateDefinition.kind}`,
       );
     }
     requireString(puzzle.viewId, `${path}.viewId`);
@@ -298,122 +338,21 @@ export function validatePuzzlePack(pack) {
       addError,
     });
 
-    const candidateIds = Array.isArray(puzzle.candidateItemIds)
-      ? puzzle.candidateItemIds
-      : [];
-    if (!Array.isArray(puzzle.candidateItemIds) || candidateIds.length === 0) {
-      addError(
-        "INVALID_CANDIDATES",
-        `${path}.candidateItemIds`,
-        "must be a non-empty array",
-      );
+    if (interaction === PUZZLE_KINDS.ITEM_PLACEMENT) {
+      validateItemPlacementPuzzle({
+        puzzle,
+        path,
+        itemById,
+        puzzleById,
+        addError,
+      });
+    } else if (interaction === PUZZLE_KINDS.KEYPAD) {
+      validateKeypadPuzzle(puzzle, path, addError);
+    } else if (interaction === PUZZLE_KINDS.DIAL_LOCK) {
+      validateDialLockPuzzle(puzzle, path, addError);
+    } else if (interaction === PUZZLE_KINDS.TOGGLE_PANEL) {
+      validateTogglePanelPuzzle(puzzle, path, addError);
     }
-    validateReferenceList({
-      values: candidateIds,
-      path: `${path}.candidateItemIds`,
-      known: itemById,
-      refCode: "UNKNOWN_ITEM_REF",
-      addError,
-    });
-
-    const slots = Array.isArray(puzzle.slots) ? puzzle.slots : [];
-    if (!Array.isArray(puzzle.slots) || slots.length === 0) {
-      addError("INVALID_SLOTS", `${path}.slots`, "must be a non-empty array");
-    }
-    const slotById = collectUniqueRecords(
-      slots,
-      `${path}.slots`,
-      "slot",
-      addError,
-    );
-
-    const placements = Array.isArray(puzzle.solution) ? puzzle.solution : [];
-    const solutionPath = `${path}.solution`;
-    if (!Array.isArray(puzzle.solution) || placements.length === 0) {
-      addError(
-        "INVALID_SOLUTION",
-        solutionPath,
-        "must be a non-empty array",
-      );
-    }
-
-    const solutionItemIds = new Set();
-    const occupiedSlotIds = new Set();
-    for (let placementIndex = 0; placementIndex < placements.length; placementIndex += 1) {
-      const placement = placements[placementIndex];
-      const placementPath = `${solutionPath}[${placementIndex}]`;
-      if (!isRecord(placement)) {
-        addError("INVALID_PLACEMENT", placementPath, "must be an object");
-        continue;
-      }
-
-      if (!itemById.has(placement.itemId)) {
-        addError(
-          "UNKNOWN_ITEM_REF",
-          `${placementPath}.itemId`,
-          `references unknown item ${String(placement.itemId)}`,
-        );
-      } else if (
-        !isItemAvailableBeforePuzzle(
-          itemById.get(placement.itemId),
-          puzzle,
-          puzzleById,
-        )
-      ) {
-        addError(
-          "UNAVAILABLE_SOLUTION_ITEM",
-          `${placementPath}.itemId`,
-          `item ${placement.itemId} cannot be collected before puzzle ${String(puzzle.id)}`,
-        );
-      }
-      if (!candidateIds.includes(placement.itemId)) {
-        addError(
-          "SOLUTION_ITEM_NOT_CANDIDATE",
-          `${placementPath}.itemId`,
-          "must also appear in candidateItemIds",
-        );
-      }
-      if (solutionItemIds.has(placement.itemId)) {
-        addError(
-          "DUPLICATE_SOLUTION_ITEM",
-          `${placementPath}.itemId`,
-          "cannot be used in more than one solution slot",
-        );
-      }
-      solutionItemIds.add(placement.itemId);
-
-      if (!slotById.has(placement.slotId)) {
-        addError(
-          "UNKNOWN_SLOT_REF",
-          `${placementPath}.slotId`,
-          `references unknown slot ${String(placement.slotId)}`,
-        );
-      }
-      if (occupiedSlotIds.has(placement.slotId)) {
-        addError(
-          "DUPLICATE_SOLUTION_SLOT",
-          `${placementPath}.slotId`,
-          "cannot have more than one solution item",
-        );
-      }
-      occupiedSlotIds.add(placement.slotId);
-    }
-
-    if (slotById.size > 0 && occupiedSlotIds.size !== slotById.size) {
-      addError(
-        "INCOMPLETE_SOLUTION",
-        solutionPath,
-        "must provide exactly one solution placement for every slot",
-      );
-    }
-
-    validateFeedback({
-      feedback: puzzle.feedback,
-      candidateIds,
-      solutionItemIds,
-      path: `${path}.feedback`,
-      addError,
-    });
     validateHints(puzzle.hints, `${path}.hints`, addError);
     validateExplanation(
       puzzle.explanation,
@@ -480,9 +419,390 @@ export function validatePuzzlePack(pack) {
   }
 
   detectDependencyCycles(dependencyGraph, puzzleById, addError);
+  validateViewUnlocks({
+    views: Array.isArray(room.views) ? room.views : [],
+    items,
+    puzzles,
+    itemById,
+    puzzleById,
+    addError,
+  });
   validateCompletion(pack, puzzles, puzzleById, itemById, addError);
 
   return { valid: errors.length === 0, errors };
+}
+
+function validateItemPlacementPuzzle({
+  puzzle,
+  path,
+  itemById,
+  puzzleById,
+  addError,
+}) {
+  const candidateIds = Array.isArray(puzzle.candidateItemIds)
+    ? puzzle.candidateItemIds
+    : [];
+  if (!Array.isArray(puzzle.candidateItemIds) || candidateIds.length === 0) {
+    addError(
+      "INVALID_CANDIDATES",
+      `${path}.candidateItemIds`,
+      "must be a non-empty array",
+    );
+  }
+  validateReferenceList({
+    values: candidateIds,
+    path: `${path}.candidateItemIds`,
+    known: itemById,
+    refCode: "UNKNOWN_ITEM_REF",
+    addError,
+  });
+
+  const slots = Array.isArray(puzzle.slots) ? puzzle.slots : [];
+  if (!Array.isArray(puzzle.slots) || slots.length === 0) {
+    addError("INVALID_SLOTS", `${path}.slots`, "must be a non-empty array");
+  }
+  const slotById = collectUniqueRecords(
+    slots,
+    `${path}.slots`,
+    "slot",
+    addError,
+  );
+
+  const placements = Array.isArray(puzzle.solution) ? puzzle.solution : [];
+  const solutionPath = `${path}.solution`;
+  if (!Array.isArray(puzzle.solution) || placements.length === 0) {
+    addError("INVALID_SOLUTION", solutionPath, "must be a non-empty array");
+  }
+
+  const solutionItemIds = new Set();
+  const occupiedSlotIds = new Set();
+  for (let placementIndex = 0; placementIndex < placements.length; placementIndex += 1) {
+    const placement = placements[placementIndex];
+    const placementPath = `${solutionPath}[${placementIndex}]`;
+    if (!isRecord(placement)) {
+      addError("INVALID_PLACEMENT", placementPath, "must be an object");
+      continue;
+    }
+
+    if (!itemById.has(placement.itemId)) {
+      addError(
+        "UNKNOWN_ITEM_REF",
+        `${placementPath}.itemId`,
+        `references unknown item ${String(placement.itemId)}`,
+      );
+    } else if (
+      !isItemAvailableBeforePuzzle(
+        itemById.get(placement.itemId),
+        puzzle,
+        puzzleById,
+      )
+    ) {
+      addError(
+        "UNAVAILABLE_SOLUTION_ITEM",
+        `${placementPath}.itemId`,
+        `item ${placement.itemId} cannot be collected before puzzle ${String(puzzle.id)}`,
+      );
+    }
+    if (!candidateIds.includes(placement.itemId)) {
+      addError(
+        "SOLUTION_ITEM_NOT_CANDIDATE",
+        `${placementPath}.itemId`,
+        "must also appear in candidateItemIds",
+      );
+    }
+    if (solutionItemIds.has(placement.itemId)) {
+      addError(
+        "DUPLICATE_SOLUTION_ITEM",
+        `${placementPath}.itemId`,
+        "cannot be used in more than one solution slot",
+      );
+    }
+    solutionItemIds.add(placement.itemId);
+
+    if (!slotById.has(placement.slotId)) {
+      addError(
+        "UNKNOWN_SLOT_REF",
+        `${placementPath}.slotId`,
+        `references unknown slot ${String(placement.slotId)}`,
+      );
+    }
+    if (occupiedSlotIds.has(placement.slotId)) {
+      addError(
+        "DUPLICATE_SOLUTION_SLOT",
+        `${placementPath}.slotId`,
+        "cannot have more than one solution item",
+      );
+    }
+    occupiedSlotIds.add(placement.slotId);
+  }
+
+  if (slotById.size > 0 && occupiedSlotIds.size !== slotById.size) {
+    addError(
+      "INCOMPLETE_SOLUTION",
+      solutionPath,
+      "must provide exactly one solution placement for every slot",
+    );
+  }
+
+  validateItemFeedback({
+    feedback: puzzle.feedback,
+    candidateIds,
+    solutionItemIds,
+    path: `${path}.feedback`,
+    addError,
+  });
+}
+
+function validateKeypadPuzzle(puzzle, path, addError) {
+  const controlPath = `${path}.control`;
+  const solutionPath = `${path}.solution`;
+  const control = puzzle.control;
+  if (!isRecord(control)) {
+    addError("INVALID_CONTROL", controlPath, "must be an object");
+  }
+  const keys = Array.isArray(control?.keys) ? control.keys : [];
+  validateUniqueStringArray(keys, `${controlPath}.keys`, "key", addError, {
+    requireNonEmpty: true,
+  });
+  if (!Array.isArray(control?.keys) || keys.length === 0) {
+    addError(
+      "INVALID_KEYPAD_KEYS",
+      `${controlPath}.keys`,
+      "must be a non-empty array of unique keys",
+    );
+  }
+  if (!Number.isInteger(control?.maxLength) || control.maxLength < 1) {
+    addError(
+      "INVALID_KEYPAD_MAX_LENGTH",
+      `${controlPath}.maxLength`,
+      "must be a positive integer",
+    );
+  }
+
+  const value = puzzle.solution?.value;
+  if (!isRecord(puzzle.solution) || !isNonEmptyString(value)) {
+    addError(
+      "INVALID_KEYPAD_SOLUTION",
+      `${solutionPath}.value`,
+      "must be a non-empty string",
+    );
+  } else if (
+    Number.isInteger(control?.maxLength) &&
+    !canComposeWithKeys(value, keys, control.maxLength)
+  ) {
+    addError(
+      "UNENTERABLE_KEYPAD_SOLUTION",
+      `${solutionPath}.value`,
+      "must be enterable with the provided keys within maxLength presses",
+    );
+  }
+
+  validateControlFeedback({
+    feedback: puzzle.feedback,
+    path: `${path}.feedback`,
+    answer: isNonEmptyString(value) ? value : null,
+    addError,
+  });
+}
+
+function validateDialLockPuzzle(puzzle, path, addError) {
+  const controlPath = `${path}.control`;
+  const control = puzzle.control;
+  if (!isRecord(control)) {
+    addError("INVALID_CONTROL", controlPath, "must be an object");
+  }
+  const dials = Array.isArray(control?.dials) ? control.dials : [];
+  if (!Array.isArray(control?.dials) || dials.length === 0) {
+    addError(
+      "INVALID_DIALS",
+      `${controlPath}.dials`,
+      "must be a non-empty array",
+    );
+  }
+  const dialById = collectUniqueRecords(
+    dials,
+    `${controlPath}.dials`,
+    "control",
+    addError,
+  );
+  for (let index = 0; index < dials.length; index += 1) {
+    const dial = dials[index];
+    const dialPath = `${controlPath}.dials[${index}]`;
+    if (!isRecord(dial)) continue;
+    if (!isNonEmptyString(dial.label)) {
+      addError("INVALID_CONTROL_LABEL", `${dialPath}.label`, "must be a non-empty string");
+    }
+    if (!Array.isArray(dial.options) || dial.options.length === 0) {
+      addError(
+        "INVALID_DIAL_OPTIONS",
+        `${dialPath}.options`,
+        "must be a non-empty array of unique options",
+      );
+    } else {
+      validateUniqueStringArray(
+        dial.options,
+        `${dialPath}.options`,
+        "option",
+        addError,
+        { requireNonEmpty: true },
+      );
+    }
+  }
+
+  const valuesByControlId = puzzle.solution?.valuesByControlId;
+  if (!isRecord(puzzle.solution) || !isRecord(valuesByControlId)) {
+    addError(
+      "INVALID_DIAL_SOLUTION",
+      `${path}.solution.valuesByControlId`,
+      "must be an object keyed by dial id",
+    );
+  } else {
+    for (const [dialId, dial] of dialById) {
+      if (!hasOwn(valuesByControlId, dialId)) {
+        addError(
+          "MISSING_CONTROL_SOLUTION",
+          `${path}.solution.valuesByControlId.${dialId}`,
+          `must provide a solution for dial ${dialId}`,
+        );
+      } else if (!dial.options?.includes(valuesByControlId[dialId])) {
+        addError(
+          "INVALID_CONTROL_SOLUTION",
+          `${path}.solution.valuesByControlId.${dialId}`,
+          `must be one of the options for dial ${dialId}`,
+        );
+      }
+    }
+    for (const dialId of Object.keys(valuesByControlId)) {
+      if (!dialById.has(dialId)) {
+        addError(
+          "UNKNOWN_CONTROL_REF",
+          `${path}.solution.valuesByControlId.${dialId}`,
+          "does not match a dial id",
+        );
+      }
+    }
+  }
+
+  validateControlFeedback({
+    feedback: puzzle.feedback,
+    path: `${path}.feedback`,
+    controlIds: new Set(dialById.keys()),
+    addError,
+  });
+}
+
+function validateTogglePanelPuzzle(puzzle, path, addError) {
+  const controlPath = `${path}.control`;
+  const control = puzzle.control;
+  if (!isRecord(control)) {
+    addError("INVALID_CONTROL", controlPath, "must be an object");
+  }
+  const switches = Array.isArray(control?.switches) ? control.switches : [];
+  if (!Array.isArray(control?.switches) || switches.length === 0) {
+    addError(
+      "INVALID_SWITCHES",
+      `${controlPath}.switches`,
+      "must be a non-empty array",
+    );
+  }
+  const switchById = collectUniqueRecords(
+    switches,
+    `${controlPath}.switches`,
+    "control",
+    addError,
+  );
+  for (let index = 0; index < switches.length; index += 1) {
+    const control = switches[index];
+    const switchPath = `${controlPath}.switches[${index}]`;
+    if (!isRecord(control)) continue;
+    if (!isNonEmptyString(control.label)) {
+      addError("INVALID_CONTROL_LABEL", `${switchPath}.label`, "must be a non-empty string");
+    }
+    if (hasOwn(control, "description") && !isNonEmptyString(control.description)) {
+      addError(
+        "INVALID_CONTROL_DESCRIPTION",
+        `${switchPath}.description`,
+        "must be a non-empty string when provided",
+      );
+    }
+  }
+
+  const selectedControlIds = Array.isArray(puzzle.solution?.selectedControlIds)
+    ? puzzle.solution.selectedControlIds
+    : [];
+  if (
+    !isRecord(puzzle.solution) ||
+    !Array.isArray(puzzle.solution.selectedControlIds) ||
+    selectedControlIds.length === 0
+  ) {
+    addError(
+      "INVALID_TOGGLE_SOLUTION",
+      `${path}.solution.selectedControlIds`,
+      "must be a non-empty array",
+    );
+  }
+  validateReferenceList({
+    values: selectedControlIds,
+    path: `${path}.solution.selectedControlIds`,
+    known: switchById,
+    refCode: "UNKNOWN_CONTROL_REF",
+    addError,
+  });
+
+  const solutionControlIds = new Set(selectedControlIds);
+  validateControlFeedback({
+    feedback: puzzle.feedback,
+    path: `${path}.feedback`,
+    controlIds: new Set(switchById.keys()),
+    solutionControlIds,
+    requireDistractorControlFeedback: true,
+    addError,
+  });
+}
+
+function validateUniqueStringArray(
+  values,
+  path,
+  label,
+  addError,
+  { requireNonEmpty = false } = {},
+) {
+  const seen = new Set();
+  for (let index = 0; index < values.length; index += 1) {
+    const value = values[index];
+    const valuePath = `${path}[${index}]`;
+    if (typeof value !== "string" || (requireNonEmpty && value.length === 0)) {
+      addError("INVALID_CONTROL_VALUE", valuePath, `must be a valid ${label} string`);
+      continue;
+    }
+    if (seen.has(value)) {
+      addError("DUPLICATE_CONTROL_VALUE", valuePath, `duplicates ${label} ${value}`);
+    }
+    seen.add(value);
+  }
+}
+
+function canComposeWithKeys(value, keys, maxPresses) {
+  if (!isNonEmptyString(value) || keys.length === 0) return false;
+  const fewestPresses = Array(value.length + 1).fill(Number.POSITIVE_INFINITY);
+  fewestPresses[0] = 0;
+  for (let start = 0; start < value.length; start += 1) {
+    if (!Number.isFinite(fewestPresses[start])) continue;
+    for (const key of keys) {
+      if (
+        typeof key === "string" &&
+        key.length > 0 &&
+        value.startsWith(key, start)
+      ) {
+        const end = start + key.length;
+        fewestPresses[end] = Math.min(
+          fewestPresses[end],
+          fewestPresses[start] + 1,
+        );
+      }
+    }
+  }
+  return fewestPresses[value.length] <= maxPresses;
 }
 
 function isItemAvailableBeforePuzzle(item, puzzle, puzzleById) {
@@ -566,7 +886,7 @@ function validateReferenceList({
   }
 }
 
-function validateFeedback({ feedback, candidateIds, solutionItemIds, path, addError }) {
+function validateItemFeedback({ feedback, candidateIds, solutionItemIds, path, addError }) {
   if (!isRecord(feedback)) {
     addError("INVALID_FEEDBACK", path, "must be an object");
     return;
@@ -628,6 +948,102 @@ function validateFeedback({ feedback, candidateIds, solutionItemIds, path, addEr
         `${path}.byItemId.${itemId}`,
         "must not label a solution item as incorrect",
       );
+    }
+  }
+}
+
+function validateControlFeedback({
+  feedback,
+  path,
+  answer = null,
+  controlIds = new Set(),
+  solutionControlIds = new Set(),
+  requireDistractorControlFeedback = false,
+  addError,
+}) {
+  if (!isRecord(feedback)) {
+    addError("INVALID_FEEDBACK", path, "must be an object");
+    return;
+  }
+  if (!isNonEmptyString(feedback.defaultWrongAnswer)) {
+    addError(
+      "MISSING_DEFAULT_FEEDBACK",
+      `${path}.defaultWrongAnswer`,
+      "must be a non-empty string",
+    );
+  }
+
+  for (const property of ["byAnswer", "byControlId"]) {
+    if (hasOwn(feedback, property) && !isRecord(feedback[property])) {
+      addError(
+        "INVALID_CONTROL_FEEDBACK",
+        `${path}.${property}`,
+        "must be an object when provided",
+      );
+      continue;
+    }
+    if (!isRecord(feedback[property])) continue;
+    for (const [key, text] of Object.entries(feedback[property])) {
+      if (!isNonEmptyString(text)) {
+        addError(
+          "INVALID_CONTROL_FEEDBACK",
+          `${path}.${property}.${key}`,
+          "must be a non-empty string",
+        );
+      }
+    }
+  }
+
+  if (isRecord(feedback.byAnswer) && answer !== null && hasOwn(feedback.byAnswer, answer)) {
+    addError(
+      "FEEDBACK_FOR_SOLUTION_ANSWER",
+      `${path}.byAnswer.${answer}`,
+      "must not label the solution answer as incorrect",
+    );
+  }
+
+  const byControlId = isRecord(feedback.byControlId)
+    ? feedback.byControlId
+    : {};
+  for (const controlId of Object.keys(byControlId)) {
+    if (!controlIds.has(controlId)) {
+      addError(
+        "FEEDBACK_FOR_UNKNOWN_CONTROL",
+        `${path}.byControlId.${controlId}`,
+        "does not match a control id",
+      );
+    }
+    if (solutionControlIds.has(controlId)) {
+      addError(
+        "FEEDBACK_FOR_SOLUTION_CONTROL",
+        `${path}.byControlId.${controlId}`,
+        "must not label a selected solution control as incorrect",
+      );
+    }
+  }
+
+  if (!requireDistractorControlFeedback) return;
+
+  const feedbackOwnerByText = new Map();
+  for (const controlId of controlIds) {
+    if (solutionControlIds.has(controlId)) continue;
+    if (!hasOwn(byControlId, controlId) || !isNonEmptyString(byControlId[controlId])) {
+      addError(
+        "MISSING_DISTRACTOR_FEEDBACK",
+        `${path}.byControlId.${controlId}`,
+        `must explain why switch ${controlId} is not part of the solution`,
+      );
+      continue;
+    }
+    const normalizedText = byControlId[controlId].trim();
+    if (feedbackOwnerByText.has(normalizedText)) {
+      addError(
+        "DUPLICATE_DISTRACTOR_FEEDBACK",
+        `${path}.byControlId.${controlId}`,
+        `must differ from feedback for ${feedbackOwnerByText.get(normalizedText)}`,
+      );
+    } else {
+      feedbackOwnerByText.set(normalizedText, controlId);
     }
   }
 }
@@ -748,6 +1164,97 @@ function detectDependencyCycles(graph, knownPuzzles, addError) {
   for (const id of graph.keys()) visit(id, []);
 }
 
+function validateViewUnlocks({
+  views,
+  items,
+  puzzles,
+  itemById,
+  puzzleById,
+  addError,
+}) {
+  for (let viewIndex = 0; viewIndex < views.length; viewIndex += 1) {
+    const view = views[viewIndex];
+    if (!isRecord(view) || !hasOwn(view, "unlock") || !isRecord(view.unlock)) {
+      continue;
+    }
+
+    const unlockPath = `$.room.views[${viewIndex}].unlock`;
+    const unlockItemId = view.unlock.itemId;
+    if (!isNonEmptyString(unlockItemId)) continue;
+
+    const unlockItem = itemById.get(unlockItemId);
+    if (!unlockItem) {
+      addError(
+        "UNKNOWN_UNLOCK_ITEM",
+        `${unlockPath}.itemId`,
+        `references unknown item ${unlockItemId}`,
+      );
+      continue;
+    }
+
+    const sourcePuzzleId = unlockItem.source?.puzzleId;
+    const sourcePuzzle = puzzleById.get(sourcePuzzleId);
+    const isDeclaredReward =
+      unlockItem.source?.type === "PUZZLE_REWARD" &&
+      sourcePuzzle &&
+      Array.isArray(sourcePuzzle.rewards) &&
+      sourcePuzzle.rewards.some(
+        (reward) =>
+          reward?.type === "REVEAL_ITEM" && reward.itemId === unlockItemId,
+      );
+    if (!isDeclaredReward) {
+      addError(
+        "INVALID_VIEW_UNLOCK_REWARD",
+        `${unlockPath}.itemId`,
+        `item ${unlockItemId} must be a PUZZLE_REWARD revealed by a puzzle`,
+      );
+      continue;
+    }
+
+    const unlockItemIndex = items.indexOf(unlockItem);
+    const unlockItemPath = `$.items[${unlockItemIndex}]`;
+    if (unlockItem.source.viewId !== sourcePuzzle.viewId) {
+      addError(
+        "VIEW_UNLOCK_SOURCE_VIEW_MISMATCH",
+        `${unlockItemPath}.source.viewId`,
+        `must match source puzzle ${sourcePuzzle.id} viewId ${String(sourcePuzzle.viewId)} so ${unlockItemId} can be collected before unlocking ${String(view.id)}`,
+      );
+    }
+    if (unlockItem.consumedOnUse !== true) {
+      addError(
+        "VIEW_UNLOCK_ITEM_NOT_CONSUMABLE",
+        `${unlockItemPath}.consumedOnUse`,
+        `must be true so view unlock item ${unlockItemId} is consumed after use`,
+      );
+    }
+
+    const firstPuzzleInView = puzzles
+      .filter(
+        (puzzle) =>
+          isRecord(puzzle) &&
+          puzzle.viewId === view.id &&
+          Number.isInteger(puzzle.order),
+      )
+      .sort((left, right) => left.order - right.order)[0];
+    if (!firstPuzzleInView) {
+      addError(
+        "VIEW_UNLOCK_WITHOUT_PUZZLE",
+        unlockPath,
+        `view ${String(view.id)} has no puzzle to unlock`,
+      );
+      continue;
+    }
+
+    if (sourcePuzzle.order !== firstPuzzleInView.order - 1) {
+      addError(
+        "VIEW_UNLOCK_NOT_PREVIOUS_REWARD",
+        `${unlockPath}.itemId`,
+        `item ${unlockItemId} must be revealed by the puzzle immediately before ${firstPuzzleInView.id}`,
+      );
+    }
+  }
+}
+
 function validateCompletion(pack, puzzles, puzzleById, itemById, addError) {
   if (!isRecord(pack.completion)) {
     addError("INVALID_COMPLETION", "$.completion", "must be an object");
@@ -811,37 +1318,58 @@ function validateCompletion(pack, puzzles, puzzleById, itemById, addError) {
     }
   }
 
+  const finalPuzzlePath = `$.puzzles[${puzzles.indexOf(finalPuzzle)}]`;
+  const finalCandidateIds = Array.isArray(finalPuzzle.candidateItemIds)
+    ? finalPuzzle.candidateItemIds
+    : [];
   const finalPlacements = Array.isArray(finalPuzzle.solution)
     ? finalPuzzle.solution
     : [];
-  const finalItemIds = new Set(
+  const finalSolutionIds = new Set(
     finalPlacements.map((placement) => placement?.itemId),
   );
-  const safeRewardIds = new Set();
-  for (const puzzle of precedingPuzzles) {
-    const qualifyingRewards = (Array.isArray(puzzle.rewards) ? puzzle.rewards : []).filter(
-      (reward) => reward?.type === "REVEAL_ITEM" && finalItemIds.has(reward.itemId),
+
+  if (finalCandidateIds.length < 2) {
+    addError(
+      "FINAL_SAFE_TOO_FEW_ITEMS",
+      `${finalPuzzlePath}.candidateItemIds`,
+      "must contain at least two physical assembly items",
     );
-    if (qualifyingRewards.length !== 1) {
+  }
+
+  const requiredRewardIds = new Set();
+  for (const requiredPuzzleId of requiredPuzzleIds) {
+    const requiredPuzzle = puzzleById.get(requiredPuzzleId);
+    if (!requiredPuzzle || requiredPuzzle.id === finalPuzzleId) continue;
+    for (const reward of Array.isArray(requiredPuzzle.rewards)
+      ? requiredPuzzle.rewards
+      : []) {
+      if (reward?.type === "REVEAL_ITEM") {
+        requiredRewardIds.add(reward.itemId);
+      }
+    }
+  }
+
+  for (let candidateIndex = 0; candidateIndex < finalCandidateIds.length; candidateIndex += 1) {
+    const itemId = finalCandidateIds[candidateIndex];
+    if (!requiredRewardIds.has(itemId)) {
       addError(
         "INVALID_SAFE_TOKEN_REWARD",
-        `$.puzzles[${puzzles.indexOf(puzzle)}].rewards`,
-        `must reveal exactly one item used by final safe ${finalPuzzleId}`,
+        `${finalPuzzlePath}.candidateItemIds[${candidateIndex}]`,
+        `item ${String(itemId)} must be revealed by a required preceding puzzle`,
       );
-    } else {
-      safeRewardIds.add(qualifyingRewards[0].itemId);
     }
   }
 
   if (
-    finalItemIds.size !== precedingPuzzles.length ||
-    safeRewardIds.size !== precedingPuzzles.length ||
-    [...finalItemIds].some((itemId) => !safeRewardIds.has(itemId))
+    finalCandidateIds.length !== finalSolutionIds.size ||
+    finalCandidateIds.some((itemId) => !finalSolutionIds.has(itemId)) ||
+    [...finalSolutionIds].some((itemId) => !finalCandidateIds.includes(itemId))
   ) {
     addError(
       "FINAL_SAFE_TOKEN_MISMATCH",
-      `$.puzzles[${puzzles.indexOf(finalPuzzle)}].solution`,
-      "must use exactly one unique reward token from every preceding puzzle",
+      `${finalPuzzlePath}.solution`,
+      "candidateItemIds and solution itemIds must match exactly",
     );
   }
 

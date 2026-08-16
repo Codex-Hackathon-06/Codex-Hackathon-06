@@ -5,10 +5,15 @@ import test from "node:test";
 import {
   collectItem,
   createInitialState,
+  exitRoom,
   getInventoryItems,
   getVisibleItems,
+  isViewUnlocked,
   navigate,
+  resetState,
+  tryUseExitItem,
   tryUseItem,
+  tryUseViewUnlockItem,
 } from "../packages/game-engine/src/runtime.js";
 
 const fixtureUrl = new URL(
@@ -59,6 +64,113 @@ test("an inventory item cannot solve a puzzle from another close-up", () => {
   assert.deepEqual(state.placements, {});
 });
 
+test("a puzzle reward is consumed to unlock the next close-up before navigation", () => {
+  const lockedPack = structuredClone(pack);
+  const wallView = lockedPack.room.views.find((view) => view.id === "wall");
+  wallView.unlock = {
+    itemId: "key-fertilizer",
+    lockedMessage: "벽면 장치가 잠겨 있어 열리지 않습니다.",
+    unlockedMessage: "거름 열쇠가 맞물리며 벽면 장치가 열렸습니다.",
+  };
+
+  let state = createInitialState(lockedPack);
+  assert.equal(isViewUnlocked(lockedPack, state, "overview"), true);
+  assert.equal(isViewUnlocked(lockedPack, state, "bookshelf"), true);
+  assert.equal(isViewUnlocked(lockedPack, state, "wall"), false);
+  assert.equal(isViewUnlocked(lockedPack, state, "missing-view"), false);
+  assert.deepEqual(state.unlockedViewIds, [
+    "overview",
+    "bookshelf",
+    "drawer",
+    "desk",
+  ]);
+
+  state = navigate(lockedPack, state, "desk");
+  state = collectItem(lockedPack, state, "book-ji");
+  state = navigate(lockedPack, state, "bookshelf");
+  state = tryUseItem(
+    lockedPack,
+    state,
+    "book-ji",
+    "bookshelf-slot-1",
+  );
+  assert.equal(state.solvedPuzzleIds.includes("puzzle-1"), true);
+
+  state = collectItem(lockedPack, state, "key-fertilizer");
+  state = collectItem(lockedPack, state, "safe-token-1");
+  assert.equal(
+    getInventoryItems(lockedPack, state).some(
+      (item) => item.id === "key-fertilizer",
+    ),
+    true,
+  );
+  assert.equal(
+    tryUseViewUnlockItem(
+      lockedPack,
+      state,
+      "key-fertilizer",
+      "wall",
+    ),
+    state,
+  );
+
+  const blocked = navigate(lockedPack, state, "wall");
+  assert.equal(blocked.currentViewId, "bookshelf");
+  assert.equal(blocked.overlay.type, "LOCKED");
+  assert.equal(blocked.overlay.body, wallView.unlock.lockedMessage);
+
+  state = navigate(lockedPack, blocked, "overview");
+  const wrongItem = tryUseViewUnlockItem(
+    lockedPack,
+    state,
+    "safe-token-1",
+    "wall",
+  );
+  assert.equal(wrongItem, state);
+
+  const notInInventory = tryUseViewUnlockItem(
+    lockedPack,
+    state,
+    "key-rain",
+    "wall",
+  );
+  assert.equal(notInInventory, state);
+  assert.equal(
+    tryUseViewUnlockItem(lockedPack, state, "key-fertilizer", "missing-view"),
+    state,
+  );
+
+  state = tryUseViewUnlockItem(
+    lockedPack,
+    state,
+    "key-fertilizer",
+    "wall",
+  );
+  assert.equal(state.overlay.type, "VIEW_UNLOCKED");
+  assert.equal(state.overlay.body, wallView.unlock.unlockedMessage);
+  assert.equal(state.selectedItemId, null);
+  assert.equal(isViewUnlocked(lockedPack, state, "wall"), true);
+  assert.equal(state.unlockedViewIds.filter((id) => id === "wall").length, 1);
+  assert.equal(state.consumedItemIds.includes("key-fertilizer"), true);
+  assert.equal(
+    getInventoryItems(lockedPack, state).some(
+      (item) => item.id === "key-fertilizer",
+    ),
+    false,
+  );
+
+  assert.equal(
+    tryUseViewUnlockItem(lockedPack, state, "key-fertilizer", "wall"),
+    state,
+  );
+  state = navigate(lockedPack, state, "wall");
+  assert.equal(state.currentViewId, "wall");
+
+  const reset = resetState(lockedPack);
+  assert.equal(isViewUnlocked(lockedPack, reset, "wall"), false);
+  assert.equal(reset.consumedItemIds.includes("key-fertilizer"), false);
+});
+
 test("the five-puzzle fixture can be completed end to end", () => {
   let state = createInitialState(pack);
 
@@ -95,8 +207,33 @@ test("the five-puzzle fixture can be completed end to end", () => {
   state = tryUseItem(pack, state, "safe-token-3", "safe-slot-3");
   state = tryUseItem(pack, state, "safe-token-4", "safe-slot-4");
 
-  assert.equal(state.escaped, true);
+  assert.equal(state.escaped, false);
+  assert.equal(state.exitUnlocked, false);
   assert.equal(state.solvedPuzzleIds.length, 5);
-  assert.equal(state.overlay.type, "ENDING");
+  assert.equal(state.overlay.type, "EXPLANATION");
   assert.equal(getVisibleItems(pack, state, "desk").some((item) => item.id === "exit-key"), true);
+
+  assert.equal(exitRoom(pack, state), state);
+  assert.equal(
+    tryUseExitItem(pack, state, "exit-key", "exit-door"),
+    state,
+  );
+
+  state = collectItem(pack, state, "exit-key");
+  assert.equal(
+    tryUseExitItem(pack, state, "exit-key", "wrong-door"),
+    state,
+  );
+  state = tryUseExitItem(pack, state, "exit-key", "exit-door");
+  assert.equal(state.exitUnlocked, true);
+  assert.equal(state.overlay.type, "EXIT_UNLOCKED");
+  assert.deepEqual(state.consumedItemIds, ["exit-key"]);
+  assert.equal(
+    getInventoryItems(pack, state).some((item) => item.id === "exit-key"),
+    false,
+  );
+
+  state = exitRoom(pack, state);
+  assert.equal(state.escaped, true);
+  assert.equal(state.overlay.type, "ENDING");
 });

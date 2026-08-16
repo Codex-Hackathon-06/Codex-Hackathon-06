@@ -42,8 +42,9 @@
 
 ### 3. 학습을 돕는 힌트와 해설
 
-- 단계형 힌트: 관찰 → 개념 → 풀이 방향
-- 정답 보기 팝업: 정답, 해설, 영상 근거, 재시청 시점 제공
+- 단계형 힌트는 정확히 2회 제공합니다: 1차 관찰 → 2차 개념
+- 두 번째 힌트 이후에는 힌트 버튼이 `정답 공개`로 바뀝니다.
+- 정답 공개 팝업에서 정답, 해설, 영상 근거, 재시청 시점을 함께 제공합니다.
 - 힌트·정답 보기 횟수와 오답 개념을 학습 노트에 누적
 
 ### 4. 하나의 방에서 완성하는 학습 흐름
@@ -67,7 +68,7 @@ flowchart LR
 
 ### Game data contract
 
-프론트엔드와 생성 API는 공통 게임 데이터(JSON)를 주고받습니다. 각 문제는 반드시 정답, 힌트, 해설, 그리고 영상 근거 타임스탬프를 가집니다. 아래는 핵심 필드 발췌이며, 실행 가능한 전체 예시는 [`puppy-poop.room.json`](content/sample-lectures/puppy-poop.room.json)입니다.
+프론트엔드와 생성 API는 공통 게임 데이터(JSON)를 주고받습니다. 각 문제는 반드시 정답, 힌트, 해설, 그리고 영상 근거 타임스탬프를 가집니다. 실행 가능한 전체 예시는 실제 26분 41초 자막을 사용한 [`coding-agents.room.json`](content/sample-lectures/coding-agents.room.json)과 아이템 배치 회귀용 [`puppy-poop.room.json`](content/sample-lectures/puppy-poop.room.json)입니다.
 
 ```json
 {
@@ -102,6 +103,22 @@ flowchart LR
   "completion": { "finalPuzzleId": "puzzle-5", "exitItemId": "exit-key", "effect": "UNLOCK_EXIT" }
 }
 ```
+
+생성 JSON은 스키마 호환을 위해 `OBSERVATION`, `CONCEPT`, `DIRECTION` 레코드를 보존하지만, 플레이 화면은 앞의 두 레코드만 힌트 1/2·2/2로 노출합니다. 이후에는 세 번째 힌트를 따로 보여주지 않고 `explanation`을 사용해 정답과 근거를 공개합니다.
+
+현재 실행기는 문제 의미에 따라 다음 9개 템플릿을 조합합니다. 자유 텍스트 입력 대신 방 안의 물건과 장치를 직접 조작합니다.
+
+| 템플릿 | 상호작용 | 사용 예시 |
+| --- | --- | --- |
+| `MISSING_TOKEN` | 아이템 배치 | 책장의 빈 개념 완성 |
+| `ORDER_ITEMS` | 아이템 배치 | 사건·과정 순서 배열 |
+| `KEY_TO_LOCK` | 아이템 배치 | 사례에 맞는 열쇠 선택 |
+| `MATCH_ITEM` | 아이템 배치 | 개념과 사례 연결 |
+| `NUMERIC_KEYPAD` | 숫자키패드 | 수식 계산 결과 입력 |
+| `SYMBOL_KEYPAD` | 문자·기호키패드 | 공식·지표 약어 조합 |
+| `MULTI_DIAL` | 다중 다이얼 | 여러 구성요소 순서 맞추기 |
+| `SWITCH_BANK` | 선택 스위치 | 맞는 특징 여러 개 켜기 |
+| `FINAL_SAFE` | 아이템 배치 | 직전 장치에서 얻은 손잡이·기어·전원 코어로 최종 금고 조립 |
 
 ## Repository structure
 
@@ -141,16 +158,24 @@ cd Codex-Hackathon-06
 npm start
 ```
 
-브라우저에서 `http://127.0.0.1:4173`을 열면 다음 흐름을 직접 확인할 수 있습니다.
+브라우저에서 `http://127.0.0.1:4173`을 열면 실제 코딩 에이전트 자막 기반 데모가 기본으로 열립니다. 상단 선택기에서 기존 문학 데모로 전환할 수도 있습니다.
 
 ```text
 방 전체 보기
 → 책장·벽면·서랍·책상 확대
-→ 아이템 클릭 수집
-→ 인벤토리에서 슬롯으로 드래그 또는 클릭 사용
-→ 오답 피드백·3단계 힌트·영상 근거 해설
-→ 5개 퍼즐 해결 및 탈출
+→ 스위치 선택
+→ 보상 액세스 카드를 벽 패널에 드롭해 소모·해금
+→ 수식 답을 숫자키패드로 입력
+→ 보상 황동 열쇠를 잠긴 서랍에 드롭해 소모·해금
+→ Terminal-bench 구성요소를 다이얼로 정렬
+→ 보상 전원 퓨즈를 책상에 드롭해 소모·해금
+→ REXBench 지표를 문자키패드로 해독
+→ 금고 손잡이·잠금 기어·전원 코어를 수집해 최종 금고 슬롯에 배치·소모
+→ 오답 피드백·힌트 1/2·힌트 2/2·정답과 영상 근거 공개
+→ 비상구 키카드를 문에 드롭해 소모한 뒤 열린 문을 눌러 탈출
 ```
+
+다음 장소는 앞 퍼즐을 맞혔다는 이유만으로 자동 개방되지 않습니다. 보상 물건을 직접 회수해 잠긴 가구에 사용해야 하며, 순서를 건너뛰어 누르면 각 장치에 정의된 잠김 문구만 표시됩니다.
 
 샘플 데이터와 구조 검사는 다음 명령으로 확인합니다.
 
@@ -163,13 +188,22 @@ npm test
 
 ```text
 apps/web/                                      # 확대 탐색·인벤토리 플레이 화면
-packages/game-engine/src/runtime.js            # 공통 아이템 배치 상태 로직
+apps/web/asset-catalog.js                      # Kenney 방·오브젝트·아이템 에셋 매핑
+apps/web/assets/2d/manifest.json                # 업로드할 2D 에셋 매핑
+apps/web/assets/3d/manifest.json                # 업로드할 3D 모델·poster 매핑
+apps/web/assets/README.md                       # 2D/3D 폴더·키·경로 계약
+packages/game-engine/src/runtime.js            # 아이템·키패드·다이얼·스위치 상태 로직
 packages/content-schema/                       # 생성 JSON 검증·프롬프트 빌더
+content/sample-lectures/coding-agents.input.json # 실제 Whisper 산출물 기반 입력·provenance
+content/sample-lectures/coding-agents.room.json  # 혼합 템플릿 5퍼즐 실행 데이터
 content/sample-lectures/puppy-poop.input.json  # 30분 영상 분석 입력 예시
 content/sample-lectures/puppy-poop.room.json   # 퍼즐 5개 실행 데이터
 content/templates/puzzle-generation-prompt.md  # AI 생성 규칙
 docs/puzzle-generator-handoff.md               # 팀 연동 계약
+docs/THIRD_PARTY_ASSETS.md                     # 사용 중인 공개 에셋 출처·버전·해시·라이선스
 ```
+
+코딩 에이전트 샘플은 제공된 `manifest.json`, `transcript.chunks.json`, `transcript.raw.json`, `transcript.srt`에서 필요한 자막 구간만 추려 사용합니다. 입력 fixture에는 원본 SHA-256, Whisper 모델, 언어, 생성 시각을 남기고 원본 영상이나 전체 자막 파일은 저장소에 복사하지 않습니다.
 
 ### Environment variables
 
@@ -181,7 +215,9 @@ cp .env.example .env
 
 ### Open-source design options
 
-현재 프로토타입은 팀의 최종 프레임워크를 강제하지 않도록 의존성 없는 HTML/CSS/JavaScript로 작성합니다. 이후에는 CC0인 [Kenney UI Pack](https://kenney.nl/assets/ui-pack), ISC 라이선스의 [Lucide](https://github.com/lucide-icons/lucide), MIT 라이선스의 [dnd-kit](https://github.com/clauderic/dnd-kit)을 선택적으로 적용할 수 있습니다. 자세한 기준은 [`docs/open-source-design-options.md`](docs/open-source-design-options.md)에 정리했습니다.
+현재 프로토타입은 의존성 없는 HTML/CSS/JavaScript 실행 구조를 유지하면서, 공개 CC0 에셋인 [Kenney Furniture Kit](https://kenney.nl/assets/furniture-kit), [Kenney UI Pack](https://kenney.nl/assets/ui-pack), [Kenney Game Icons](https://kenney.nl/assets/game-icons)의 원본 PNG를 실제 방·출구·가구·아이템·조작 UI에 사용합니다. 발표 환경에서 오프라인으로도 동작하도록 공식 배포 ZIP에서 필요한 파일만 선별해 저장소에 포함했고 원본 라이선스 파일을 함께 보존했습니다. 정확한 출처, 버전, ZIP 해시는 [`docs/THIRD_PARTY_ASSETS.md`](docs/THIRD_PARTY_ASSETS.md), 향후 상호작용 라이브러리 선택 기준은 [`docs/open-source-design-options.md`](docs/open-source-design-options.md)에 정리했습니다.
+
+추가 에셋은 `apps/web/assets/2d`와 `apps/web/assets/3d`에 나눠 올립니다. 두 manifest가 같은 `objects`, `items`, `exit` 키를 사용하므로 상단의 에셋 모드 선택기만 바꿔 동일한 진행 상태에서 두 방향을 비교할 수 있습니다. 2D는 `image`, 3D는 GLB `model`과 권장 `poster` descriptor를 사용하며, 누락되거나 잘못된 항목은 현재 Kenney 이미지로 폴백합니다. 실제 3D 뷰어 모듈과 모델별 카메라 조정은 GLB 파일 업로드 후 최종 시각 검수 단계에서 연결합니다.
 
 ## Git 컨벤션
 

@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "1.0",
+  "provenance": {
+    "sourceFileName": "YTDown.com_YouTube_Media_fpEwY-3b-Vw_001_1080p.mp4",
+    "sourceSha256": "681bf8de82fe8d0581927737d33da90987e2adc3f7eed7dce5026f74150de2ef",
+    "sourceSizeBytes": 52790039,
+    "transcriptionModel": "whisper-1",
+    "language": "ko",
+    "createdAt": "2026-08-16T05:03:55.207Z",
+    "artifacts": [
+      "manifest.json",
+      "transcript.chunks.json",
+      "transcript.raw.json",
+      "transcript.srt"
+    ]
+  },
+  "video": {
+    "id": "coding-agents-benchmarks",
+    "title": "코딩 에이전트와 벤치마크",
+    "durationSec": 1601.17,
+    "segments": [
+      {
+        "id": "seg-0020",
+        "startSec": 91,
+        "endSec": 95,
+        "text": "우선 첫 번째로는 실행 기반이라는 점이 있습니다."
+      },
+      {
+        "id": "seg-0021",
+        "startSec": 95,
+        "endSec": 101,
+        "text": "즉 단순히 코드를 작성하는데 머물지 않고 작성된 코드를 실제로 실행해 볼 수 있다는 점"
+      },
+      {
+        "id": "seg-0026",
+        "startSec": 125,
+        "endSec": 129,
+        "text": "익스트림 롱 컨텍스트를 다룬다는 태스크 자체의 특성이 있습니다."
+      },
+      {
+        "id": "seg-0027",
+        "startSec": 129,
+        "endSec": 133,
+        "text": "또한 코드를 검색하는 건 역시도 특징이라고 할 수 있는데요."
+      },
+      {
+        "id": "seg-0035",
+        "startSec": 162,
+        "endSec": 166,
+        "text": "마지막으로는 도구를 사용하는 건 역시도 매우 중요한데요."
+      },
+      {
+        "id": "seg-0094",
+        "startSec": 437,
+        "endSec": 444,
+        "text": "평가 방식 자체는 12개 저장소에서 수집되어 있는 9만 개의 풀리케스트를 사용했다고 하고"
+      },
+      {
+        "id": "seg-0097",
+        "startSec": 461,
+        "endSec": 467,
+        "text": "그래서 이슈의 텍스트가 평균적으로 195 단어로 생각보다 적고"
+      },
+      {
+        "id": "seg-0098",
+        "startSec": 467,
+        "endSec": 476,
+        "text": "다만 코드베이스 자체가 파일 수는 3천 개, 그리고 라인 수는 43만 라인에 이를 정도로 매우 방대한 라인으로 이루어져 있습니다."
+      },
+      {
+        "id": "seg-0112",
+        "startSec": 558,
+        "endSec": 564,
+        "text": "BM25를 적용했을 경우 가장 높은 성능이 3.79%의 성공률을 보이고 있습니다."
+      },
+      {
+        "id": "seg-0173",
+        "startSec": 827,
+        "endSec": 832,
+        "text": "총 168시간이 소모되는 태스크들도 일부 포함되어 있을 만큼"
+      },
+      {
+        "id": "seg-0177",
+        "startSec": 843,
+        "endSec": 845,
+        "text": "태스크 자체는 프롬프트와 더커 이미지,"
+      },
+      {
+        "id": "seg-0178",
+        "startSec": 845,
+        "endSec": 848,
+        "text": "그리고 검증할 수 있는 테스트,"
+      },
+      {
+        "id": "seg-0179",
+        "startSec": 848,
+        "endSec": 851,
+        "text": "레퍼런스 솔루션, 그리고 제한시간으로 구성되어 있습니다."
+      },
+      {
+        "id": "seg-0258",
+        "startSec": 1270,
+        "endSec": 1275,
+        "text": "그 다음으로 인프라 구축에 있어서는 평가를 12시간으로 제한을 했습니다."
+      },
+      {
+        "id": "seg-0263",
+        "startSec": 1315,
+        "endSec": 1323,
+        "text": "성능 평가 자체는 Full Success, Execution Success, 그리고 File Recall 세가지 측면에서 측정이 됩니다."
+      },
+      {
+        "id": "seg-0267",
+        "startSec": 1349,
+        "endSec": 1358,
+        "text": "그래서 어쩔 수 없이 Execution Success라고 하는 최종 파일이 실제로 실행 가능한지 여부만 측정을 해보았을 때도"
+      },
+      {
+        "id": "seg-0269",
+        "startSec": 1366,
+        "endSec": 1377,
+        "text": "그러면 조금 더 가서 File Recall 즉 골드가 수정한 파일 중에서 실제로 각각의 평가되는 에이전트가 수정한 파일들이 얼마나 포함되는지 확인해 보면"
+      }
+    ]
+  },
+  "roomCapabilities": {
+    "roomId": "coding-agents-lab",
+    "initialViewId": "overview",
+    "viewIds": ["overview", "bookshelf", "wall", "drawer", "desk"],
+    "targets": [
+      {
+        "id": "agent-feature-panel",
+        "viewId": "bookshelf",
+        "template": "SWITCH_BANK",
+        "controlIds": [
+          "feature-execution",
+          "feature-long-context",
+          "feature-code-search",
+          "feature-tool-use",
+          "feature-text-only",
+          "feature-no-environment"
+        ]
+      },
+      {
+        "id": "swe-repository-keypad",
+        "viewId": "wall",
+        "template": "NUMERIC_KEYPAD",
+        "controlIds": ["swe-keypad"]
+      },
+      {
+        "id": "terminal-structure-dials",
+        "viewId": "drawer",
+        "template": "MULTI_DIAL",
+        "controlIds": ["terminal-1", "terminal-2", "terminal-3", "terminal-4", "terminal-5"]
+      },
+      {
+        "id": "rex-metric-keypad",
+        "viewId": "desk",
+        "template": "SYMBOL_KEYPAD",
+        "controlIds": ["rex-keypad"]
+      },
+      {
+        "id": "benchmark-final-safe",
+        "viewId": "desk",
+        "template": "FINAL_SAFE",
+        "slotIds": ["final-slot-1", "final-slot-2", "final-slot-3"]
+      }
+    ],
+    "allowedAssetKeys": [
+      "wall-access-card",
+      "drawer-key",
+      "desk-power-fuse",
+      "safe-handle",
+      "safe-gear",
+      "safe-power-core",
+      "exit-keycard"
+    ]
+  }
+}

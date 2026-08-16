@@ -14,6 +14,58 @@
   <body>
     <a class="skip-link" href="#game-scene">게임 장면으로 바로가기</a>
 
+    <dialog
+      class="story-overlay story-intro-overlay"
+      id="story-intro-dialog"
+      aria-labelledby="story-intro-title"
+      aria-describedby="story-intro-body"
+    >
+      <div class="story-card story-intro-card">
+        <div class="story-card-glow" aria-hidden="true"></div>
+        <p class="story-overline">LECTURE ARCHIVE · AFTER HOURS</p>
+        <h1 id="story-intro-title">기억이 잠든 강의실</h1>
+        <p class="story-lead" id="story-intro-body">
+          강의가 끝난 뒤, 기록 보관실의 문이 잠겼습니다. 방 안에 남은 물건과
+          강의 속 단서를 연결해 마지막 출구를 여세요.
+        </p>
+
+        <section class="story-mission" aria-labelledby="story-mission-title">
+          <div class="story-mission-heading">
+            <span aria-hidden="true">MISSION</span>
+            <h2 id="story-mission-title">오늘의 탈출 임무</h2>
+          </div>
+          <p id="story-intro-mission">
+            <strong id="story-puzzle-total">5</strong>개의 퍼즐을 해결하고 출구 키카드를
+            획득하세요.
+          </p>
+          <ol class="story-objectives" id="story-intro-objectives">
+            <li><span>01</span>빛나는 가구를 눌러 가까이 관찰하기</li>
+            <li><span>02</span>발견한 물건을 수집하고 장치를 직접 조작하기</li>
+            <li><span>03</span>마지막 키카드로 잠긴 출구 열기</li>
+          </ol>
+        </section>
+
+        <div class="story-tip">
+          <span class="story-tip-mark" aria-hidden="true">!</span>
+          <p>막히면 힌트를 두 번 확인한 뒤 정답을 공개할 수 있어요.</p>
+        </div>
+
+        <form class="story-actions" method="dialog">
+          <button
+            class="story-primary-button"
+            id="story-start-button"
+            type="submit"
+            value="start"
+            data-story-action="start"
+            autofocus
+          >
+            <span>강의실 들어가기</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+      </div>
+    </dialog>
+
     <div class="app-shell" id="app-shell" data-view="overview">
       <header class="topbar">
         <a class="brand" href="#" aria-label="강의실 탈출 처음으로">
@@ -36,6 +88,20 @@
         </div>
 
         <div class="topbar-actions">
+          <label class="demo-picker">
+            <span>에셋 모드</span>
+            <select id="asset-mode-select" aria-label="장면 에셋 모드 선택">
+              <option value="2d" selected>2D</option>
+              <option value="3d">3D</option>
+            </select>
+          </label>
+          <label class="demo-picker">
+            <span>데모</span>
+            <select id="demo-select" aria-label="강의 퍼즐 데모 선택">
+              <option value="coding-agents">코딩 에이전트 · 멀티 템플릿</option>
+              <option value="puppy-poop">강아지똥 · 아이템 배치</option>
+            </select>
+          </label>
           <div class="progress-chip" aria-label="퍼즐 진행도">
             <span class="progress-chip-label">해결</span>
             <strong><span id="progress-count">0</span>/<span id="progress-total">5</span></strong>
@@ -109,7 +175,7 @@
           </span>
           <div>
             <strong>발견한 아이템</strong>
-            <small>드래그하거나 선택한 뒤 빈칸을 누르세요</small>
+            <small>보상 물품은 수집하고, 장치는 화면에서 직접 조작하세요</small>
           </div>
         </div>
 
@@ -126,6 +192,67 @@
         </div>
       </footer>
     </div>
+
+    <dialog
+      class="story-overlay story-ending-overlay"
+      id="exit-ending-dialog"
+      aria-labelledby="exit-ending-title"
+      aria-describedby="exit-ending-summary"
+    >
+      <div class="story-card story-ending-card">
+        <div class="ending-sunburst" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="ending-unlocked-mark" aria-hidden="true">
+          <span class="ending-door-leaf"></span>
+          <span class="ending-light-path"></span>
+        </div>
+        <p class="story-overline">EXIT UNLOCKED · MISSION COMPLETE</p>
+        <h1 id="exit-ending-title">강의실 탈출 완료!</h1>
+        <p class="story-lead" id="exit-ending-summary">
+          마지막 잠금이 풀리고 밝은 복도로 이어지는 출구가 열렸습니다.
+          강의의 핵심 단서를 모두 되찾았어요.
+        </p>
+
+        <div class="ending-result" aria-label="최종 탈출 결과">
+          <div>
+            <small>해결한 퍼즐</small>
+            <strong><span id="exit-solved-count">5</span>/<span id="exit-puzzle-total">5</span></strong>
+          </div>
+          <span class="ending-result-divider" aria-hidden="true"></span>
+          <div>
+            <small>출구 상태</small>
+            <strong id="exit-door-status">OPEN</strong>
+          </div>
+        </div>
+
+        <p class="ending-caption" id="exit-ending-caption">
+          수고했어요. 이제 밝아진 문 너머로 나갈 시간입니다.
+        </p>
+
+        <form class="story-actions ending-actions" method="dialog">
+          <button
+            class="story-secondary-button"
+            id="exit-ending-replay-button"
+            type="submit"
+            value="replay"
+            data-story-action="replay"
+          >
+            처음부터 다시 하기
+          </button>
+          <button
+            class="story-primary-button story-exit-button"
+            id="exit-ending-continue-button"
+            type="submit"
+            value="continue"
+            data-story-action="continue"
+          >
+            <span>밝은 복도로 나가기</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+      </div>
+    </dialog>
 
     <dialog class="game-modal" id="game-modal" aria-labelledby="modal-title">
       <div class="modal-accent" id="modal-accent" aria-hidden="true"></div>
