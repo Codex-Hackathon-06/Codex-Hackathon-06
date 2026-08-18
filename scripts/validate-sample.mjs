@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { validatePuzzlePack } from "../packages/content-schema/src/index.js";
 
-const sampleNames = ["coding-agents.room.json", "puppy-poop.room.json"];
+const sampleNames = ["coding-agents.room.json"];
 
 for (const sampleName of sampleNames) {
   const sampleUrl = new URL(`../content/sample-lectures/${sampleName}`, import.meta.url);

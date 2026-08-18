@@ -53,6 +53,13 @@ try {
     }, null, 2)}\n`,
   );
 } catch (error) {
-  process.stderr.write(`${error.stack ?? error.message}\n`);
+  // 설정 누락은 사용자가 바로 고칠 수 있는 문제이므로 스택 트레이스 없이 안내만 출력한다.
+  const isSetupError = error?.code === "OPENAI_API_KEY_MISSING";
+  process.stderr.write(`${isSetupError ? error.message : (error.stack ?? error.message)}\n`);
+  if (isSetupError) {
+    process.stderr.write(
+      "프로젝트 루트에 .env 파일을 만들고 AI_API_KEY=<발급받은 키> 를 넣은 뒤 다시 실행하세요.\n",
+    );
+  }
   process.exitCode = 1;
 }

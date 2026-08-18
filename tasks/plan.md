@@ -37,7 +37,7 @@ Whisper 산출물(`manifest.json`, `transcript.chunks.json`, `transcript.raw.jso
 **Acceptance criteria:**
 - [x] kind별 필수 입력·정답 구조를 검증한다.
 - [x] 모든 퍼즐에 오답 피드백, 힌트 2회 후 정답 공개, 실제 segment 근거가 필요하다.
-- [x] 기존 강아지똥 ITEM_PLACEMENT 팩도 계속 유효하다.
+- [x] ITEM_PLACEMENT 계열 팩(tests/fixtures/item-placement-room.json)도 계속 유효하다.
 
 **Verification:** `node --test tests/content-schema.test.js`
 

@@ -1,5 +1,5 @@
-const kenneyUrl = (pack, fileName) =>
-  new URL(`./assets/third-party/kenney/${pack}/${fileName}`, import.meta.url).href;
+const pixelUrl = (category, fileName) =>
+  new URL(`./assets/third-party/pixel/${category}/${fileName}`, import.meta.url).href;
 
 export const ASSET_MODES = Object.freeze(["2d", "3d"]);
 export const SUPPORTED_ASSET_MODES = ASSET_MODES;
@@ -147,17 +147,17 @@ export async function setAssetMode(mode) {
 }
 
 export const ASSET_SOURCES = Object.freeze({
-  furnitureKit: Object.freeze({
-    name: "Kenney Furniture Kit",
+  isometricLibrary: Object.freeze({
+    name: "Kenney Isometric Miniature Library",
     version: "1.0",
     license: "CC0-1.0",
-    sourceUrl: "https://kenney.nl/assets/furniture-kit",
+    sourceUrl: "https://kenney.nl/assets/isometric-miniature-library",
   }),
-  uiPack: Object.freeze({
-    name: "Kenney UI Pack",
-    version: "2.0",
+  uiPackPixelAdventure: Object.freeze({
+    name: "Kenney UI Pack - Pixel Adventure",
+    version: "1.0",
     license: "CC0-1.0",
-    sourceUrl: "https://kenney.nl/assets/ui-pack",
+    sourceUrl: "https://kenney.nl/assets/ui-pack-pixel-adventure",
   }),
   gameIcons: Object.freeze({
     name: "Kenney Game Icons",
@@ -165,111 +165,179 @@ export const ASSET_SOURCES = Object.freeze({
     license: "CC0-1.0",
     sourceUrl: "https://kenney.nl/assets/game-icons",
   }),
+  mansionDemo: Object.freeze({
+    name: "Mansion Demo (edomin)",
+    version: "1.0",
+    license: "CC0-1.0",
+    sourceUrl: "https://opengameart.org/content/mansion-demo",
+  }),
+  pixelKeys: Object.freeze({
+    name: "Keys (SomebodyLarr) / RPG Pixel Art Pack (Delta12)",
+    version: "1.0",
+    license: "CC0-1.0",
+    sourceUrl: "https://opengameart.org/content/keys-1",
+  }),
+  pixelDocuments: Object.freeze({
+    name: "CC0 Book & Document Icons (AntumDeluge)",
+    version: "1.0",
+    license: "CC0-1.0",
+    sourceUrl: "https://opengameart.org/content/cc0-document-icons",
+  }),
+  usbDevices: Object.freeze({
+    name: "USB compatible plug sprites (knekko)",
+    version: "1.0",
+    license: "CC0-1.0",
+    sourceUrl: "https://opengameart.org/content/usb-compatible-plug-sprites",
+  }),
 });
 
 export const OVERVIEW_OBJECT_ASSETS = Object.freeze({
   bookshelf: Object.freeze({
     kind: "image",
-    src: kenneyUrl("furniture-kit", "bookcaseOpen_NE.png"),
-    alt: "열린 책장",
-    source: "furnitureKit",
+    src: pixelUrl("objects", "bookcase-books.png"),
+    alt: "책이 꽂힌 책장",
+    source: "isometricLibrary",
   }),
   wall: Object.freeze({
     kind: "image",
-    src: kenneyUrl("furniture-kit", "cabinetTelevision_NE.png"),
-    alt: "화면이 달린 기록 보드",
-    source: "furnitureKit",
+    src: pixelUrl("objects", "display-case-books.png"),
+    alt: "기록물이 전시된 진열장",
+    source: "isometricLibrary",
   }),
   drawer: Object.freeze({
     kind: "image",
-    src: kenneyUrl("furniture-kit", "sideTableDrawers_NE.png"),
-    alt: "여러 칸 서랍장",
-    source: "furnitureKit",
+    src: pixelUrl("objects", "display-case.png"),
+    alt: "잠긴 유리 보관장",
+    source: "isometricLibrary",
   }),
   desk: Object.freeze({
     kind: "image",
-    src: kenneyUrl("furniture-kit", "desk_NE.png"),
-    alt: "연구용 책상",
-    source: "furnitureKit",
+    src: pixelUrl("objects", "desk-table.png"),
+    alt: "분석용 책상",
+    source: "isometricLibrary",
   }),
 });
 
 export const EXIT_DOOR_ASSETS = Object.freeze({
   locked: Object.freeze({
     kind: "image",
-    src: kenneyUrl("furniture-kit", "doorway_NE.png"),
+    src: pixelUrl("exit", "door-closed.png"),
+    pixelArt: true,
     alt: "닫힌 출구 문",
-    source: "furnitureKit",
+    source: "mansionDemo",
   }),
   unlocked: Object.freeze({
     kind: "image",
-    src: kenneyUrl("furniture-kit", "doorwayOpen_NE.png"),
+    src: pixelUrl("exit", "doorway-open.png"),
     alt: "열린 출구 문",
-    source: "furnitureKit",
+    source: "isometricLibrary",
   }),
 });
 
 export const ITEM_ASSETS = Object.freeze({
-  "console-keyboard": Object.freeze({
+  "wall-access-card": Object.freeze({
     kind: "image",
-    src: kenneyUrl("furniture-kit", "computerKeyboard_NE.png"),
-    alt: "실행 콘솔 키보드",
-    source: "furnitureKit",
+    src: pixelUrl("items", "wall-access-card.png"),
+    pixelArt: true,
+    alt: "SWE 보드 액세스 카드",
+    source: "pixelDocuments",
   }),
-  "repository-books": Object.freeze({
+  "drawer-key": Object.freeze({
     kind: "image",
-    src: kenneyUrl("furniture-kit", "books_NE.png"),
-    alt: "저장소 기록책 묶음",
-    source: "furnitureKit",
+    src: pixelUrl("items", "drawer-key.png"),
+    pixelArt: true,
+    alt: "황동 서랍 열쇠",
+    source: "pixelKeys",
   }),
-  "terminal-monitor": Object.freeze({
+  "desk-power-fuse": Object.freeze({
     kind: "image",
-    src: kenneyUrl("furniture-kit", "computerScreen_NE.png"),
-    alt: "터미널 모니터",
-    source: "furnitureKit",
+    src: pixelUrl("items", "desk-power-fuse.png"),
+    pixelArt: true,
+    alt: "분석 책상 전원 퓨즈",
+    source: "usbDevices",
   }),
-  "evaluation-report": Object.freeze({
+  "safe-handle": Object.freeze({
     kind: "image",
-    src: kenneyUrl("ui-pack", "button_rectangle_depth_gradient.png"),
-    alt: "평가 지표 리포트 카드",
-    source: "uiPack",
+    src: pixelUrl("items", "safe-handle.png"),
+    pixelArt: true,
+    alt: "금고 회전 손잡이",
+    source: "pixelKeys",
+  }),
+  "safe-gear": Object.freeze({
+    kind: "image",
+    src: pixelUrl("items", "safe-gear.png"),
+    pixelArt: true,
+    alt: "금고 잠금 기어",
+    source: "pixelKeys",
+  }),
+  "safe-power-core": Object.freeze({
+    kind: "image",
+    src: pixelUrl("items", "safe-power-core.png"),
+    pixelArt: true,
+    alt: "금고 전원 코어",
+    source: "usbDevices",
   }),
   "exit-keycard": Object.freeze({
     kind: "image",
-    src: kenneyUrl("game-icons", "exit.png"),
+    src: pixelUrl("items", "exit-keycard.png"),
+    pixelArt: true,
     alt: "비상구 키카드",
-    source: "gameIcons",
+    source: "pixelKeys",
+  }),
+  key: Object.freeze({
+    kind: "image",
+    src: pixelUrl("items", "key.png"),
+    pixelArt: true,
+    alt: "은빛 열쇠",
+    source: "pixelKeys",
+  }),
+  "message-card": Object.freeze({
+    kind: "image",
+    src: pixelUrl("items", "message-card.png"),
+    pixelArt: true,
+    alt: "봉인된 쪽지",
+    source: "pixelDocuments",
+  }),
+  "story-card": Object.freeze({
+    kind: "image",
+    src: pixelUrl("items", "story-card.png"),
+    pixelArt: true,
+    alt: "이야기 단서 카드",
+    source: "pixelDocuments",
   }),
   book: Object.freeze({
     kind: "image",
-    src: kenneyUrl("furniture-kit", "books_NE.png"),
-    alt: "책 묶음",
-    source: "furnitureKit",
+    src: pixelUrl("items", "book.png"),
+    pixelArt: true,
+    alt: "책",
+    source: "pixelDocuments",
   }),
   "concept-token": Object.freeze({
     kind: "image",
-    src: kenneyUrl("ui-pack", "check_round_color.png"),
+    src: pixelUrl("items", "concept-token.png"),
+    pixelArt: true,
     alt: "완료 배지",
-    source: "uiPack",
+    source: "gameIcons",
   }),
   "exit-key": Object.freeze({
     kind: "image",
-    src: kenneyUrl("game-icons", "exit.png"),
-    alt: "출구 아이콘",
-    source: "gameIcons",
+    src: pixelUrl("items", "exit-key.png"),
+    pixelArt: true,
+    alt: "출구 열쇠",
+    source: "pixelKeys",
   }),
 });
 
 export const UI_ASSETS = Object.freeze({
-  buttonWide: kenneyUrl("ui-pack", "button_rectangle_depth_gradient.png"),
-  buttonSquare: kenneyUrl("ui-pack", "button_square_depth_gradient.png"),
-  toggleHandle: kenneyUrl("ui-pack", "slide_hangle.png"),
-  check: kenneyUrl("game-icons", "checkmark.png"),
-  locked: kenneyUrl("game-icons", "locked.png"),
-  unlocked: kenneyUrl("game-icons", "unlocked.png"),
-  zoom: kenneyUrl("game-icons", "zoomIn.png"),
-  question: kenneyUrl("game-icons", "question.png"),
-  exit: kenneyUrl("game-icons", "exit.png"),
+  buttonWide: pixelUrl("ui", "button-wide.png"),
+  buttonSquare: pixelUrl("ui", "button-square.png"),
+  toggleHandle: pixelUrl("ui", "toggle-handle.png"),
+  check: pixelUrl("ui", "check.png"),
+  locked: pixelUrl("ui", "locked.png"),
+  unlocked: pixelUrl("ui", "unlocked.png"),
+  zoom: pixelUrl("ui", "zoom.png"),
+  question: pixelUrl("ui", "question.png"),
+  exit: pixelUrl("ui", "exit.png"),
 });
 
 export function getOverviewObjectAsset(viewId) {

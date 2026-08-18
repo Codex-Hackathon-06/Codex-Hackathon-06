@@ -29,19 +29,13 @@ import {
   UI_ASSETS,
 } from "./asset-catalog.js";
 
-const DEMO_PACKS = {
-  "coding-agents": "../../content/sample-lectures/coding-agents.room.json",
-  "puppy-poop": "../../content/sample-lectures/puppy-poop.room.json",
-};
-
-const DEFAULT_DEMO_KEY = "coding-agents";
+const ROOM_PACK_URL = "../../content/sample-lectures/coding-agents.room.json";
 const VISIBLE_HINT_LIMIT = 2;
 
 const elements = {
   appShell: document.querySelector("#app-shell"),
   assetModeSelect: document.querySelector("#asset-mode-select"),
   backButton: document.querySelector("#back-button"),
-  demoSelect: document.querySelector("#demo-select"),
   gameScene: document.querySelector("#game-scene"),
   inventoryList: document.querySelector("#inventory-list"),
   lectureTitle: document.querySelector("#lecture-title"),
@@ -78,53 +72,25 @@ const elements = {
 
 const viewPresentation = {
   bookshelf: {
-    eyebrow: "서가 기록 · 01",
-    description: "책등과 문구 사이에 숨은 빈칸을 관찰하세요. 다른 장소에서 찾은 책이 필요할 수 있어요.",
-    artClass: "bookshelf",
-  },
-  wall: {
-    eyebrow: "사건 기록 · 02",
-    description: "흩어진 사건 카드를 모아 이야기의 변화 과정을 다시 연결하세요.",
-    artClass: "wall",
-  },
-  drawer: {
-    eyebrow: "잠금 장치 · 03",
-    description: "민들레 문양의 자물쇠입니다. 강아지똥이 맡은 역할을 나타내는 열쇠를 찾아보세요.",
-    artClass: "drawer",
-  },
-  desk: {
-    eyebrow: "기록자의 자리 · 04",
-    description: "작품의 메시지를 완성하고, 모은 개념 토큰으로 마지막 금고를 여세요.",
-    artClass: "desk",
-  },
-};
-
-const codingAgentViewPresentation = {
-  bookshelf: {
     eyebrow: "AGENT FEATURES · 01",
     description: "강의에서 강조한 코딩 에이전트의 특징만 골라 기능 스위치를 켜세요.",
-    artClass: "bookshelf",
   },
   wall: {
     eyebrow: "SWE-BENCH · 02",
     description: "강의 속 데이터로 식을 계산하고 숫자키패드 자물쇠를 여세요.",
-    artClass: "wall",
   },
   drawer: {
     eyebrow: "TERMINAL-BENCH · 03",
     description: "태스크를 이루는 다섯 구성요소를 강의에서 나온 순서대로 맞추세요.",
-    artClass: "drawer",
   },
   desk: {
     eyebrow: "REXBENCH · 04",
     description: "평가 지표 문자키패드를 해독하고 금고 손잡이·기어·전원 코어를 조립하세요.",
-    artClass: "desk",
   },
 };
 
 let pack = null;
 let state = null;
-let activeDemoKey = DEFAULT_DEMO_KEY;
 let activeHintPuzzleId = null;
 let toastTimer = null;
 let dialDrag = null;
@@ -172,7 +138,8 @@ function assetDescriptorMarkup(
     : `role="img" aria-label="${escapeHtml(alt || descriptor.alt || "에셋")}"`;
 
   if (descriptor.kind === "image") {
-    return `<img${classAttribute} data-asset-kind="image" src="${escapeHtml(descriptor.src)}" alt="${decorative ? "" : escapeHtml(alt || descriptor.alt)}" ${decorative ? 'aria-hidden="true"' : ""} />`;
+    const pixelArtAttribute = descriptor.pixelArt ? ' data-pixel-art="true"' : "";
+    return `<img${classAttribute} data-asset-kind="image"${pixelArtAttribute} src="${escapeHtml(descriptor.src)}" alt="${decorative ? "" : escapeHtml(alt || descriptor.alt)}" ${decorative ? 'aria-hidden="true"' : ""} />`;
   }
 
   const poster =
@@ -193,8 +160,7 @@ function getViewKey(viewId) {
 }
 
 function presentationFor(viewId) {
-  const catalog = activeDemoKey === "coding-agents" ? codingAgentViewPresentation : viewPresentation;
-  return catalog[getViewKey(viewId)];
+  return viewPresentation[getViewKey(viewId)];
 }
 
 function formatTime(seconds) {
@@ -414,8 +380,6 @@ function renderOverview(view) {
 
   return `
     <div class="room-overview" aria-label="${escapeHtml(pack.room.title ?? "강의실 방 전체")}">
-      <div class="room-window" aria-hidden="true"></div>
-      <div class="room-light" aria-hidden="true"></div>
       ${objectMarkup}
       <button
         class="room-exit-door ${exitUnlocked ? "is-unlocked" : "is-locked"} ${exitItemReady ? "can-accept-keycard" : ""}"
@@ -473,7 +437,6 @@ function renderCloseup(view) {
           <h2>${escapeHtml(view.label)}</h2>
           <span>${escapeHtml(presentation.description)}</span>
         </div>
-        <div class="furniture-art ${escapeHtml(presentation.artClass)}" aria-hidden="true"></div>
         ${assetDescriptorMarkup(objectAsset, {
           className: `closeup-object-asset asset-${safeCssKey(viewKey)}`,
           decorative: false,
@@ -1474,9 +1437,6 @@ function bindEvents() {
     showStoryIntro();
   });
 
-  elements.demoSelect.addEventListener("change", () => {
-    loadDemo(elements.demoSelect.value);
-  });
 
   elements.assetModeSelect?.addEventListener("change", () => {
     changeAssetMode(elements.assetModeSelect.value);
@@ -1524,11 +1484,8 @@ function bindEvents() {
   });
 }
 
-async function loadDemo(demoKey) {
-  const nextDemoKey = Object.hasOwn(DEMO_PACKS, demoKey) ? demoKey : DEFAULT_DEMO_KEY;
-  activeDemoKey = nextDemoKey;
+async function loadRoom() {
   completionReported = false;
-  elements.demoSelect.value = nextDemoKey;
   elements.gameScene.setAttribute("aria-busy", "true");
   elements.gameScene.innerHTML = `
     <div class="loading-state">
@@ -1539,16 +1496,12 @@ async function loadDemo(demoKey) {
   `;
 
   try {
-    const response = await fetch(DEMO_PACKS[nextDemoKey], { cache: "no-store" });
+    const response = await fetch(ROOM_PACK_URL, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(`게임 데이터 요청 실패 (${response.status})`);
     }
     pack = await response.json();
     state = createInitialState(pack);
-
-    const url = new URL(window.location.href);
-    url.searchParams.set("demo", nextDemoKey);
-    window.history.replaceState({}, "", url);
 
     elements.lectureTitle.textContent = `${pack.video.title} · ${formatTime(pack.video.durationSec)}`;
     document.title = `${pack.room.title} | 강의실 탈출`;
@@ -1568,8 +1521,7 @@ async function initialize() {
   if (elements.assetModeSelect) elements.assetModeSelect.value = initialAssetMode;
   elements.appShell.dataset.assetMode = initialAssetMode;
   bindEvents();
-  const requestedDemo = new URLSearchParams(window.location.search).get("demo");
-  await loadDemo(requestedDemo ?? DEFAULT_DEMO_KEY);
+  await loadRoom();
 }
 
 initialize();

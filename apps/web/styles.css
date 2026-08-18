@@ -1,15 +1,15 @@
 :root {
   color-scheme: dark;
-  --bg: #0b0c0b;
-  --surface: #121311;
-  --surface-soft: #191a17;
-  --line: rgba(255, 255, 255, 0.1);
-  --line-strong: rgba(255, 255, 255, 0.18);
-  --text: #f5f3eb;
-  --muted: #a9aaa3;
-  --dim: #6f716c;
-  --lime: #d6ff55;
-  --lime-deep: #a9d51e;
+  --bg: #050708;
+  --surface: #0f151c;
+  --surface-soft: #131b23;
+  --line: #343f49;
+  --line-strong: #46535f;
+  --text: #f5f3ea;
+  --muted: #aeb7bd;
+  --dim: #8f999f;
+  --lime: #baff43;
+  --lime-deep: #8fd413;
   --amber: #ffbc64;
   --red: #ff806c;
   --blue: #8ccce3;
@@ -80,11 +80,14 @@ button {
 
 .app-shell {
   min-height: 100vh;
-  padding-bottom: 116px;
+  padding-bottom: 82px;
+  /* STT 화면(live-ui/style.css의 body)과 같은 배경 조합을 쓴다.
+     실시간 기록 화면에서 게임으로 넘어와도 같은 공간으로 읽히게 하기 위함. */
   background:
-    radial-gradient(circle at 12% -4%, rgba(214, 255, 85, 0.08), transparent 28%),
-    radial-gradient(circle at 86% 18%, rgba(255, 188, 100, 0.05), transparent 28%),
-    var(--bg);
+    radial-gradient(circle at 82% 6%, rgba(173, 255, 47, 0.11), transparent 34rem),
+    radial-gradient(circle at 12% 60%, rgba(20, 38, 56, 0.18), transparent 32rem),
+    linear-gradient(145deg, #0d1115, #050708 58%);
+  background-attachment: fixed;
 }
 
 .topbar {
@@ -96,7 +99,7 @@ button {
   min-height: 76px;
   padding: 12px clamp(18px, 4vw, 64px);
   border-bottom: 1px solid var(--line);
-  background: rgba(11, 12, 11, 0.82);
+  background: rgba(8, 11, 14, 0.82);
   backdrop-filter: blur(18px);
 }
 
@@ -327,9 +330,11 @@ button {
 .scene-shell {
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: #141512;
-  box-shadow: var(--shadow);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(15, 21, 28, 0.96), rgba(11, 15, 20, 0.94));
+  box-shadow:
+    0 28px 90px rgba(0, 0, 0, 0.28),
+    inset 0 1px rgba(255, 255, 255, 0.02);
 }
 
 .scene-toolbar {
@@ -341,7 +346,7 @@ button {
   min-height: 53px;
   padding: 8px 17px;
   border-bottom: 1px solid var(--line);
-  background: #151613;
+  background: rgba(13, 17, 21, 0.96);
 }
 
 .back-button {
@@ -387,10 +392,14 @@ button {
 
 .game-scene {
   position: relative;
-  min-height: clamp(480px, 61vh, 720px);
+  /* 창 높이에 맞춰 씬을 키운다. 상단바(76px)와 씬 툴바(53px), 하단 인벤토리 바를
+     제외한 나머지를 씬이 차지하게 해서 방이 창을 가득 채우도록 한다. */
+  /* 상단바+제목+씬 툴바(267px)와 하단에 고정된 인벤토리 독(96px), 여백까지 뺀 높이.
+     이 값이면 데스크톱에서 페이지 스크롤 없이 방이 창을 가득 채운다. */
+  min-height: clamp(460px, calc(100vh - 380px), 1040px);
   overflow: hidden;
   outline: none;
-  background: #10110f;
+  background: #080b0e;
 }
 
 .loading-state,
@@ -449,9 +458,8 @@ button {
   isolation: isolate;
   overflow: hidden;
   background:
-    linear-gradient(108deg, rgba(16, 18, 15, 0.08) 42%, rgba(228, 229, 194, 0.05) 67%, transparent 68%),
-    radial-gradient(ellipse at 56% 30%, rgba(214, 255, 85, 0.06), transparent 28%),
-    linear-gradient(#36372f 0 67%, #24251f 67%);
+    radial-gradient(ellipse at 56% 26%, rgba(173, 255, 47, 0.07), transparent 42%),
+    linear-gradient(#151d25 0 67%, #0b1116 67%);
 }
 
 .room-overview::before {
@@ -463,8 +471,8 @@ button {
   height: 62%;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   background:
-    repeating-linear-gradient(91deg, transparent 0 90px, rgba(0, 0, 0, 0.13) 91px 93px),
-    linear-gradient(10deg, #171814, #292a23 70%);
+    repeating-linear-gradient(91deg, transparent 0 90px, rgba(0, 0, 0, 0.16) 91px 93px),
+    linear-gradient(10deg, #080c10, #131c24 70%);
   transform: perspective(340px) rotateX(45deg);
   transform-origin: top;
 }
@@ -476,47 +484,8 @@ button {
   content: "";
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(3, 4, 3, 0.66), transparent 22%, transparent 79%, rgba(3, 4, 3, 0.64)),
-    linear-gradient(0deg, rgba(3, 4, 3, 0.5), transparent 30%, rgba(0, 0, 0, 0.2));
-}
-
-.room-window {
-  position: absolute;
-  top: 8%;
-  left: 39%;
-  width: 21%;
-  height: 25%;
-  border: 10px solid #22231f;
-  background:
-    linear-gradient(90deg, transparent 48%, #252621 49% 52%, transparent 53%),
-    linear-gradient(0deg, transparent 48%, #252621 49% 52%, transparent 53%),
-    linear-gradient(145deg, #8a9285, #54594f);
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.09),
-    18px 30px 80px rgba(233, 242, 197, 0.08);
-  opacity: 0.75;
-}
-
-.room-light {
-  position: absolute;
-  top: -1%;
-  left: 55%;
-  width: 1px;
-  height: 9%;
-  background: #777970;
-}
-
-.room-light::after {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  width: 70px;
-  height: 25px;
-  border-radius: 50% 50% 25% 25%;
-  background: #22231f;
-  box-shadow: 0 10px 35px rgba(236, 255, 176, 0.12);
-  content: "";
-  transform: translateX(-50%);
+    linear-gradient(90deg, rgba(3, 5, 7, 0.66), transparent 22%, transparent 79%, rgba(3, 5, 7, 0.64)),
+    linear-gradient(0deg, rgba(3, 5, 7, 0.5), transparent 30%, rgba(0, 0, 0, 0.2));
 }
 
 .room-object {
@@ -771,112 +740,71 @@ model-viewer[data-asset-kind="model"]:not(:defined) > .asset-model-placeholder {
   }
 }
 
+/* 방 오브젝트는 자리(위치·크기)만 잡는 투명한 히트박스다. 가구의 생김새는 전부
+   asset-catalog가 넣는 픽셀 스프라이트가 담당하므로 CSS로 다시 그리지 않는다. */
+/* 상자 비율은 잘라낸 스프라이트의 실제 비율과 같게 두어 이미지가 상자를 꽉 채우게 한다.
+   그래야 LOCKED 배지와 돋보기 아이콘이 가구에서 뜨지 않고 붙는다.
+   bottom 값을 통일해 네 가구가 같은 바닥선에 선다. */
 .object-bookshelf {
-  bottom: 13%;
-  left: 3%;
-  width: 18%;
-  height: 58%;
-  border: 10px solid #242019;
-  border-bottom-width: 14px;
-  background:
-    repeating-linear-gradient(0deg, transparent 0 20%, #27231d 20% 23%),
-    repeating-linear-gradient(90deg, #785943 0 7%, #a27855 7% 11%, #4d5960 11% 16%, #9a6e45 16% 20%, #424b42 20% 24%);
-  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.55);
+  bottom: 8%;
+  left: 4%;
+  width: auto;
+  height: 52%;
+  aspect-ratio: 168 / 194;
 }
 
 .object-bookshelf .inspect-dot {
-  top: 45%;
-  right: -18px;
+  top: 40%;
+  right: -14px;
 }
 
 .object-wall {
-  top: 19%;
-  left: 24%;
-  width: 17%;
-  height: 39%;
-  border: 8px solid #30271f;
-  background:
-    linear-gradient(32deg, transparent 49%, rgba(51, 37, 28, 0.32) 50% 51%, transparent 52%),
-    #756453;
-  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.32);
-}
-
-.object-wall::before {
-  position: absolute;
-  inset: 13% 11%;
-  background:
-    linear-gradient(#d2c7aa, #aaa083) 0 0 / 28% 40% no-repeat,
-    linear-gradient(#8f9d83, #65705d) 92% 8% / 35% 31% no-repeat,
-    linear-gradient(#b7a27c, #8c795b) 44% 90% / 37% 38% no-repeat;
-  content: "";
-  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.25));
-  transform: rotate(-2deg);
+  bottom: 8%;
+  left: 25%;
+  width: auto;
+  height: 40%;
+  aspect-ratio: 169 / 147;
 }
 
 .object-wall .inspect-dot {
+  top: 40%;
   right: -14px;
-  bottom: -14px;
 }
 
 .object-drawer {
-  bottom: 16%;
-  left: 59%;
-  width: 14%;
-  height: 36%;
-  border: 8px solid #332a21;
-  background: repeating-linear-gradient(0deg, #5d4936 0 29%, #30271f 30% 34%);
-  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.38);
-}
-
-.object-drawer::before {
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(0deg, transparent 0 12%, #b59b70 13% 15%, transparent 16% 33%);
-  content: "";
-  opacity: 0.48;
+  bottom: 8%;
+  left: 58%;
+  width: auto;
+  height: 40%;
+  aspect-ratio: 170 / 147;
 }
 
 .object-drawer .inspect-dot {
-  top: 35%;
-  right: -17px;
+  top: 40%;
+  right: -14px;
 }
 
 .object-desk {
   right: 3%;
-  bottom: 11%;
-  width: 20%;
-  height: 45%;
-  border-top: 13px solid #4b3828;
-  background:
-    linear-gradient(90deg, #2d241c 0 7%, transparent 7% 86%, #2d241c 86% 93%, transparent 93%),
-    linear-gradient(90deg, transparent 0 60%, #33281f 60% 100%);
-}
-
-.object-desk::before {
-  position: absolute;
-  right: 16%;
-  bottom: 90%;
-  width: 34%;
-  height: 46%;
-  border: 5px solid #26221e;
-  border-radius: 3px;
-  background: #40463c;
-  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.6);
-  content: "";
+  bottom: 8%;
+  width: auto;
+  height: 30%;
+  aspect-ratio: 158 / 105;
 }
 
 .object-desk .inspect-dot {
-  top: -29px;
-  right: 20%;
+  top: 34%;
+  right: -14px;
 }
 
 .room-exit-door {
   position: absolute;
   z-index: 2;
-  top: 11%;
-  left: 44%;
-  width: 11%;
-  height: 57%;
+  bottom: 40%;
+  left: 45%;
+  width: auto;
+  height: 34%;
+  aspect-ratio: 161 / 237;
   display: block;
   padding: 0;
   border: 0;
@@ -1140,8 +1068,8 @@ model-viewer[data-asset-kind="model"]:not(:defined) > .asset-model-placeholder {
   grid-template-columns: minmax(0, 1.22fr) minmax(330px, 0.78fr);
   isolation: isolate;
   background:
-    radial-gradient(circle at 30% 24%, rgba(214, 255, 85, 0.055), transparent 34%),
-    #171815;
+    radial-gradient(circle at 30% 24%, rgba(173, 255, 47, 0.06), transparent 34%),
+    #0b1116;
 }
 
 .closeup-visual {
@@ -1149,7 +1077,11 @@ model-viewer[data-asset-kind="model"]:not(:defined) > .asset-model-placeholder {
   min-height: 100%;
   overflow: hidden;
   border-right: 1px solid var(--line);
-  background: linear-gradient(140deg, #34352e, #20211d 58%, #191a17);
+  /* 확대 화면도 방 전체와 같은 벽/바닥 구성으로 둔다. 가구 모양은 픽셀 스프라이트가
+     담당하므로 배경에는 벽면과 바닥선만 남긴다. */
+  background:
+    radial-gradient(ellipse at 50% 22%, rgba(173, 255, 47, 0.06), transparent 46%),
+    linear-gradient(#161f27 0 72%, #0b1116 72%);
 }
 
 .closeup-visual::after {
@@ -1159,8 +1091,8 @@ model-viewer[data-asset-kind="model"]:not(:defined) > .asset-model-placeholder {
   content: "";
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(5, 6, 5, 0.46), transparent 24%, transparent 74%, rgba(5, 6, 5, 0.28)),
-    linear-gradient(0deg, rgba(5, 6, 5, 0.37), transparent 32%);
+    linear-gradient(90deg, rgba(4, 6, 8, 0.46), transparent 24%, transparent 74%, rgba(4, 6, 8, 0.28)),
+    linear-gradient(0deg, rgba(4, 6, 8, 0.37), transparent 32%);
 }
 
 .closeup-label {
@@ -1280,12 +1212,6 @@ model-viewer[data-asset-kind="model"]:not(:defined) > .asset-model-placeholder {
   content: "OPEN";
 }
 
-.furniture-art {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
 .closeup-object-asset {
   position: absolute;
   z-index: 8;
@@ -1305,33 +1231,39 @@ model-viewer[data-asset-kind="model"]:not(:defined) > .asset-model-placeholder {
     transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+/* 확대 화면에서 가구는 퍼즐 패널 아래에 온전히 보이도록 낮고 작게 놓는다.
+   패널이 화면 위쪽 절반을 덮으므로, 이보다 크게 두면 가구가 절반만 보인다. */
 .closeup-object-asset.asset-bookshelf {
-  bottom: -1%;
-  left: 7%;
-  width: 65%;
-  height: 83%;
+  bottom: 2%;
+  left: 50%;
+  width: 34%;
+  height: 29%;
+  transform: translateX(-50%);
 }
 
 .closeup-object-asset.asset-wall {
-  right: 7%;
   bottom: 2%;
-  width: 72%;
-  height: 74%;
+  left: 50%;
+  width: 36%;
+  height: 27%;
+  transform: translateX(-50%);
 }
 
 .closeup-object-asset.asset-drawer {
-  bottom: 1%;
-  left: 8%;
-  width: 72%;
-  height: 72%;
+  bottom: 2%;
+  left: 50%;
+  width: 36%;
+  height: 27%;
+  transform: translateX(-50%);
   transform-origin: center bottom;
 }
 
 .closeup-object-asset.asset-desk {
-  right: 2%;
-  bottom: -4%;
-  width: 86%;
-  height: 76%;
+  bottom: 4%;
+  left: 50%;
+  width: 40%;
+  height: 22%;
+  transform: translateX(-50%);
 }
 
 .closeup-scene.has-solved-device .closeup-object-asset.asset-drawer {
@@ -1340,127 +1272,9 @@ model-viewer[data-asset-kind="model"]:not(:defined) > .asset-model-placeholder {
     saturate(1.04)
     drop-shadow(0 0 18px rgba(214, 255, 85, 0.13))
     drop-shadow(0 32px 30px rgba(0, 0, 0, 0.5));
-  transform: translate(4%, 6%) scale(1.04);
+  transform: translateX(-50%) scale(1.04);
 }
 
-.closeup-scene.has-solved-device .furniture-art.drawer {
-  box-shadow:
-    inset 0 0 70px rgba(214, 255, 85, 0.07),
-    0 0 0 2px rgba(214, 255, 85, 0.14),
-    0 40px 70px rgba(0, 0, 0, 0.42);
-  transform: perspective(700px) rotateY(-2deg) translateY(2%);
-}
-
-.closeup-scene.has-solved-device .furniture-art.drawer::after {
-  position: absolute;
-  top: 29%;
-  right: 3%;
-  left: 3%;
-  height: 22%;
-  border: 5px solid #3a2d23;
-  background: linear-gradient(#17130f, #2a211a);
-  box-shadow:
-    inset 0 12px 18px rgba(0, 0, 0, 0.75),
-    0 13px 18px rgba(0, 0, 0, 0.35);
-  content: "";
-  transform: translateY(24%);
-}
-
-.furniture-art.bookshelf {
-  inset: 16% 8% -4%;
-  border: 18px solid #30251c;
-  border-bottom-width: 28px;
-  background:
-    repeating-linear-gradient(0deg, transparent 0 21%, #34291f 21% 25%),
-    repeating-linear-gradient(90deg, #6d4f3a 0 5%, #a77b50 5% 9%, #455056 9% 14%, #847d56 14% 18%, #5c4240 18% 23%);
-  box-shadow:
-    inset 0 0 80px rgba(0, 0, 0, 0.55),
-    0 30px 80px rgba(0, 0, 0, 0.34);
-  transform: perspective(800px) rotateY(2deg);
-}
-
-.furniture-art.wall {
-  inset: 14% 9% 8%;
-  border: 18px solid #36291e;
-  background:
-    linear-gradient(37deg, transparent 49.5%, rgba(86, 60, 40, 0.42) 50% 50.5%, transparent 51%),
-    #7a6853;
-  box-shadow:
-    inset 0 0 60px rgba(0, 0, 0, 0.35),
-    0 34px 70px rgba(0, 0, 0, 0.4);
-  transform: rotate(-0.7deg);
-}
-
-.furniture-art.wall::before,
-.furniture-art.wall::after {
-  position: absolute;
-  background: #c4b99d;
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.22);
-  content: "";
-}
-
-.furniture-art.wall::before {
-  top: 12%;
-  left: 9%;
-  width: 27%;
-  height: 30%;
-  transform: rotate(-3deg);
-}
-
-.furniture-art.wall::after {
-  right: 8%;
-  bottom: 12%;
-  width: 34%;
-  height: 27%;
-  background: #899781;
-  transform: rotate(2deg);
-}
-
-.furniture-art.drawer {
-  inset: 19% 18% 4%;
-  border: 18px solid #35281e;
-  background:
-    repeating-linear-gradient(0deg, #6d523d 0 27%, #392c22 27.5% 31.5%),
-    #5a4433;
-  box-shadow:
-    inset 0 0 70px rgba(0, 0, 0, 0.38),
-    0 40px 70px rgba(0, 0, 0, 0.42);
-  transform: perspective(700px) rotateY(-2deg);
-}
-
-.furniture-art.drawer::before {
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(0deg, transparent 0 10%, #c3aa7b 11% 13%, transparent 14% 31%);
-  content: "";
-  opacity: 0.5;
-}
-
-.furniture-art.desk {
-  inset: 25% 4% -20%;
-  border-top: 28px solid #5b412d;
-  background:
-    radial-gradient(ellipse at 50% 12%, rgba(255, 223, 172, 0.07), transparent 35%),
-    repeating-linear-gradient(90deg, #3c2c21 0 3%, #4b3527 3.2% 8%);
-  box-shadow: 0 -8px 35px rgba(0, 0, 0, 0.38);
-  transform: perspective(500px) rotateX(7deg);
-  transform-origin: top;
-}
-
-.furniture-art.desk::before {
-  position: absolute;
-  top: -20%;
-  right: 10%;
-  width: 35%;
-  height: 28%;
-  border: 10px solid #29251f;
-  border-radius: 4px;
-  background:
-    linear-gradient(90deg, transparent 31%, rgba(214, 255, 85, 0.18) 32% 34%, transparent 35% 65%, rgba(214, 255, 85, 0.18) 66% 68%, transparent 69%),
-    #3b4037;
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.65);
-  content: "";
-}
 
 .scene-targets-layer {
   position: absolute;
@@ -2983,44 +2797,44 @@ model-viewer[data-asset-kind="model"]:not(:defined) > .asset-model-placeholder {
     min-height: 500px;
   }
 
-  .room-window,
-  .room-light {
-    display: none;
-  }
-
   .object-bookshelf {
-    bottom: 20%;
+    bottom: 10%;
     left: 2%;
-    width: 18%;
-    height: 42%;
+    width: auto;
+    height: 30%;
+    aspect-ratio: 168 / 194;
   }
 
   .object-wall {
-    top: 25%;
-    left: 22%;
-    width: 18%;
-    height: 28%;
+    bottom: 10%;
+    left: 24%;
+    width: auto;
+    height: 23%;
+    aspect-ratio: 169 / 147;
   }
 
   .room-exit-door {
-    top: 14%;
-    left: 42%;
-    width: 15%;
-    height: 48%;
+    bottom: 40%;
+    left: 44%;
+    width: auto;
+    height: 22%;
+    aspect-ratio: 161 / 237;
   }
 
   .object-drawer {
-    bottom: 22%;
-    left: 60%;
-    width: 15%;
-    height: 28%;
+    bottom: 10%;
+    left: 57%;
+    width: auto;
+    height: 23%;
+    aspect-ratio: 170 / 147;
   }
 
   .object-desk {
     right: 2%;
-    bottom: 14%;
-    width: 20%;
-    height: 34%;
+    bottom: 10%;
+    width: auto;
+    height: 17%;
+    aspect-ratio: 158 / 105;
   }
 
   .room-object .inspect-dot {
@@ -3663,4 +3477,19 @@ model-viewer[data-asset-kind="model"]:not(:defined) > .asset-model-placeholder {
   .app-shell.is-ending .game-scene {
     transition: none;
   }
+}
+
+/* 픽셀 에셋 렌더링
+   아이템과 UI 아이콘은 16~32px 원본이라 슬롯 크기까지 2~4배 확대된다. 브라우저 기본
+   보간(bilinear)으로 늘리면 픽셀 윤곽이 뭉개지므로 보간을 끈다.
+   반대로 방 오브젝트는 256x512 아이소메트릭 렌더라 화면에서 축소되는 쪽이며, 여기에
+   nearest-neighbor를 적용하면 오히려 계단 현상이 생긴다. 그래서 asset-catalog가
+   pixelArt로 표시한 저해상도 스프라이트에만 선택적으로 적용한다. */
+[data-pixel-art="true"],
+.exit-lock-icon,
+.item-glyph img,
+.room-object .inspect-dot img,
+.closeup-mode-badge img {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
 }

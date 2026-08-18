@@ -9,7 +9,7 @@ import {
 } from "../packages/content-schema/src/index.js";
 
 const fixtureUrl = new URL(
-  "../content/sample-lectures/puppy-poop.room.json",
+  "./fixtures/item-placement-room.json",
   import.meta.url,
 );
 const schemaUrl = new URL(
@@ -41,7 +41,7 @@ test("suggestPuzzleCount allocates one puzzle per six minutes within demo limits
   assert.throws(() => suggestPuzzleCount(Number.NaN), TypeError);
 });
 
-test("the puppy-poop sample is a valid five-puzzle safe room", async () => {
+test("the item-placement fixture is a valid five-puzzle safe room", async () => {
   const pack = await loadFixture();
   const result = validatePuzzlePack(pack);
 
@@ -329,7 +329,7 @@ test("buildGenerationPrompt fixes a 30-minute lecture at five mixed-template puz
   const input = {
     video: {
       videoId: "video-1",
-      title: "강아지똥 작품 이해",
+      title: "광합성의 원리",
       durationSec: 30 * 60,
       segments: [{ id: "segment-1", text: "작품의 핵심 내용" }],
     },

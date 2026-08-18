@@ -13,7 +13,7 @@ import {
 } from "../packages/game-engine/src/runtime.js";
 
 const fixtureUrl = new URL(
-  "../content/sample-lectures/puppy-poop.room.json",
+  "./fixtures/item-placement-room.json",
   import.meta.url,
 );
 const pack = JSON.parse(await readFile(fixtureUrl, "utf8"));
@@ -106,13 +106,13 @@ test("answer reveal preserves the existing prerequisite and solved-puzzle guards
 
   const puzzle = pack.puzzles.find((entry) => entry.id === "puzzle-1");
   let solvedState = navigate(pack, createInitialState(pack), "desk");
-  solvedState = collectItem(pack, solvedState, "book-ji");
+  solvedState = collectItem(pack, solvedState, "book-hap");
   solvedState = navigate(pack, solvedState, puzzle.viewId);
   solvedState = hintsFor(solvedState, puzzle.id, 2);
   solvedState = tryUseItem(
     pack,
     solvedState,
-    "book-ji",
+    "book-hap",
     "bookshelf-slot-1",
   );
   assert.equal(solvedState.solvedPuzzleIds.includes(puzzle.id), true);

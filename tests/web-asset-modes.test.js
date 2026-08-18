@@ -96,13 +96,13 @@ test("mode API resolves valid descriptors and falls back per invalid or absent e
       alt: "3D 책장",
     });
     assert.equal(getOverviewObjectAsset("wall").kind, "image");
-    assert.equal(getOverviewObjectAsset("wall").source, "furnitureKit");
+    assert.equal(getOverviewObjectAsset("wall").source, "isometricLibrary");
     assert.deepEqual(getExitDoorAsset(true), {
       kind: "model",
       src: assetUrl("3d/exit/open.glb"),
       alt: "열린 3D 출구",
     });
-    assert.equal(getExitDoorAsset(false).source, "furnitureKit");
+    assert.equal(getExitDoorAsset(false).source, "mansionDemo");
 
     assert.equal(await setAssetMode("not-a-mode"), "2d");
     assert.equal(getAssetMode(), "2d");
@@ -116,7 +116,7 @@ test("mode API resolves valid descriptors and falls back per invalid or absent e
       src: assetUrl("2d/items/book.png"),
       alt: "2D 책",
     });
-    assert.equal(getOverviewObjectAsset("desk").source, "furnitureKit");
+    assert.equal(getOverviewObjectAsset("desk").source, "isometricLibrary");
     assert.equal(getItemAsset("__proto__"), null);
     assert.deepEqual(UI_ASSETS, originalUiAssets);
   } finally {
@@ -124,16 +124,16 @@ test("mode API resolves valid descriptors and falls back per invalid or absent e
   }
 });
 
-test("a missing manifest keeps the selected mode and every Kenney fallback", async () => {
+test("a missing manifest keeps the selected mode and every vendored fallback", async () => {
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async () => jsonResponse(null, false);
 
   try {
     await setAssetMode("3d");
     assert.equal(getAssetMode(), "3d");
-    assert.equal(getOverviewObjectAsset("bookshelf").source, "furnitureKit");
-    assert.equal(getItemAsset("book").source, "furnitureKit");
-    assert.equal(getExitDoorAsset(true).source, "furnitureKit");
+    assert.equal(getOverviewObjectAsset("bookshelf").source, "isometricLibrary");
+    assert.equal(getItemAsset("book").source, "pixelDocuments");
+    assert.equal(getExitDoorAsset(true).source, "isometricLibrary");
   } finally {
     globalThis.fetch = originalFetch;
   }

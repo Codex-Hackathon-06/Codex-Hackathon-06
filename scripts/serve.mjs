@@ -9,6 +9,7 @@ const types = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
   ".json": "application/json; charset=utf-8",
+  ".png": "image/png",
   ".svg": "image/svg+xml",
 };
 
@@ -20,22 +21,22 @@ createServer((request, response) => {
     return;
   }
 
-  const requested =
-    urlPath === "/stt"
-      ? "/game-team-handoff/stt.html"
-      : urlPath === "/apps/web/"
-      ? "/apps/web/index.html"
-      : urlPath === "/game"
-        ? "/game-team-handoff/integration/game.html"
-        : urlPath === "/style.css"
-          ? "/game-team-handoff/integration/style.css"
-          : urlPath === "/game.js"
-            ? "/game-team-handoff/integration/game.js"
-            : urlPath === "/game-handoff.js"
-              ? "/game-team-handoff/integration/game-handoff.js"
-              : urlPath === "/game-runtime.js"
-                ? "/game-team-handoff/integration/game-runtime.js"
-        : urlPath;
+  // STT 화면이 첫 화면이다. 강의를 기록하고 분석한 뒤에 게임으로 넘어가는 순서라서,
+  // 루트로 들어오면 live-ui의 실시간 STT 화면을 보여준다.
+  // live-ui/는 npm start(src/live-server.mjs)가 쓰는 것과 같은 파일이며,
+  // game-team-handoff/integration/의 복사본과 내용이 동일하므로 단일 출처로 live-ui를 쓴다.
+  const routes = new Map([
+    ["/stt", "/live-ui/index.html"],
+    ["/app.js", "/live-ui/app.js"],
+    ["/style.css", "/live-ui/style.css"],
+    ["/game", "/live-ui/game.html"],
+    ["/game.html", "/live-ui/game.html"],
+    ["/game.js", "/live-ui/game.js"],
+    ["/game-handoff.js", "/live-ui/game-handoff.js"],
+    ["/game-runtime.js", "/live-ui/game-runtime.js"],
+    ["/apps/web/", "/apps/web/index.html"],
+  ]);
+  const requested = routes.get(urlPath) ?? urlPath;
   const safePath = normalize(requested).replace(/^(\.\.[/\\])+/, "");
   const filePath = join(root, safePath);
 

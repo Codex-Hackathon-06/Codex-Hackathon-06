@@ -81,11 +81,66 @@ AI_API_KEY=your_openai_api_key
 
 ## 실행 방법
 
-### 1. 녹화 영상 배치 STT
+아래 표의 순서대로 실행하면 됩니다. **API 키 없이도 1~2단계는 그대로 동작하며**, 실제 음성 전사와 개념 분석(3~4단계)에만 OpenAI 키가 필요합니다.
+
+| 단계 | 명령 | API 키 | 결과 |
+| --- | --- | :---: | --- |
+| 1. 검증 | `npm test` | 불필요 | 86개 테스트 통과 |
+| 2. 게임 확인 | `npm run start:game` | 불필요 | STT 화면 → 방탈출 게임 |
+| 3. 실시간 STT | `npm start` | 필요 | 시스템 오디오 실시간 전사 |
+| 4. 녹화본 STT | `npm run transcribe -- --input ./DEMO.mp4` | 필요 | 전사 JSON·SRT |
+
+### 0. 설치
+
+```bash
+npm install
+npm test
+```
+
+Node.js 20 이상이 필요합니다. `npm test`가 86개 모두 통과하면 설치가 정상입니다. API 키 없이 오디오 프레이밍, 캐시, SRT, 게임 스키마, 퍼즐 런타임까지 검증합니다.
+
+### 1. 게임 프로토타입 실행 (API 키 불필요)
+
+```bash
+npm run start:game
+```
+
+`http://127.0.0.1:4173`에 접속하면 STT 화면이 먼저 열립니다. 이 서버는 정적 파일만 제공해서 실시간 전사 WebSocket(`/live`)이 없으므로 STT 화면은 `연결 끊김`으로 표시됩니다. 방탈출 게임은 `http://127.0.0.1:4173/apps/web/`에서 바로 확인할 수 있고, 샘플 강의(`코딩 에이전트와 벤치마크`)로 퍼즐 5개를 끝까지 풀 수 있습니다.
+
+포트를 이미 다른 프로세스가 쓰고 있으면 `EADDRINUSE` 오류가 납니다. 다른 포트로 띄우려면 `PORT=4180 npm run start:game`처럼 지정하고, 이전에 띄워 둔 서버를 정리하려면 `lsof -nP -iTCP:4173 -sTCP:LISTEN -t | xargs kill`을 사용하세요.
+
+### 2. 샘플 콘텐츠 검증 (API 키 불필요)
+
+```bash
+npm run validate:sample
+```
+
+게임에 실리는 방 데이터가 공통 JSON 스키마를 만족하는지 확인합니다.
+
+### 3. macOS 실시간 STT (API 키 필요)
+
+```bash
+npm run live
+```
+
+스크립트가 Swift helper를 빌드하고 `http://127.0.0.1:4173`에서 실시간 STT 화면을 엽니다. 최초 실행 시 macOS의 화면 및 시스템 오디오 기록 권한을 허용해야 합니다. macOS 13 이상과 Xcode Command Line Tools(`xcode-select --install`)가 필요합니다.
+
+이미 helper를 빌드했다면 서버만 다시 띄우면 됩니다.
+
+```bash
+npm run build:mac-audio
+npm start
+```
+
+`npm start`로 띄운 서버는 `/`가 실시간 STT 화면, `/game`이 분석 결과를 넘겨받은 게임 화면입니다. 기록을 끝내면 개념 분석이 자동으로 돌고, `게임 시작` 버튼으로 방탈출 화면까지 이어집니다.
+
+### 4. 녹화 영상 배치 STT (API 키 필요)
 
 ```bash
 npm run transcribe -- --input ./DEMO.mp4
 ```
+
+키가 없으면 `AI_API_KEY`를 설정하라는 안내를 출력하고 종료합니다. 키 없이 전처리만 확인하려면 `--prepare-only`를 사용하세요.
 
 주요 옵션:
 
@@ -97,36 +152,13 @@ npm run transcribe -- --input ./DEMO.mp4
 --force                   기존 캐시를 무시하고 다시 생성
 ```
 
-### 2. 전사 결과 분석
+### 5. 전사 결과 분석 (API 키 필요)
 
 ```bash
 npm run analyze -- --input ./data/transcripts/<hash>/transcript.chunks.json
 ```
 
-분석 결과는 기본적으로 전사 파일과 같은 디렉터리에 `game-generator.input.json`으로 저장됩니다.
-
-### 3. macOS 실시간 STT
-
-```bash
-npm run live
-```
-
-스크립트가 Swift helper를 빌드하고 `http://127.0.0.1:4173`에서 실시간 STT 화면을 엽니다. 최초 실행 시 macOS의 화면 및 시스템 오디오 기록 권한을 허용해야 합니다.
-
-직접 빌드하려면 다음 명령을 사용합니다.
-
-```bash
-npm run build:mac-audio
-npm start
-```
-
-### 4. 게임 프로토타입만 실행
-
-```bash
-npm run start:game
-```
-
-브라우저에서 `http://127.0.0.1:4173`에 접속합니다.
+`<hash>`는 4단계에서 만들어진 디렉터리 이름입니다. 분석 결과는 기본적으로 전사 파일과 같은 디렉터리에 `game-generator.input.json`으로 저장됩니다.
 
 ## 생성 결과
 

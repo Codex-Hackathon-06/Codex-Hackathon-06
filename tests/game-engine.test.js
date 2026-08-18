@@ -17,7 +17,7 @@ import {
 } from "../packages/game-engine/src/runtime.js";
 
 const fixtureUrl = new URL(
-  "../content/sample-lectures/puppy-poop.room.json",
+  "./fixtures/item-placement-room.json",
   import.meta.url,
 );
 const pack = JSON.parse(await readFile(fixtureUrl, "utf8"));
@@ -32,32 +32,32 @@ function take(state, viewId, itemId) {
 
 test("scene items become collectible only from their current view", () => {
   let state = createInitialState(pack);
-  assert.deepEqual(getVisibleItems(pack, state, "desk").map((item) => item.id).includes("book-ji"), true);
+  assert.deepEqual(getVisibleItems(pack, state, "desk").map((item) => item.id).includes("book-hap"), true);
 
-  state = collectItem(pack, state, "book-ji");
+  state = collectItem(pack, state, "book-hap");
   assert.equal(getInventoryItems(pack, state).length, 0);
 
-  state = take(state, "desk", "book-ji");
-  assert.equal(getInventoryItems(pack, state).some((item) => item.id === "book-ji"), true);
-  assert.equal(getVisibleItems(pack, state, "desk").some((item) => item.id === "book-ji"), false);
+  state = take(state, "desk", "book-hap");
+  assert.equal(getInventoryItems(pack, state).some((item) => item.id === "book-hap"), true);
+  assert.equal(getVisibleItems(pack, state, "desk").some((item) => item.id === "book-hap"), false);
 });
 
 test("a wrong item keeps inventory and shows concept feedback", () => {
   let state = createInitialState(pack);
-  state = take(state, "bookshelf", "book-gi");
-  state = tryUseItem(pack, state, "book-gi", "bookshelf-slot-1");
+  state = take(state, "bookshelf", "book-han");
+  state = tryUseItem(pack, state, "book-han", "bookshelf-slot-1");
 
   assert.equal(state.placements["bookshelf-slot-1"], undefined);
-  assert.equal(getInventoryItems(pack, state).some((item) => item.id === "book-gi"), true);
+  assert.equal(getInventoryItems(pack, state).some((item) => item.id === "book-han"), true);
   assert.equal(state.overlay.type, "WRONG");
-  assert.match(state.overlay.body, /작품 제목/);
+  assert.match(state.overlay.body, /강의에서 쓰인 용어/);
 });
 
 test("an inventory item cannot solve a puzzle from another close-up", () => {
   let state = createInitialState(pack);
-  state = take(state, "desk", "book-ji");
+  state = take(state, "desk", "book-hap");
 
-  const unchanged = tryUseItem(pack, state, "book-ji", "bookshelf-slot-1");
+  const unchanged = tryUseItem(pack, state, "book-hap", "bookshelf-slot-1");
 
   assert.equal(unchanged, state);
   assert.deepEqual(state.solvedPuzzleIds, []);
@@ -68,7 +68,7 @@ test("a puzzle reward is consumed to unlock the next close-up before navigation"
   const lockedPack = structuredClone(pack);
   const wallView = lockedPack.room.views.find((view) => view.id === "wall");
   wallView.unlock = {
-    itemId: "key-fertilizer",
+    itemId: "key-chloroplast",
     lockedMessage: "벽면 장치가 잠겨 있어 열리지 않습니다.",
     unlockedMessage: "거름 열쇠가 맞물리며 벽면 장치가 열렸습니다.",
   };
@@ -86,21 +86,21 @@ test("a puzzle reward is consumed to unlock the next close-up before navigation"
   ]);
 
   state = navigate(lockedPack, state, "desk");
-  state = collectItem(lockedPack, state, "book-ji");
+  state = collectItem(lockedPack, state, "book-hap");
   state = navigate(lockedPack, state, "bookshelf");
   state = tryUseItem(
     lockedPack,
     state,
-    "book-ji",
+    "book-hap",
     "bookshelf-slot-1",
   );
   assert.equal(state.solvedPuzzleIds.includes("puzzle-1"), true);
 
-  state = collectItem(lockedPack, state, "key-fertilizer");
+  state = collectItem(lockedPack, state, "key-chloroplast");
   state = collectItem(lockedPack, state, "safe-token-1");
   assert.equal(
     getInventoryItems(lockedPack, state).some(
-      (item) => item.id === "key-fertilizer",
+      (item) => item.id === "key-chloroplast",
     ),
     true,
   );
@@ -108,7 +108,7 @@ test("a puzzle reward is consumed to unlock the next close-up before navigation"
     tryUseViewUnlockItem(
       lockedPack,
       state,
-      "key-fertilizer",
+      "key-chloroplast",
       "wall",
     ),
     state,
@@ -131,19 +131,19 @@ test("a puzzle reward is consumed to unlock the next close-up before navigation"
   const notInInventory = tryUseViewUnlockItem(
     lockedPack,
     state,
-    "key-rain",
+    "key-mitochondria",
     "wall",
   );
   assert.equal(notInInventory, state);
   assert.equal(
-    tryUseViewUnlockItem(lockedPack, state, "key-fertilizer", "missing-view"),
+    tryUseViewUnlockItem(lockedPack, state, "key-chloroplast", "missing-view"),
     state,
   );
 
   state = tryUseViewUnlockItem(
     lockedPack,
     state,
-    "key-fertilizer",
+    "key-chloroplast",
     "wall",
   );
   assert.equal(state.overlay.type, "VIEW_UNLOCKED");
@@ -151,16 +151,16 @@ test("a puzzle reward is consumed to unlock the next close-up before navigation"
   assert.equal(state.selectedItemId, null);
   assert.equal(isViewUnlocked(lockedPack, state, "wall"), true);
   assert.equal(state.unlockedViewIds.filter((id) => id === "wall").length, 1);
-  assert.equal(state.consumedItemIds.includes("key-fertilizer"), true);
+  assert.equal(state.consumedItemIds.includes("key-chloroplast"), true);
   assert.equal(
     getInventoryItems(lockedPack, state).some(
-      (item) => item.id === "key-fertilizer",
+      (item) => item.id === "key-chloroplast",
     ),
     false,
   );
 
   assert.equal(
-    tryUseViewUnlockItem(lockedPack, state, "key-fertilizer", "wall"),
+    tryUseViewUnlockItem(lockedPack, state, "key-chloroplast", "wall"),
     state,
   );
   state = navigate(lockedPack, state, "wall");
@@ -168,34 +168,34 @@ test("a puzzle reward is consumed to unlock the next close-up before navigation"
 
   const reset = resetState(lockedPack);
   assert.equal(isViewUnlocked(lockedPack, reset, "wall"), false);
-  assert.equal(reset.consumedItemIds.includes("key-fertilizer"), false);
+  assert.equal(reset.consumedItemIds.includes("key-chloroplast"), false);
 });
 
 test("the five-puzzle fixture can be completed end to end", () => {
   let state = createInitialState(pack);
 
-  state = take(state, "desk", "book-ji");
+  state = take(state, "desk", "book-hap");
   state = go(state, "bookshelf");
-  state = tryUseItem(pack, state, "book-ji", "bookshelf-slot-1");
+  state = tryUseItem(pack, state, "book-hap", "bookshelf-slot-1");
   assert.deepEqual(state.solvedPuzzleIds, ["puzzle-1"]);
 
-  state = take(state, "bookshelf", "event-rejected");
-  state = take(state, "wall", "event-meeting");
-  state = take(state, "desk", "event-nourish");
+  state = take(state, "bookshelf", "event-light");
+  state = take(state, "wall", "event-split");
+  state = take(state, "desk", "event-sugar");
   state = go(state, "wall");
-  state = tryUseItem(pack, state, "event-rejected", "wall-slot-1");
-  state = tryUseItem(pack, state, "event-meeting", "wall-slot-2");
-  state = tryUseItem(pack, state, "event-nourish", "wall-slot-3");
+  state = tryUseItem(pack, state, "event-light", "wall-slot-1");
+  state = tryUseItem(pack, state, "event-split", "wall-slot-2");
+  state = tryUseItem(pack, state, "event-sugar", "wall-slot-3");
   assert.equal(state.solvedPuzzleIds.includes("puzzle-2"), true);
 
-  state = take(state, "bookshelf", "key-fertilizer");
+  state = take(state, "bookshelf", "key-chloroplast");
   state = go(state, "drawer");
-  state = tryUseItem(pack, state, "key-fertilizer", "drawer-key-slot");
+  state = tryUseItem(pack, state, "key-chloroplast", "drawer-key-slot");
   assert.equal(state.solvedPuzzleIds.includes("puzzle-3"), true);
 
-  state = take(state, "drawer", "message-help");
+  state = take(state, "drawer", "message-energy");
   state = go(state, "desk");
-  state = tryUseItem(pack, state, "message-help", "desk-message-slot");
+  state = tryUseItem(pack, state, "message-energy", "desk-message-slot");
   assert.equal(state.solvedPuzzleIds.includes("puzzle-4"), true);
 
   state = take(state, "bookshelf", "safe-token-1");
